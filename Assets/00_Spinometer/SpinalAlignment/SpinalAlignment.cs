@@ -1,4 +1,11 @@
-﻿using System.Collections.Generic;
+﻿/*
+ * Copyright 2024 GET BACK Ltd.
+ *
+ * Licensed for Non-Commercial Personal Use Only.
+ * See LICENSE.md in this directory for more info.
+ */
+
+using System.Collections.Generic;
 
 namespace GetBack.Spinometer.SpinalAlignment
 {
