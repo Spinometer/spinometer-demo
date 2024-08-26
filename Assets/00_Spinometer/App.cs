@@ -9,7 +9,7 @@ using Debug = UnityEngine.Debug;
 namespace GetBack.Spinometer
 {
 
-  public class GameManager : MonoBehaviour
+  public class App : MonoBehaviour
   {
     public enum State {
       Disclaimer,

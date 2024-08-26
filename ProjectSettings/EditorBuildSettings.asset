@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/00_Spinometer/00_Game.unity
+    path: Assets/00_Spinometer/00_App.unity
     guid: 439f800dd4352604ea012bdfb57d689e
   - enabled: 1
     path: Assets/00_Spinometer/Debug.unity
