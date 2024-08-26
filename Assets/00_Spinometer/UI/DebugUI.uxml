@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/00_SpineMeter/UI/DebugUI.uss?fileID=7433441132597879392&amp;guid=2bb42f3bbcd86804ab424b5cd3d88baa&amp;type=3#DebugUI" />
+    <Style src="project://database/Assets/00_Spinometer/UI/DebugUI.uss?fileID=7433441132597879392&amp;guid=2bb42f3bbcd86804ab424b5cd3d88baa&amp;type=3#DebugUI" />
     <ui:VisualElement name="VisualElement" picking-mode="Ignore" style="flex-grow: 1; flex-direction: row;">
-        <ui:VisualElement style="flex-grow: 1; flex-direction: column; width: 400px; margin-top: 196px; margin-bottom: 4px;">
+        <ui:VisualElement style="flex-grow: 1; flex-direction: column; width: 400px; margin-top: 260px; margin-bottom: 4px;">
             <ui:VisualElement picking-mode="Ignore" class="big" style="flex-grow: 1;">
                 <ui:VisualElement style="flex-direction: row;">
                     <ui:VisualElement picking-mode="Ignore" style="width: 288px;">
@@ -21,7 +21,7 @@
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
-                        <ui:VisualElement style="flex-grow: initial; flex-direction: row;">
+                        <ui:VisualElement style="flex-grow: initial; flex-direction: row; display: none;">
                             <ui:Label text="T1_slope" class="field-label" />
                             <ui:Label text="Label">
                                 <Bindings>
@@ -63,7 +63,7 @@
                         </ui:VisualElement>
                     </ui:VisualElement>
                     <ui:VisualElement picking-mode="Ignore" enabled="true">
-                        <ui:VisualElement name="VisualElement" picking-mode="Ignore" style="flex-grow: initial; flex-direction: row;">
+                        <ui:VisualElement name="VisualElement" picking-mode="Ignore" style="flex-grow: initial; flex-direction: row; display: none;">
                             <ui:Label text="EyePost" class="field-label" />
                             <ui:Label text="Label">
                                 <Bindings>
