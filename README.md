@@ -3,7 +3,7 @@
 
 This program detects faces from webcam footage, estimates distance and angle, and then predicts spine posture.  The algorithm for estimating spine posture from distance and angle is a proprietary patent, and this software serves as a demonstration of this patented technology.
 
-![](https://www.get-back.jp/spinometer/images/movie_GETBACKgeek20240824.webp)
+![](./doc/ss-0.webp)
 
 ## Table of Contents
 
