@@ -95,7 +95,7 @@ namespace GetBack.Spinometer
       opt_user_height_cm = PlayerPrefs.GetFloat("opt_user_height_cm", -1f);
       opt_user_weight_kg = PlayerPrefs.GetFloat("opt_user_weight_kg", -1f);
       opt_targetFrameRate = PlayerPrefs.GetInt("opt_targetFrameRate", 15);
-      opt_poseEstimationFrequency = PlayerPrefs.GetInt("opt_poseEstimationFrequency", 4);
+      opt_poseEstimationFrequency = PlayerPrefs.GetInt("opt_poseEstimationFrequency", 15);
 
       Debug.Log("Settings#LoadSettings(): done.");
     }
