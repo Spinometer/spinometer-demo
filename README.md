@@ -61,15 +61,21 @@ Following third-party assets/files are not included in this repository.  You wil
 - Head tracker models (from opentrack project) into `Assets/00_SpineMeter/Tracker/NeuralNet/Model/`
     - head-localizer: [https://github.com/opentrack/opentrack/raw/master/tracker-neuralnet/models/head-localizer.onnx](https://github.com/opentrack/opentrack/raw/master/tracker-neuralnet/models/head-localizer.onnx)
     - head-pose-0.2-small: [https://github.com/opentrack/opentrack/raw/master/tracker-neuralnet/models/head-pose-0.2-small.onnx](https://github.com/opentrack/opentrack/raw/master/tracker-neuralnet/models/head-pose-0.2-small.onnx)
+
+  Note that `.meta` files are also needed.  They are already included in this repo, but ``
+
 - ALINE: [https://assetstore.unity.com/packages/tools/gui/aline-162772](https://assetstore.unity.com/packages/tools/gui/aline-162772)
+
 - Skeleton 2.0: [https://assetstore.unity.com/packages/3d/characters/humanoids/skeleton-2-0-160089](https://assetstore.unity.com/packages/3d/characters/humanoids/skeleton-2-0-160089)
+
 - Final IK: [https://assetstore.unity.com/packages/p/final-ik-14290](https://assetstore.unity.com/packages/p/final-ik-14290)
+
 - DOTween: [https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676](https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676)<br/>
   or DOTween Pro: [https://assetstore.unity.com/packages/tools/visual-scripting/dotween-pro-32416](https://assetstore.unity.com/packages/tools/visual-scripting/dotween-pro-32416)
 
 
 ## License
 
-This source code is publicly available but is not open-source software.  The algorithm for estimating spine posture from distance and angle is protected by patent.
+The proprietary portions of this software (the implementation of the algorithm for estimating spine posture) are subject to separate license terms from the other parts.  See [Assets/00_Spinometer/SpinalAlignment/LICENSE.md](Assets/00_Spinometer/SpinalAlignment/LICENSE.md) for more information.
 
-[Include any additional licensing information here]
+Other parts are licensed under [The MIT License](https://opensource.org/license/MIT).
