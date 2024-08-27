@@ -31,27 +31,13 @@ A binary package is available for Windows.  Download and install it from [the di
 
 1. Upon launching, you'll see the initial setup screen.
 2. Follow the setup process:
-    - Select your webcam device from the dropdown and press Next.
-    - Set the relative angle between the webcam and your face (face the camera directly and press Next).
-    - Set the webcam's field of view (position your face 50cm from the camera and press Next).
+    - Select your webcam device from the dropdown and press "Next".
+    - Set the relative angle between the webcam and your face (face the camera directly and press "Next").
+    - Set the webcam's field of view (position your face 50 cm from the camera and press "Next").
 3. After setup, the program will begin normal operation.
 4. To redo the setup, press Settings in the bottom right corner.
 
-Note: Setup information is saved in the registry. If you uninstall the program, this data will remain.  To remove it completely, use the Registry Editor.
-
-## Spine Posture Prediction
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-In in volutpat erat.
-Cras id dapibus lacus, sit amet pellentesque felis.
-Mauris tincidunt urna nibh, ac ultrices nisl dignissim vitae.
-Integer vulputate luctus condimentum.
-Praesent a diam dignissim, egestas arcu nec, pharetra magna.
-Suspendisse dignissim orci ac ante iaculis aliquam.
-Praesent accumsan, mauris sed pellentesque imperdiet, est justo porta metus, eu cursus ex lectus ut odio.
-In hac habitasse platea dictumst.
-Phasellus tincidunt mollis est, vitae luctus ex euismod ac.
-Etiam vitae erat velit.
+Note: Setup information is saved in the registry. If you uninstall the program, this data will be preserved.  To remove it completely, use the Registry Editor.
 
 ## Building from Source
 
@@ -76,6 +62,8 @@ Following third-party assets/files are not included in this repository.  You wil
 - DOTween: [https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676](https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676)<br/>
   or DOTween Pro: [https://assetstore.unity.com/packages/tools/visual-scripting/dotween-pro-32416](https://assetstore.unity.com/packages/tools/visual-scripting/dotween-pro-32416)
 
+After placing the assets, open `Assets/00_Spinometer/00_App`.
+Now you can run the application.
 
 ## License
 
