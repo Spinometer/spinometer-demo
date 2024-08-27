@@ -1,0 +1,3 @@
+.locale-changer-row {
+    opacity: 0;
+}

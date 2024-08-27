@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: StringTable_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: c97d4cf749952e94f876d9e7f397b00d, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 140533940224
+    m_Localized: This application software is not a medical device. It is intended
+      to provide information related to spinal health for general reference only.
+      Please consult with a physician or specialist for individual circumstances
+      or concerns regarding your health. There is no warranty regarding the impact
+      on health from the use of this application software.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 562715803648
+    m_Localized: Important Notice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48076676513792
+    m_Localized: 'distance [cm]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48772670930944
+    m_Localized: 'pitch [deg]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49534134239232
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 575189557985280
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 575393816395776
+    m_Localized: Next
+    m_Metadata:
+      m_Items: []
+  - m_Id: 576385572159488
+    m_Localized: Display Surface Angle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 578055211335680
+    m_Localized: WebCam Device Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 577110205284352
+    m_Localized: display-diagonal-fov
+    m_Metadata:
+      m_Items: []
+  - m_Id: 576743727972352
+    m_Localized: Additional Pitch Offset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 583575573905408
+    m_Localized: 'Pose Estimation Frequency [/sec]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 588745061974016
+    m_Localized: 'Target Framerate [FPS]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26292494862401536
+    m_Localized: While keeping your head straight forward, click <b>Next</b>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26297724660367360
+    m_Localized: While keeping your face at 50cm from the screen, click <b>Finish</b>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26299129311805440
+    m_Localized: Select webcam device, then click <b>Next</b>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26299427128360960
+    m_Localized: Revertt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26299160001527808
+    m_Localized: Save
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26545747814531072
+    m_Localized: Finish
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

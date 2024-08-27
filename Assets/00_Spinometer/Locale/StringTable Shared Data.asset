@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: StringTable Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: StringTable
+  m_TableCollectionNameGuidString: c97d4cf749952e94f876d9e7f397b00d
+  m_Entries:
+  - m_Id: 140533940224
+    m_Key: ui.disclaimer.heading
+    m_Metadata:
+      m_Items: []
+  - m_Id: 562715803648
+    m_Key: ui.disclaimer.heading
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48076676513792
+    m_Key: ui.spine-meter.field.distance.label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48772670930944
+    m_Key: ui.spine-meter.field.pitch.label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49534134239232
+    m_Key: ui.spine-meter.button.settings.label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 575189557985280
+    m_Key: ui.easy-setup.button.back.label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 575393816395776
+    m_Key: ui.easy-setup.button.next.label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 576385572159488
+    m_Key: ui.settings.field.display-surface-angle.label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 576743727972352
+    m_Key: ui.settings.field.additional-pitch-offset.label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 577110205284352
+    m_Key: ui.settings.field.display-diagonal-fov.label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 578055211335680
+    m_Key: ui.settings.field.webcam-device-name.label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 583575573905408
+    m_Key: ui.settings.field.pose-estimation-frequency.label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 588745061974016
+    m_Key: ui.settings.field.target-framerate.label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26292494862401536
+    m_Key: ui.easy-setup-angle.label.instructions.label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26297724660367360
+    m_Key: ui.easy-setup-distance.label.instructions.label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26299129311805440
+    m_Key: ui.easy-setup-camera.label.instructions.label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26299160001527808
+    m_Key: ui.settings.btn.save.label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26299427128360960
+    m_Key: ui.settings.btn.revert.label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26545747814531072
+    m_Key: ui.easy-setup.button.finish.label
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 7564533899483152687
+  references:
+    version: 2
+    RefIds:
+    - rid: 7564533899483152687
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1708912864293

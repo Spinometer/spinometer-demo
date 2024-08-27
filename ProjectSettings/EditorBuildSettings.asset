@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/00_Spinometer/00_Game.unity
+    guid: 439f800dd4352604ea012bdfb57d689e
+  - enabled: 1
+    path: Assets/00_Spinometer/Debug.unity
+    guid: bdf38cae17ac506468d8f3a16a41de7f
+  - enabled: 1
+    path: Assets/00_Spinometer/Disclaimer.unity
+    guid: 29ebdb6e8e085b741954c8aee7bdfcfd
+  - enabled: 1
+    path: Assets/00_Spinometer/Settings.unity
+    guid: 2f78e57d4474b7244a63f7298fc51b4f
+  - enabled: 1
+    path: Assets/00_Spinometer/Spinometer.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/00_Spinometer/EasySetupCamera.unity
+    guid: de035e4d4722595489c80ea50633e0ea
+  - enabled: 1
+    path: Assets/00_Spinometer/EasySetupAngle.unity
+    guid: dfa11442721f97f4dba98126abd4a898
+  - enabled: 1
+    path: Assets/00_Spinometer/EasySetupDistance.unity
+    guid: 58073fa222c17a04993a0618bdbdbadb
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 6f977792ec751e54e89cb44141a0c5db, type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: 0eb77086b1ba6154d882ac7b8ffabd7d, type: 2}
+  m_UseUCBPForAssetBundles: 0

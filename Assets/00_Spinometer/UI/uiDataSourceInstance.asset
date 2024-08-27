@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82377899e76026e498bce35bec28d67c, type: 3}
+  m_Name: uiDataSourceInstance
+  m_EditorClassIdentifier: 
+  webCamStateString: running
+  distanceStr: 51.8
+  pitchStr: 5.0
+  rel_C2_C7_vert: 28.3
+  rel_T1_slope: 52.2
+  rel_C7_T3_vert: 37.1
+  rel_C7_T3_T8: 150.6
+  rel_T3_T8_T12: 154.9
+  rel_T8_T12_L3: 180.1
+  rel_T12_L3_S: 171.9
+  abs_EyePost: 5.0
+  abs_C2: 95.0
+  abs_C7: 61.7
+  abs_T3: 52.9
+  abs_T8: 82.3
+  abs_T12: 107.4
+  abs_L3: 107.3
+  abs_S: 99.0
+  opt_useNew: 1
+  opt_webCamDeviceName: Integrated Camera
+  opt_webCamDeviceNameList:
+  - Integrated Camera
+  - OBS Virtual Camera
+  opt_webCamDeviceNameIndex: 0
+  opt_displaySurfaceAngle: 79.982864
+  opt_additionalPitchOffset: 15
+  opt_displayDiagonalFov: 59.78183
+  opt_poseEstimationFrequency: 30
+  opt_targetFrameRate: 30
+  opt_user_sex: -1
+  opt_user_birthYear: -1
+  opt_user_height_cm: -1
+  opt_user_weight_kg: -1
+  opt_s_distance_offset: 64.8
+  opt_s_distance_multiplier: 66
+  opt_distance_correction_angle_distance_factor: 0
+  opt_distance_correction_cos_factor: 64

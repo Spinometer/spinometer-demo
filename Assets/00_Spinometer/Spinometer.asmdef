@@ -1,0 +1,21 @@
+{
+    "name": "Spinometer",
+    "rootNamespace": "",
+    "references": [
+        "GUID:de4e6084e6d474788bb8c799d6b461ec",
+        "GUID:d8b63aba1907145bea998dd612889d6b",
+        "GUID:c98377141161c7746a178fb5cb1af075",
+        "GUID:dac1e7a5151dd4142814f1effc90c01f",
+        "GUID:eec0964c48f6f4e40bc3ec2257ccf8c5",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

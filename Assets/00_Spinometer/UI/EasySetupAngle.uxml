@@ -1,0 +1,31 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="LocaleChanger" src="project://database/Assets/00_SpineMeter/UI/LocaleChanger.uxml?fileID=9197481963319205126&amp;guid=675491ccc64a5de4386f983af1864a39&amp;type=3#LocaleChanger" />
+    <Style src="project://database/Assets/00_SpineMeter/UI/SettingsUI.uss?fileID=7433441132597879392&amp;guid=ef243047774edd543b1753aaba09eaee&amp;type=3#SettingsUI" />
+    <ui:VisualElement style="flex-grow: 1; flex-direction: row; background-color: rgba(0, 0, 0, 0.88); -unity-font-definition: url(&quot;project://database/Assets/00_SpineMeter/Fonts/NotoSansJP-Regular%20SDF.asset?fileID=11400000&amp;guid=553ed431a1bc1644397dd555742559a5&amp;type=2#NotoSansJP-Regular SDF&quot;);">
+        <ui:VisualElement style="flex-grow: 1; width: 400px; align-items: flex-end;">
+            <ui:Instance template="LocaleChanger" name="LocaleChanger" />
+            <ui:VisualElement name="easy-setup-instruction" style="flex-grow: 1; left: auto; right: auto; bottom: auto; top: auto; width: 100%;">
+                <ui:Label text="顔を水平正面に向けた状態で、&lt;b&gt;次へ&lt;/b&gt;をクリックしてください。�" style="align-items: auto; justify-content: flex-start; align-self: auto; align-content: auto; flex-grow: 1; -unity-text-align: middle-center; font-size: 32px; white-space: normal;">
+                    <Bindings>
+                        <UnityEngine.Localization.LocalizedString property="text" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(26292494862401536)" />
+                    </Bindings>
+                </ui:Label>
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: initial; flex-direction: row; margin-bottom: 60px; margin-right: 60px;">
+                <ui:Button text="Save" name="btn-easy-setup-back">
+                    <Bindings>
+                        <UnityEngine.Localization.LocalizedString property="text" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(575189557985280)" />
+                    </Bindings>
+                </ui:Button>
+                <ui:Button text="Revert" name="btn-easy-setup-next">
+                    <Bindings>
+                        <UnityEngine.Localization.LocalizedString property="text" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(575393816395776)" />
+                    </Bindings>
+                </ui:Button>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <Bindings>
+            <UnityEngine.Localization.LocalizedObject property="style.unityFontDefinition" table="GUID:5a6cc37294238534a8128b0d74fe6ab4" entry="Id(94932467040256)" />
+        </Bindings>
+    </ui:VisualElement>
+</ui:UXML>

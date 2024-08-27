@@ -1,0 +1,27 @@
+.unity-label {
+    font-size: 10px;
+    color: rgb(204, 204, 204);
+}
+
+.big .unity-label {
+    font-size: 24px;
+    color: rgb(204, 204, 204);
+}
+
+.field-label {
+    flex-grow: 0;
+    flex-basis: 80px;
+}
+
+.big .field-label {
+    flex-grow: 0;
+    flex-basis: 140px;
+}
+
+.h1 {
+    font-size: 32px;
+}
+
+.p {
+    font-size: 24px;
+}

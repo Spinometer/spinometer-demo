@@ -1,0 +1,3 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:Label text="0.0" enable-rich-text="false" emoji-fallback-support="false" display-tooltip-when-elided="false" triple-click-selects-line="false" double-click-selects-word="false" picking-mode="Ignore" class="alignment-value-proto" style="position: absolute; top: auto; left: auto; bottom: auto; font-size: 22px;" />
+</engine:UXML>
