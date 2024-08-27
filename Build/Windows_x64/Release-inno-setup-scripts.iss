@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Spinomter"
-#define MyAppVersion "0.1.4.20240824.0001"
+#define MyAppVersion "0.1.5.20240828.0000"
 #define MyAppPublisher "GET BACK Ltd."
 #define MyAppURL "https://www.get-back.jp/"
 #define MyAppExeName "heads-up-free-edition.exe"
