@@ -1,8 +1,9 @@
-﻿# Spine Meter - Spine Posture Estimation from Webcam
+﻿# Spine Meter
+## Spinal Alignment / Posture Estimator Based on Face-to-display Distance and Head Tilting Angle
 
 This program detects faces from webcam footage, estimates distance and angle, and then predicts spine posture.  The algorithm for estimating spine posture from distance and angle is a proprietary patent, and this software serves as a demonstration of this patented technology.
 
-![](./doc/20240511T202830.webp)
+![](https://www.get-back.jp/spinometer/images/movie_GETBACKgeek20240824.webp)
 
 ## Table of Contents
 
@@ -24,7 +25,7 @@ This program detects faces from webcam footage, estimates distance and angle, an
 
 ## Installation
 
-A binary package is available for Windows.  Download and install it from [the distribution page](https://www.get-back.jp/spine-meter).
+A binary package is available for Windows.  Download and install it from [the distribution page](https://www.get-back.jp/spinometer).
 
 ## Usage
 
@@ -54,7 +55,7 @@ Etiam vitae erat velit.
 
 ## Building from Source
 
-This is a [Unity](https://unity.com/) project.  At the time of writing, development is done using Unity Editor version 6000.0.10f1.
+This is a [Unity](https://unity.com/) project.  At the time of writing, development is done using Unity Editor version 6000.0.16f1.
 
 Following third-party assets/files are not included in this repository.  You will need download and place them separately.
 
@@ -62,11 +63,13 @@ Following third-party assets/files are not included in this repository.  You wil
     - head-localizer: [https://github.com/opentrack/opentrack/raw/master/tracker-neuralnet/models/head-localizer.onnx](https://github.com/opentrack/opentrack/raw/master/tracker-neuralnet/models/head-localizer.onnx)
     - head-pose-0.2-small: [https://github.com/opentrack/opentrack/raw/master/tracker-neuralnet/models/head-pose-0.2-small.onnx](https://github.com/opentrack/opentrack/raw/master/tracker-neuralnet/models/head-pose-0.2-small.onnx)
 
-  Note that `.meta` files are also needed.  They are already included in this repo, but ``
+  Note that `.meta` files are also needed.  They are already included in this repo, but if you lose or overwritten them by an accident (e.g. by launching Unity Editor before placing the onnx files), restore them by `git checkout -f Assets/00_Spinometer/Tracker/NeuralNet/Model/head-{localizer,pose-0.2-small}.onnx.meta`.
 
 - ALINE: [https://assetstore.unity.com/packages/tools/gui/aline-162772](https://assetstore.unity.com/packages/tools/gui/aline-162772)
 
 - Skeleton 2.0: [https://assetstore.unity.com/packages/3d/characters/humanoids/skeleton-2-0-160089](https://assetstore.unity.com/packages/3d/characters/humanoids/skeleton-2-0-160089)
+
+  You need to convert the BRP materials to URP in the Editor (Window > Rendering > Render Pipeline Converter).
 
 - Final IK: [https://assetstore.unity.com/packages/p/final-ik-14290](https://assetstore.unity.com/packages/p/final-ik-14290)
 
