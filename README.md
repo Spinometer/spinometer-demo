@@ -21,7 +21,7 @@ This program detects faces from webcam footage, estimates distance and angle, an
 - **Spine posture prediction** (patented algorithm)
 - Real-time display of:
     - Estimated distance and angle (top left of the screen)
-    - Predicted spine posture (skeleton on the right side) (with some assumptions ([see below](#spine-posture-prediction)))
+    - Predicted spine posture (skeleton on the right side) (with some assumptions ([see official web](https://www.get-back.jp/spinometer/#background)))
 
 ## Installation
 
