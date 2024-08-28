@@ -65,8 +65,12 @@ Following third-party assets/files are not included in this repository.  You wil
 After placing the assets, open `Assets/00_Spinometer/00_App`.
 Now you can run the application.
 
+## Thanks
+
+- [opentrack](https://github.com/opentrack/opentrack) authors and maintainers, as we adopted their code of neuralnet tracker module as a crucial part of Spinometer.
+
 ## License
 
 The proprietary portions of this software (the implementation of the algorithm for estimating spine posture) are subject to separate license terms from the other parts.  See [Assets/00_Spinometer/SpinalAlignment/LICENSE.md](Assets/00_Spinometer/SpinalAlignment/LICENSE.md) for more information.
 
-Other parts are licensed under [The MIT License](https://opensource.org/license/MIT).
+Other parts are licensed under [The ISC License](https://en.wikipedia.org/wiki/ISC_license).
