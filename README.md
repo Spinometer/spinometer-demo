@@ -1,4 +1,4 @@
-﻿# Spine Meter
+﻿# Spinometer
 ## Spinal Alignment / Posture Estimator Based on Face-to-display Distance and Head Tilting Angle
 
 This program detects faces from webcam footage, estimates distance and angle, and then predicts spine posture.  The algorithm for estimating spine posture from distance and angle is a proprietary patent, and this software serves as a demonstration of this patented technology.
