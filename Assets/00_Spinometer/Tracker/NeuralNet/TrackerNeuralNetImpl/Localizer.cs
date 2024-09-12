@@ -19,9 +19,9 @@ namespace GetBack.Spinometer.TrackerNeuralNetImpl
       _worker.Execute(inputTensor);
       var results = _worker.PeekOutput() as TensorFloat;
       results.CompleteOperationsAndDownload();
-      float localizerProbablity = Sigmoid(results[0]);
+      float localizerProbability = Sigmoid(results[0]);
       var normalizedRoi = new TrackerNeuralNet.BoundingBox(results[1], results[2], results[3], results[4]);
-      return ValueTuple.Create(localizerProbablity, normalizedRoi);
+      return ValueTuple.Create(localizerProbability, normalizedRoi);
     }
 
     private float Sigmoid(float a)
