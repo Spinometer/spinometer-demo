@@ -79,7 +79,7 @@ namespace GetBack.Spinometer.TrackerNeuralNetImpl
       {
         var results = _worker.PeekOutput("pos_size_scales") as TensorFloat;
         results.CompleteOperationsAndDownload();
-        face.centerStdDev = patchCenter + 0.5f * patchSize * new float2(results[0], results[1]);
+        face.centerStdDev = 0.5f * patchSize * new float2(results[0], results[1]);
         face.sizeStdDev = 0.5f * patchSize * results[2];
       }
       {
