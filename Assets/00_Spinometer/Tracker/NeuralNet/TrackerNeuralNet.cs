@@ -534,6 +534,11 @@ namespace GetBack.Spinometer
       {
         return HashCode.Combine(x1, y1, x2, y2);
       }
+
+      public override string ToString()
+      {
+        return $"({x1:F2}, {y1:F2})..({x2:F2}, {y2:F2})";
+      }
     };
 
     private float UnNormalize(float x, float preOffset, float newSize)
