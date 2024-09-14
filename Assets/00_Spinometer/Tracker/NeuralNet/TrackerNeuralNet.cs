@@ -380,7 +380,7 @@ namespace GetBack.Spinometer
       var rotationCorrection = ComputeRotationCorrection(faceCenter);
       var rot = rotationCorrection * Image2World(face.rotation);
 
-      float settings_offset_fwd = 0.2f;
+      float settings_offset_fwd = 0f;//.2f;
       float settings_offset_up = 0f;
       float settings_offset_right = 0f;
       var local_offset = new float3(
@@ -389,7 +389,7 @@ namespace GetBack.Spinometer
         settings_offset_right);
       float3 offset = rot * local_offset;
       float3 pos = faceCenter + offset;
-      pos.x = 0.784f * pos.x - 0.113f; // FIXME: adjustment with magic number only applicable to specific person and camera.
+//      pos.x = 0.784f * pos.x - 0.113f; // FIXME: adjustment with magic number only applicable to specific person and camera.
 
       var pose = new Pose(pos,
                           face.rotation);
