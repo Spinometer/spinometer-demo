@@ -1,0 +1,150 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/00_Spinometer/UI/ExtraUI.uss?fileID=7433441132597879392&amp;guid=dfa352d66e078634cb1c4c0498e4a7a8&amp;type=3#ExtraUI" />
+    <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-direction: row; background-color: rgba(0, 0, 0, 0.41);">
+        <ui:VisualElement style="flex-grow: 1; flex-direction: column; width: 400px; margin-top: 156px; margin-bottom: 4px;">
+            <ui:VisualElement picking-mode="Ignore" class="big" style="flex-grow: 1;">
+                <ui:VisualElement style="flex-direction: row;">
+                    <ui:VisualElement picking-mode="Ignore" name="col" style="width: 288px; flex-basis: 620px;">
+                        <ui:Label text="----- Face Localizer -----" class="field-label" style="flex-basis: auto;" />
+                        <ui:VisualElement name="localizerProbablity" class="extra-value-field" style="flex-grow: initial; flex-direction: row;">
+                            <ui:Label text="Probablity" class="field-label" />
+                            <ui:Label text="Label">
+                                <Bindings>
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="localizerProbability" />
+                                </Bindings>
+                            </ui:Label>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="localizerNormalizedRoi" enabled="true" class="extra-value-field" style="display: none;">
+                            <ui:Label text="normalizedRoi" class="field-label" />
+                            <ui:Label text="Label">
+                                <Bindings>
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="localizerNormalizedRoi" />
+                                </Bindings>
+                            </ui:Label>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="localizerRect" class="extra-value-field" style="flex-grow: initial; flex-direction: row; display: none;">
+                            <ui:Label text="localizerRect" class="field-label" />
+                            <ui:Label text="Label">
+                                <Bindings>
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="localizerRect" />
+                                </Bindings>
+                            </ui:Label>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="localizerUnNormalizedRoi" class="extra-value-field" style="flex-grow: initial; flex-direction: row;">
+                            <ui:Label text="ROI (TL..BR) [px]" class="field-label">
+                                <Bindings />
+                            </ui:Label>
+                            <ui:Label text="Label">
+                                <Bindings>
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="localizerUnNormalizedRoi" />
+                                </Bindings>
+                            </ui:Label>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="localizerLastRoi" class="extra-value-field" style="flex-grow: initial; flex-direction: row; display: none;">
+                            <ui:Label text="lastRoi" class="field-label">
+                                <Bindings />
+                            </ui:Label>
+                            <ui:Label text="Label">
+                                <Bindings>
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="localizerLastRoi" />
+                                </Bindings>
+                            </ui:Label>
+                        </ui:VisualElement>
+                        <ui:Label text="----- Pose Estimator -----" name="Label" class="field-label" style="flex-basis: auto;" />
+                        <ui:VisualElement name="poseEstimatorLastRoi" class="extra-value-field" style="flex-grow: initial; flex-direction: row; display: none;">
+                            <ui:Label text="lastRoi" class="field-label">
+                                <Bindings />
+                            </ui:Label>
+                            <ui:Label text="Label">
+                                <Bindings>
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="poseEstimatorLastRoi" />
+                                </Bindings>
+                            </ui:Label>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="poseEstimatorFaceCenter" class="extra-value-field" style="flex-grow: initial; flex-direction: row;">
+                            <ui:Label text="Center [px]" class="field-label">
+                                <Bindings />
+                            </ui:Label>
+                            <ui:Label text="Label">
+                                <Bindings>
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="faceCenter" />
+                                </Bindings>
+                            </ui:Label>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="poseEstimatorFaceCenterStdDev" class="extra-value-field" style="flex-grow: initial; flex-direction: row;">
+                            <ui:Label text="Center Std Dev [px]" class="field-label">
+                                <Bindings />
+                            </ui:Label>
+                            <ui:Label text="Label">
+                                <Bindings>
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="faceCenterStdDev" />
+                                </Bindings>
+                            </ui:Label>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="poseEstimatorFaceSize" class="extra-value-field" style="flex-grow: initial; flex-direction: row;">
+                            <ui:Label text="Size [px]" class="field-label">
+                                <Bindings />
+                            </ui:Label>
+                            <ui:Label text="Label">
+                                <Bindings>
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="faceSize" />
+                                </Bindings>
+                            </ui:Label>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="poseEstimatorFaceSizeStdDev" class="extra-value-field" style="flex-grow: initial; flex-direction: row;">
+                            <ui:Label text="Size Std Dev [px]" class="field-label">
+                                <Bindings />
+                            </ui:Label>
+                            <ui:Label text="Label">
+                                <Bindings>
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="faceSizeStdDev" />
+                                </Bindings>
+                            </ui:Label>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="poseEstimatorFaceRotation" class="extra-value-field" style="flex-grow: initial; flex-direction: row;">
+                            <ui:Label text="Rotation (quaternion)" class="field-label" style="height: 38px;">
+                                <Bindings />
+                            </ui:Label>
+                            <ui:Label text="Label">
+                                <Bindings>
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="faceRotation" />
+                                </Bindings>
+                            </ui:Label>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="poseEstimatorFaceBox" class="extra-value-field" style="flex-grow: initial; flex-direction: row;">
+                            <ui:Label text="New ROI (TL..BR) [px]" class="field-label">
+                                <Bindings />
+                            </ui:Label>
+                            <ui:Label text="Label">
+                                <Bindings>
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="faceBox" />
+                                </Bindings>
+                            </ui:Label>
+                        </ui:VisualElement>
+                        <ui:Label text="-----  Tracker -----" class="field-label" style="flex-basis: auto;" />
+                        <ui:VisualElement name="poseEstimatorPosePosition" class="extra-value-field" style="flex-grow: initial; flex-direction: row;">
+                            <ui:Label text="Position [m]" class="field-label">
+                                <Bindings />
+                            </ui:Label>
+                            <ui:Label text="Label">
+                                <Bindings>
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="posePosition" />
+                                </Bindings>
+                            </ui:Label>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="poseEstimatorPoseRotation" class="extra-value-field" style="flex-grow: initial; flex-direction: row;">
+                            <ui:Label text="Rotation (quaternion)" class="field-label">
+                                <Bindings />
+                            </ui:Label>
+                            <ui:Label text="Label">
+                                <Bindings>
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="poseRotation" />
+                                </Bindings>
+                            </ui:Label>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

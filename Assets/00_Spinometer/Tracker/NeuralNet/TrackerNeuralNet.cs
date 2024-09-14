@@ -3,6 +3,7 @@ using Drawing;
 using GetBack.Spinometer.SpinalAlignment;
 using GetBack.Spinometer.SpinalAlignmentVisualizer;
 using GetBack.Spinometer.TrackerNeuralNetImpl;
+using GetBack.Spinometer.UI;
 using Unity.Mathematics;
 using Unity.Sentis;
 using UnityEngine;
@@ -27,6 +28,7 @@ namespace GetBack.Spinometer
     [SerializeField] private WebCam _webCam;
     [SerializeField] private Settings _settings;
     [SerializeField] private UiDataSource _uiDataSource;
+    [SerializeField] private ExtraUiDataSource _extraUiDataSource;
     [SerializeField] private UIDocument _uiDocument;
     [SerializeField] private Transform _webCamPlane;
     private SpinalAlignmentVisualizerSkeleton _visualizerSkeleton = null;
@@ -119,6 +121,7 @@ namespace GetBack.Spinometer
       _spinalAlignmentEstimator = new SpinalAlignmentEstimator(_settings, _uiDataSource);
       _visualizerSkeleton = GetComponent<SpinalAlignmentVisualizerSkeleton>();
       _visualizerStickFigure = GetComponent<SpinalAlignmentVisualizerStickFigure>();
+      _extraUiDataSource.tracker = this;
     }
 
     void Start()
@@ -233,6 +236,12 @@ namespace GetBack.Spinometer
 
         //Debug.Log("***CCC*** " + localizerProbability);
         //Debug.Log("***DDD*** " + localizerUnNormalizedRoi.x1 + ", " + localizerUnNormalizedRoi.y1 + ", " + localizerUnNormalizedRoi.x2 + ", " + localizerUnNormalizedRoi.y2);
+
+        _extraUiDataSource.localizerProbability = localizerProbability;
+        _extraUiDataSource.localizerNormalizedRoi = localizerNormalizedRoi;
+        _extraUiDataSource.localizerRect = _localizerRect;
+        _extraUiDataSource.localizerUnNormalizedRoi = localizerUnNormalizedRoi;
+
         if (_poseEstimatorLastRoi.HasValue
             && Iou(localizerUnNormalizedRoi, _poseEstimatorLastRoi.Value) >= 0.25f
             && localizerProbability > 0.5f) {
@@ -251,6 +260,8 @@ namespace GetBack.Spinometer
           _localizerLastRoi = null;
           _poseEstimatorLastRoi = null;
         }
+        _extraUiDataSource.localizerLastRoi = _localizerLastRoi;
+        _extraUiDataSource.poseEstimatorLastRoi = _poseEstimatorLastRoi;
       }
       //Debug.Log("***MMM***");
 
@@ -263,9 +274,17 @@ namespace GetBack.Spinometer
       //
       {
         var face = _poseEstimator.Run(inputTensor, _poseEstimatorLastRoi.Value);
+        _extraUiDataSource.faceCenter = face.center;
+        _extraUiDataSource.faceCenterStdDev = face.centerStdDev;
+        _extraUiDataSource.faceSize = face.size;
+        _extraUiDataSource.faceSizeStdDev = face.sizeStdDev;
+        _extraUiDataSource.faceRotation = face.rotation;
+        _extraUiDataSource.faceBox = face.box;
+
         // Debug.Log("face: " + face.center + " " + face.size);
         if (face.size < 0.001f) {
           _poseEstimatorLastRoi = null;
+          _extraUiDataSource.poseEstimatorLastRoi = _poseEstimatorLastRoi;
           UpdateTrackerStatus(TrackerStatus.TrackingLost);
           return;
         }
@@ -280,6 +299,7 @@ namespace GetBack.Spinometer
         var roi = Expand(face.box, settings_roi_zoom);
         float settings_roi_filter_alpha = 1.0f;
         _poseEstimatorLastRoi = EwaFilter(_poseEstimatorLastRoi.Value, roi, settings_roi_filter_alpha);
+        _extraUiDataSource.poseEstimatorLastRoi = _poseEstimatorLastRoi;
 
         var normalizedBox = Normalize(face.box,
                                       new float2(1f, 1f),
@@ -298,8 +318,10 @@ namespace GetBack.Spinometer
 //        var angles = pose.rotation.eulerAngles;
         //Debug.Log(pose.position);
         pose.position = new Vector3(pose.position.z, pose.position.y, pose.position.x);
-        GameObject.Find("/FaceProxyContainer/FaceProxy").transform.localPosition = pose.position;
-        GameObject.Find("/FaceProxyContainer/FaceProxy").transform.localRotation = pose.rotation;
+        _extraUiDataSource.posePosition = pose.position;
+        _extraUiDataSource.poseRotation = pose.rotation;
+        GameObject.Find("/SK_Skeleton/FaceProxyContainer/FaceProxy").transform.localPosition = pose.position;
+        GameObject.Find("/SK_Skeleton/FaceProxyContainer/FaceProxy").transform.localRotation = pose.rotation;
         //GameObject.Find("/FaceProxyContainer/FaceProxy").transform.localRotation = face.rotation;
 
         float smoothingLambda = 6.0f;

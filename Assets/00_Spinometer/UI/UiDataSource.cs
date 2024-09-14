@@ -1,6 +1,4 @@
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 [CreateAssetMenu(fileName = "uiDataSourceInstance", menuName = "ScriptableObjects/UiDataSource", order = 1)]
 public class UiDataSource : ScriptableObject

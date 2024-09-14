@@ -320,12 +320,12 @@ GameObject:
   - component: {fileID: 175104364}
   - component: {fileID: 175104363}
   m_Layer: 0
-  m_Name: FaceProxy
+  m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &175104363
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -354,7 +354,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175104362}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -370,7 +370,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef6207025be8f1045942dcc5ffd00e2b, type: 2}
+  - {fileID: 2100000, guid: c3fb4f082c9626f41b28c79133bcd837, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -408,12 +408,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175104362}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.20000002, y: 0.2, z: 0.02}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1486613997}
+  m_Father: {fileID: 1081504921}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &179274089 stripped
 Transform:
@@ -445,7 +445,7 @@ Transform:
   m_GameObject: {fileID: 289596504}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: -2.2, y: -0.71, z: 0}
+  m_LocalPosition: {x: 2.21, y: 1.03, z: 0}
   m_LocalScale: {x: 0.1, y: 0.24999999, z: 0.074999996}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -761,6 +761,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1462218748}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1081504920
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1081504921}
+  m_Layer: 0
+  m_Name: FaceProxy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1081504921
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081504920}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 175104366}
+  m_Father: {fileID: 1486613997}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1092723896 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100104, guid: 314cd33b23684e24694478173d618d90, type: 3}
@@ -914,13 +946,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486613996}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.25, y: 1.63, z: 0.543}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 175104366}
-  m_Father: {fileID: 0}
+  - {fileID: 1081504921}
+  m_Father: {fileID: 2067541500}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1512761781
 GameObject:
@@ -1331,6 +1363,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 400102, guid: 314cd33b23684e24694478173d618d90, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1486613997}
     - targetCorrespondingSourceObject: {fileID: 400074, guid: 314cd33b23684e24694478173d618d90, type: 3}
       insertIndex: 0
       addedObject: {fileID: 1878515584}
@@ -1628,6 +1663,7 @@ MonoBehaviour:
   _webCam: {fileID: 1004904243}
   _settings: {fileID: 11400000, guid: 51542d75c233bb946a18c77104c4c333, type: 2}
   _uiDataSource: {fileID: 11400000, guid: b0642bbdcbe8c274cbcf9e8f7dee90dc, type: 2}
+  _extraUiDataSource: {fileID: 11400000, guid: ad1e8f6da73bbd64981e1f05a03ee7ef, type: 2}
   _uiDocument: {fileID: 1822691517}
   _webCamPlane: {fileID: 457216870}
 --- !u!4 &2074200216
@@ -1704,7 +1740,6 @@ SceneRoots:
   - {fileID: 2074200216}
   - {fileID: 100349891}
   - {fileID: 1004904242}
-  - {fileID: 1486613997}
   - {fileID: 1822691518}
   - {fileID: 2067541497}
   - {fileID: 1512761784}

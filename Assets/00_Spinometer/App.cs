@@ -20,6 +20,7 @@ namespace GetBack.Spinometer
     [SerializeField] private Settings _settings;
 
     private string _sceneName_debug = "Debug";
+    private string _sceneName_extra = "Extra";
     private string _sceneName_disclaimer = "Disclaimer";
     private string _sceneName_settings = "Settings";
     private string _sceneName_easySetupCamera = "EasySetupCamera";
@@ -74,6 +75,8 @@ namespace GetBack.Spinometer
 
       if (Keyboard.current.dKey.wasPressedThisFrame)
         ToggleDebugUI();
+      if (Keyboard.current.eKey.wasPressedThisFrame)
+        ToggleExtraUI();
     }
 
     private async void ToggleDebugUI()
@@ -83,6 +86,18 @@ namespace GetBack.Spinometer
         await SceneManager.LoadSceneAsync(_sceneName_debug, LoadSceneMode.Additive);
       } else {
         await SceneManager.UnloadSceneAsync(scene);
+      }
+    }
+
+    private async void ToggleExtraUI()
+    {
+      var scene = SceneManager.GetSceneByName(_sceneName_extra);
+      if (scene == null || !scene.isLoaded) {
+        await SceneManager.LoadSceneAsync(_sceneName_extra, LoadSceneMode.Additive);
+        GameObject.Find("/SK_Skeleton/FaceProxyContainer/FaceProxy/Cube").SetActive(true);
+      } else {
+        await SceneManager.UnloadSceneAsync(scene);
+        GameObject.Find("/SK_Skeleton/FaceProxyContainer/FaceProxy/Cube").SetActive(false);
       }
     }
 

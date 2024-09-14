@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/00_Spinometer/Disclaimer.unity
     guid: 29ebdb6e8e085b741954c8aee7bdfcfd
   - enabled: 1
+    path: Assets/00_Spinometer/Extra.unity
+    guid: 7020ff410a19f91408269a66d022ed00
+  - enabled: 1
     path: Assets/00_Spinometer/Settings.unity
     guid: 2f78e57d4474b7244a63f7298fc51b4f
   - enabled: 1
