@@ -294,7 +294,7 @@ namespace GetBack.Spinometer
                                         float2.zero, new float2(4f, -3f));
         _faceCircleRadius = face.size / inputTensor.shape[2] * 3f;
 
-        var pose = TransformToWorldPose(face, inputTensorShape); // TODO: apply filter
+        var pose = TransformToWorldPose(face, inputTensorShape);
 //        var angles = pose.rotation.eulerAngles;
         //Debug.Log(pose.position);
         pose.position = new Vector3(pose.position.z, pose.position.y, pose.position.x);
@@ -306,7 +306,7 @@ namespace GetBack.Spinometer
         float dt = Time.deltaTime;
         _dt = Damp(_dt, dt, smoothingLambda, dt);
         dt = _dt;
-                                   float angle = -pose.rotation.eulerAngles.x;
+        float angle = -pose.rotation.eulerAngles.x;
         float pitchSensitivity = 1.4f; // FIXME:  arbitrary adjustment using magic number.
         _uiDataSource.pitch = Damp(_uiDataSource.pitch,
                                    ((angle + 540f) % 360f - 180f) * pitchSensitivity +
@@ -408,14 +408,56 @@ namespace GetBack.Spinometer
 
     private float3 Image2World(float2 faceCenter, float faceSize, float referenceHeadSize_world_m, TensorShape inputTensorShape)
     {
-      int w = 320;
-      int h = 240;
-      float diag_fov = _settings.opt_displayDiagonalFov * Mathf.PI / 180f;
+      // excerpt from make_intrinsics() in ftnoir_tracker_neuralnet.cpp of opentrack
+      /*  a
+        ______  <--- here is sensor area
+        |    /
+        |   /
+      f |  /
+        | /  2 x angle is the fov
+        |/
+          <--- here is the hole of the pinhole camera
+
+        So, a / f = tan(fov / 2)
+        => f = a/tan(fov/2)
+        What is a?
+        1 if we define f in terms of clip space where the image plane goes from -1 to 1. Because a is the half-width.
+      */
+
+      int w = 288;
+      int h = 244;
+      float diag_fov = _settings.opt_displayDiagonalFov * Mathf.Deg2Rad;
       float fov_w = 2f * Mathf.Atan(Mathf.Tan(diag_fov / 2f) / Mathf.Sqrt(1f + (float)h / w * h / w));
       float fov_h = 2f * Mathf.Atan(Mathf.Tan(diag_fov / 2f) / Mathf.Sqrt(1f + (float)w / h * w / h));
       float intrinsics_focal_length_w = 1f / Mathf.Tan(.5f * fov_w);
       float intrinsics_focal_length_h = 1f / Mathf.Tan(.5f * fov_h);
+      //Debug.Log($"{fov_w * Mathf.Rad2Deg}*{fov_h * Mathf.Rad2Deg}");
+      //Debug.Log($"{intrinsics_focal_length_w}*{intrinsics_focal_length_h}");
 
+      // excerpt from image_to_world() in ftnoir_tracker_neuralnet.cpp of opentrack
+      /*
+        Compute the location the network outputs in 3d space.
+
+           hhhhhh  <- head size (meters)
+          \      | -----------------------
+           \     |                         \
+            \    |                          |
+             \   |                          |- x (meters)
+              ____ <- face.size / width     |
+               \ |  |                       |
+                \|  |- focal length        /
+                   ------------------------
+                ------------------------------------------------>> z direction
+            z/x = zi / f
+            zi = image position
+            z = world position
+            f = focal length
+
+            We can also do deltas:
+            dz / x = dzi / f
+            => x = dz / dzi * f
+            which means we can compute x from the head size (dzi) if we assume some reference size (dz).
+        */
       var headSizeVertical = 2f * faceSize;
       var xpos = -(intrinsics_focal_length_w * inputTensorShape[3] * 0.5f) / headSizeVertical * referenceHeadSize_world_m;
       var zpos = (faceCenter.x / inputTensorShape[3] * 2f - 1f) * xpos / intrinsics_focal_length_w;
