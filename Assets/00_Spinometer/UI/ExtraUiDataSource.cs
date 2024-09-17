@@ -9,6 +9,8 @@ namespace GetBack.Spinometer.UI
     // common
     public float smoothingLambda = 6.0f;
     public float smoothingDt = 1.0f / 15;
+    private float throttlingTimer_ = 0f;
+    private bool needsRepaint_ = true;
 
     // face localizer
     public string localizerProbabilityStr;
@@ -51,7 +53,8 @@ namespace GetBack.Spinometer.UI
       get => _localizerProbability;
       set {
         _localizerProbability = Damp(_localizerProbability, value);
-        localizerProbabilityStr = Fmt(_localizerProbability);
+        if (needsRepaint_)
+          localizerProbabilityStr = Fmt(_localizerProbability);
       }
     }
 
@@ -60,7 +63,8 @@ namespace GetBack.Spinometer.UI
       get => _localizerNormalizedRoi;
       set {
         _localizerNormalizedRoi = Damp(_localizerNormalizedRoi, value);
-        localizerNormalizedRoiStr = Fmt(_localizerNormalizedRoi);
+        if (needsRepaint_)
+          localizerNormalizedRoiStr = Fmt(_localizerNormalizedRoi);
       }
     }
 
@@ -69,7 +73,8 @@ namespace GetBack.Spinometer.UI
       get => _localizerRect;
       set {
         _localizerRect = Damp(_localizerRect, value);
-        localizerRectStr = Fmt(_localizerRect);
+        if (needsRepaint_)
+          localizerRectStr = Fmt(_localizerRect);
       }
     }
 
@@ -78,7 +83,8 @@ namespace GetBack.Spinometer.UI
       get => _localizerUnNormalizedRoi;
       set {
         _localizerUnNormalizedRoi = Damp(_localizerUnNormalizedRoi, value);
-        localizerUnNormalizedRoiStr = Fmt(_localizerUnNormalizedRoi);
+        if (needsRepaint_)
+          localizerUnNormalizedRoiStr = Fmt(_localizerUnNormalizedRoi);
       }
     }
 
@@ -87,7 +93,8 @@ namespace GetBack.Spinometer.UI
       get => _localizerLastRoi;
       set {
         _localizerLastRoi = Damp(_localizerLastRoi, value);
-        localizerLastRoiStr = Fmt(_localizerLastRoi);
+        if (needsRepaint_)
+          localizerLastRoiStr = Fmt(_localizerLastRoi);
       }
     }
 
@@ -96,7 +103,8 @@ namespace GetBack.Spinometer.UI
       get => _poseEstimatorLastRoi;
       set {
         _poseEstimatorLastRoi = Damp(_poseEstimatorLastRoi, value);
-        poseEstimatorLastRoiStr = Fmt(_poseEstimatorLastRoi);
+        if (needsRepaint_)
+          poseEstimatorLastRoiStr = Fmt(_poseEstimatorLastRoi);
       }
     }
 
@@ -105,7 +113,8 @@ namespace GetBack.Spinometer.UI
       get => _faceCenter;
       set {
         _faceCenter = Damp(_faceCenter, value);
-        faceCenterStr = Fmt(_faceCenter);
+        if (needsRepaint_)
+          faceCenterStr = Fmt(_faceCenter);
       }
     }
 
@@ -114,7 +123,8 @@ namespace GetBack.Spinometer.UI
       get => _faceCenterStdDev;
       set {
         _faceCenterStdDev = Damp(_faceCenterStdDev, value);
-        faceCenterStdDevStr = Fmt(_faceCenterStdDev);
+        if (needsRepaint_)
+          faceCenterStdDevStr = Fmt(_faceCenterStdDev);
       }
     }
 
@@ -123,7 +133,8 @@ namespace GetBack.Spinometer.UI
       get => _faceSize;
       set {
         _faceSize = Damp(_faceSize, value);
-        faceSizeStr = Fmt(_faceSize);
+        if (needsRepaint_)
+          faceSizeStr = Fmt(_faceSize);
       }
     }
 
@@ -132,7 +143,8 @@ namespace GetBack.Spinometer.UI
       get => _faceSizeStdDev;
       set {
         _faceSizeStdDev = Damp(_faceSizeStdDev, value);
-        faceSizeStdDevStr = Fmt(_faceSizeStdDev);
+        if (needsRepaint_)
+          faceSizeStdDevStr = Fmt(_faceSizeStdDev);
       }
     }
 
@@ -141,7 +153,8 @@ namespace GetBack.Spinometer.UI
       get => _faceRotation;
       set {
         _faceRotation = Damp(_faceRotation, value);
-        faceRotationStr = Fmt(_faceRotation);
+        if (needsRepaint_)
+          faceRotationStr = Fmt(_faceRotation);
       }
     }
 
@@ -150,7 +163,8 @@ namespace GetBack.Spinometer.UI
       get => _faceBox;
       set {
         _faceBox = Damp(_faceBox, value);
-        faceBoxStr = Fmt(_faceBox);
+        if (needsRepaint_)
+          faceBoxStr = Fmt(_faceBox);
       }
     }
 
@@ -159,7 +173,8 @@ namespace GetBack.Spinometer.UI
       get => _posePosition;
       set {
         _posePosition = Damp(_posePosition, value);
-        posePositionStr = Fmt(_posePosition);
+        if (needsRepaint_)
+          posePositionStr = Fmt(_posePosition);
       }
     }
 
@@ -168,7 +183,8 @@ namespace GetBack.Spinometer.UI
       get => _poseRotation;
       set {
         _poseRotation = Damp(_poseRotation, value);
-        poseRotationStr = Fmt(_poseRotation);
+        if (needsRepaint_)
+          poseRotationStr = Fmt(_poseRotation);
       }
     }
 
@@ -245,6 +261,15 @@ namespace GetBack.Spinometer.UI
     public string Fmt(TrackerNeuralNet.BoundingBox? value)
     {
       return (!value.HasValue) ? "---" : value.Value.ToString();
+    }
+
+    public void NextTick(float deltaTime)
+    {
+      smoothingDt = deltaTime;
+      throttlingTimer_ -= deltaTime;
+      needsRepaint_ = throttlingTimer_ < 0f;
+      if (throttlingTimer_ < 0f)
+        throttlingTimer_ = 0.5f;
     }
   }
 }

@@ -150,6 +150,8 @@ namespace GetBack.Spinometer
 
     void Update()
     {
+      _extraUiDataSource.NextTick(Time.deltaTime);
+
       _secondsToNextFrame -= Time.deltaTime;
       if (_secondsToNextFrame <= 0f) {
         _secondsToNextFrame += 1.0f / _settings.opt_poseEstimationFrequency;
