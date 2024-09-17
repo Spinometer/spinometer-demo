@@ -239,7 +239,7 @@ namespace GetBack.Spinometer.SpinalAlignment
         absoluteAngles[SpinalAlignment.AbsoluteAngleId.L3] + (-180f + relativeAngles[SpinalAlignment.RelativeAngleId.T12_L3_S]);
 
       // FIXME: treating S specially for more natural motion.
-      var mult = distance < 0.5f ? _settings.opt_s_distance_multiplier_foreward : _settings.opt_s_distance_multiplier_backward;
+      var mult = distance < 0.5f ? _settings.opt_s_distance_multiplier_forward : _settings.opt_s_distance_multiplier_backward;
       absoluteAngles[SpinalAlignment.AbsoluteAngleId.S] = _settings.opt_s_distance_offset + mult * (distance - 0.5f);
 
       _uiDataSource.abs_EyePost = absoluteAngles[SpinalAlignment.AbsoluteAngleId.EyePost].ToString("0.0");

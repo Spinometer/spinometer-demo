@@ -40,15 +40,8 @@ namespace GetBack.Spinometer
     public float opt_user_height_cm; // not in [m]
     public float opt_user_weight_kg;
 
-//    public float opt_s_distance_offset = 50.0f;
-//    public float opt_s_distance_multiplier = 66.0f;
-
-    // backward
-    //public float opt_s_distance_offset = 0.0f;
-    //public float opt_s_distance_multiplier = 160.0f;
-
     public float opt_s_distance_offset = 80.0f;
-    public float opt_s_distance_multiplier_foreward = 45.0f;
+    public float opt_s_distance_multiplier_forward = 45.0f;
     public float opt_s_distance_multiplier_backward = 120.0f;
 
     public float opt_distance_correction_angle_distance_factor = 0f;

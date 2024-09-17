@@ -337,7 +337,7 @@ namespace GetBack.Spinometer
                                    _settings.opt_additionalPitchOffset,
                                    smoothingLambda, dt);
 
-        _uiDataSource.distance = CorrectDistance(Damp(_uiDataSource.distance, -pose.position.z,  smoothingLambda, dt));
+        _uiDataSource.distance = CorrectDistance(Damp(_uiDataSource.distance, -pose.position.z, smoothingLambda, dt));
 
         _spinalAlignmentEstimator.Estimate(_uiDataSource.distance, _uiDataSource.pitch, _spinalAlignment);
       }
