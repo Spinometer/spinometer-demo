@@ -12,3 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eca8838f99b4fc58bf6e3fddeae22ee, type: 3}
   m_Name: extraUiDataSourceInstance
   m_EditorClassIdentifier: 
+  smoothingLambda: 6
+  smoothingDt: 0.06666667
+  settings_: {fileID: 11400000, guid: 51542d75c233bb946a18c77104c4c333, type: 2}
+  localizerProbabilityStr: 
+  localizerNormalizedRoiStr: 
+  localizerRectStr: 
+  localizerUnNormalizedRoiStr: 
+  localizerLastRoiStr: 
+  poseEstimatorLastRoiStr: 
+  faceCenterStr: 
+  faceCenterStdDevStr: 
+  faceSizeStr: 
+  faceSizeStdDevStr: 
+  faceRotationStr: 
+  faceBoxStr: 
+  posePositionStr: 
+  poseRotationStr: 

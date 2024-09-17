@@ -158,6 +158,7 @@ namespace GetBack.Spinometer
         }
         RegisterLocaleChangeButtonEvents(uidoc);
       }
+      ToggleExtraUI();
     }
 
     private static void RegisterLocaleChangeButtonEvents(UIDocument uidoc)

@@ -12,10 +12,6 @@ namespace GetBack.Spinometer
     public List<string> opt_webCamDeviceNameList;
     public int opt_webCamDeviceNameIndex;
 
-    // le:
-    // additionalPitchOffset = 15
-    // displayDiagonalFov = 56
-
     /// <summary>
     ///   Angle of the display surface from the front vector (based on the user) in degrees.
     ///   0 means it is completely flatten away and 90 indicates it is right up.
@@ -46,6 +42,8 @@ namespace GetBack.Spinometer
 
     public float opt_distance_correction_angle_distance_factor = 0f;
     public float opt_distance_correction_cos_factor = 64f;
+
+    [Range(1, 30)] public int opt_extra_updateFrequency = 2;
 
     public void Awake()
     {
@@ -89,6 +87,7 @@ namespace GetBack.Spinometer
       opt_user_weight_kg = PlayerPrefs.GetFloat("opt_user_weight_kg", -1f);
       opt_targetFrameRate = PlayerPrefs.GetInt("opt_targetFrameRate", 15);
       opt_poseEstimationFrequency = PlayerPrefs.GetInt("opt_poseEstimationFrequency", 15);
+      opt_extra_updateFrequency = PlayerPrefs.GetInt("opt_extra_updateFrequency", 2);
 
       Debug.Log("Settings#LoadSettings(): done.");
     }
@@ -106,6 +105,7 @@ namespace GetBack.Spinometer
       PlayerPrefs.SetFloat("opt_user_weight_kg", opt_user_weight_kg);
       PlayerPrefs.SetInt("opt_targetFrameRate", opt_targetFrameRate);
       PlayerPrefs.SetInt("opt_poseEstimationFrequency", opt_poseEstimationFrequency);
+      PlayerPrefs.SetInt("opt_extra_updateFrequency", opt_extra_updateFrequency);
       Debug.Log("Settings#SaveSettings(): done.");
     }
   }

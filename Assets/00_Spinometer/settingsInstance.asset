@@ -16,7 +16,6 @@ MonoBehaviour:
   opt_webCamDeviceName: Integrated Camera
   opt_webCamDeviceNameList:
   - Integrated Camera
-  - OBS Virtual Camera
   opt_webCamDeviceNameIndex: 0
   opt_displaySurfaceAngle: 64.82746
   opt_additionalPitchOffset: 15
@@ -32,3 +31,4 @@ MonoBehaviour:
   opt_s_distance_multiplier_backward: 120
   opt_distance_correction_angle_distance_factor: 0
   opt_distance_correction_cos_factor: 64
+  opt_extra_updateFrequency: 2

@@ -11,6 +11,7 @@ namespace GetBack.Spinometer.UI
     public float smoothingDt = 1.0f / 15;
     private float throttlingTimer_ = 0f;
     private bool needsRepaint_ = true;
+    [SerializeField] private Settings settings_;
 
     // face localizer
     public string localizerProbabilityStr;
@@ -269,7 +270,7 @@ namespace GetBack.Spinometer.UI
       throttlingTimer_ -= deltaTime;
       needsRepaint_ = throttlingTimer_ < 0f;
       if (throttlingTimer_ < 0f)
-        throttlingTimer_ = 0.5f;
+        throttlingTimer_ = 1.0f / settings_.opt_extra_updateFrequency;
     }
   }
 }

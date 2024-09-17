@@ -98,6 +98,14 @@ MonoBehaviour:
     m_Localized: Finish
     m_Metadata:
       m_Items: []
+  - m_Id: 74087413160886272
+    m_Localized: 'Target Framerate [FPS]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 74090138531545088
+    m_Localized: '"Extra" Update Rate [1/s]'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
