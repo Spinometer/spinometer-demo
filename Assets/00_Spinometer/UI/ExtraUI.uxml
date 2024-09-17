@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/00_Spinometer/UI/ExtraUI.uss?fileID=7433441132597879392&amp;guid=dfa352d66e078634cb1c4c0498e4a7a8&amp;type=3#ExtraUI" />
     <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-direction: row; background-color: rgba(0, 0, 0, 0.41);">
-        <ui:VisualElement style="flex-grow: 1; flex-direction: column; width: 400px; margin-top: 240px; margin-bottom: 4px;">
+        <ui:VisualElement style="flex-grow: 1; flex-direction: column; width: 400px; margin-top: 134px; margin-bottom: 4px; margin-left: 20px;">
             <ui:VisualElement picking-mode="Ignore" class="big" style="flex-grow: 1;">
                 <ui:VisualElement style="flex-direction: row;">
                     <ui:VisualElement picking-mode="Ignore" name="col" style="width: 288px; flex-basis: 620px;">
