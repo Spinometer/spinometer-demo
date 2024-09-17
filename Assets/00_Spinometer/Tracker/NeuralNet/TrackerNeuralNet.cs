@@ -121,7 +121,6 @@ namespace GetBack.Spinometer
       _spinalAlignmentEstimator = new SpinalAlignmentEstimator(_settings, _uiDataSource);
       _visualizerSkeleton = GetComponent<SpinalAlignmentVisualizerSkeleton>();
       _visualizerStickFigure = GetComponent<SpinalAlignmentVisualizerStickFigure>();
-      _extraUiDataSource.tracker = this;
     }
 
     void Start()
@@ -320,10 +319,11 @@ namespace GetBack.Spinometer
         pose.position = new Vector3(pose.position.z, pose.position.y, pose.position.x);
         _extraUiDataSource.posePosition = pose.position;
         _extraUiDataSource.poseRotation = pose.rotation;
+        // now _extraUiDataSource has damped posePosition and poseRotation.  we use them below to translate/rotate face proxy.
         GameObject.Find("/SK_Skeleton/FaceProxyOrigin").transform.localRotation = Quaternion.AngleAxis(
           -90f + _settings.opt_displaySurfaceAngle + _settings.opt_additionalPitchOffset, Vector3.left);
-        GameObject.Find("/SK_Skeleton/FaceProxyOrigin/CameraOrigin/FaceProxy").transform.localPosition = pose.position;
-        GameObject.Find("/SK_Skeleton/FaceProxyOrigin/CameraOrigin/FaceProxy").transform.localRotation = pose.rotation;
+        GameObject.Find("/SK_Skeleton/FaceProxyOrigin/CameraOrigin/FaceProxy").transform.localPosition = _extraUiDataSource.posePosition;
+        GameObject.Find("/SK_Skeleton/FaceProxyOrigin/CameraOrigin/FaceProxy").transform.localRotation = _extraUiDataSource.poseRotation;
 
         float smoothingLambda = 6.0f;
         float dt = Time.deltaTime;

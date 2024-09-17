@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/00_Spinometer/UI/ExtraUI.uss?fileID=7433441132597879392&amp;guid=dfa352d66e078634cb1c4c0498e4a7a8&amp;type=3#ExtraUI" />
     <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-direction: row; background-color: rgba(0, 0, 0, 0.41);">
-        <ui:VisualElement style="flex-grow: 1; flex-direction: column; width: 400px; margin-top: 156px; margin-bottom: 4px;">
+        <ui:VisualElement style="flex-grow: 1; flex-direction: column; width: 400px; margin-top: 240px; margin-bottom: 4px;">
             <ui:VisualElement picking-mode="Ignore" class="big" style="flex-grow: 1;">
                 <ui:VisualElement style="flex-direction: row;">
                     <ui:VisualElement picking-mode="Ignore" name="col" style="width: 288px; flex-basis: 620px;">
@@ -10,7 +10,7 @@
                             <ui:Label text="Probablity" class="field-label" />
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="localizerProbability" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="localizerProbabilityStr" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
@@ -36,7 +36,7 @@
                             </ui:Label>
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="localizerUnNormalizedRoi" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="localizerUnNormalizedRoiStr" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
@@ -65,9 +65,9 @@
                             <ui:Label text="Center [px]" class="field-label">
                                 <Bindings />
                             </ui:Label>
-                            <ui:Label text="Label">
+                            <ui:Label text="Label" style="height: 38px; width: 6px;">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="faceCenter" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="faceCenterStr" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
@@ -77,7 +77,7 @@
                             </ui:Label>
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="faceCenterStdDev" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="faceCenterStdDevStr" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
@@ -87,7 +87,7 @@
                             </ui:Label>
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="faceSize" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="faceSizeStr" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
@@ -97,7 +97,7 @@
                             </ui:Label>
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="faceSizeStdDev" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="faceSizeStdDevStr" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
@@ -107,7 +107,7 @@
                             </ui:Label>
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="faceRotation" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="faceRotationStr" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
@@ -117,7 +117,7 @@
                             </ui:Label>
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="faceBox" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="faceBoxStr" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
@@ -128,7 +128,7 @@
                             </ui:Label>
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="posePosition" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="posePositionStr" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
@@ -138,7 +138,7 @@
                             </ui:Label>
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="poseRotation" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/extraUiDataSourceInstance.asset?fileID=11400000&amp;guid=ad1e8f6da73bbd64981e1f05a03ee7ef&amp;type=2#extraUiDataSourceInstance" data-source-path="poseRotationStr" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
