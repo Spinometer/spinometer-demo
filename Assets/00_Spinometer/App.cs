@@ -94,10 +94,10 @@ namespace GetBack.Spinometer
       var scene = SceneManager.GetSceneByName(_sceneName_extra);
       if (scene == null || !scene.isLoaded) {
         await SceneManager.LoadSceneAsync(_sceneName_extra, LoadSceneMode.Additive);
-        GameObject.Find("/SK_Skeleton/FaceProxyContainer/FaceProxy/Cube").SetActive(true);
+        GameObject.Find("/SK_Skeleton/FaceProxyOrigin/CameraOrigin/FaceProxy/Cube").SetActive(true);
       } else {
         await SceneManager.UnloadSceneAsync(scene);
-        GameObject.Find("/SK_Skeleton/FaceProxyContainer/FaceProxy/Cube").SetActive(false);
+        GameObject.Find("/SK_Skeleton/FaceProxyOrigin/CameraOrigin/FaceProxy/Cube").SetActive(false);
       }
     }
 

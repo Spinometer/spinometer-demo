@@ -320,9 +320,10 @@ namespace GetBack.Spinometer
         pose.position = new Vector3(pose.position.z, pose.position.y, pose.position.x);
         _extraUiDataSource.posePosition = pose.position;
         _extraUiDataSource.poseRotation = pose.rotation;
-        GameObject.Find("/SK_Skeleton/FaceProxyContainer/FaceProxy").transform.localPosition = pose.position;
-        GameObject.Find("/SK_Skeleton/FaceProxyContainer/FaceProxy").transform.localRotation = pose.rotation;
-        //GameObject.Find("/FaceProxyContainer/FaceProxy").transform.localRotation = face.rotation;
+        GameObject.Find("/SK_Skeleton/FaceProxyOrigin").transform.localRotation = Quaternion.AngleAxis(
+          -90f + _settings.opt_displaySurfaceAngle + _settings.opt_additionalPitchOffset, Vector3.left);
+        GameObject.Find("/SK_Skeleton/FaceProxyOrigin/CameraOrigin/FaceProxy").transform.localPosition = pose.position;
+        GameObject.Find("/SK_Skeleton/FaceProxyOrigin/CameraOrigin/FaceProxy").transform.localRotation = pose.rotation;
 
         float smoothingLambda = 6.0f;
         float dt = Time.deltaTime;
