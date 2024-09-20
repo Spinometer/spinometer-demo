@@ -183,15 +183,15 @@ namespace GetBack.Spinometer
       // Debug.Log(_webcamRaw.isPlaying + ", " + now + ", " + (now - _lastSeen));
       if (!_webcamRaw.didUpdateThisFrame) {
         var diff = now - _lastSeen;
-        if (diff > TimeSpan.FromSeconds(1.0)) {
-          // >5 doesn't work, because Unity reports fake frames after 5 (and sometimes less) seconds from disconnection.
+        if (diff > TimeSpan.FromSeconds(4.0)) {
+          // >5 doesn't work, because Unity reports fake blank frames after 5 (and sometimes less) seconds from disconnection.
           // >1 is reasonably reliable.
-          Debug.Log("webcam not responded for 1 secs.  disconnecting...");
+          Debug.Log("webcam not responded for 4 secs.  disconnecting...");
           RescanDevices();
           SelectDeviceByName(null);
           return;
         }
-        if (diff > TimeSpan.FromSeconds(0.5)) {
+        if (diff > TimeSpan.FromSeconds(1.5)) {
           State = StateEnum.webCamNotResponding;
           return;
         }
