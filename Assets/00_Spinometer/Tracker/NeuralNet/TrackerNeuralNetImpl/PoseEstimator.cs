@@ -9,7 +9,7 @@ namespace GetBack.Spinometer.TrackerNeuralNetImpl
 {
   public class PoseEstimator : IDisposable
   {
-    private IWorker _worker;
+    private Worker _worker;
     private bool hasUncertainty = true;
     private bool hasEyeClosedDetection = false;
     private BrightnessNormalizer _brightnessNormalizer;
@@ -17,7 +17,7 @@ namespace GetBack.Spinometer.TrackerNeuralNetImpl
     public PoseEstimator(Model poseEstimatorRuntimeModel)
     {
       var backendType = SystemInfo.supportsComputeShaders ? BackendType.GPUCompute : BackendType.GPUPixel;
-      _worker = WorkerFactory.CreateWorker(backendType, poseEstimatorRuntimeModel);
+      _worker = new Worker(poseEstimatorRuntimeModel, backendType);
       _brightnessNormalizer = new BrightnessNormalizer();
     }
 
@@ -27,7 +27,7 @@ namespace GetBack.Spinometer.TrackerNeuralNetImpl
     /// <param name="inputTensor">The input tensor containing the face image.</param>
     /// <param name="box">The bounding box that encloses the face in the input tensor.</param>
     /// <returns>A Face object containing the detected face information.</returns>
-    public Face Run(TensorFloat inputTensor, TrackerNeuralNet.BoundingBox box)
+    public Face Run(Tensor<float> inputTensor, TrackerNeuralNet.BoundingBox box)
     {
       //int patchSize = Mathf.FloorToInt(Math.Max(box.Width, box.Height) * 1.05f);
       float patchSize = Math.Max(box.Width, box.Height) * 1.05f;
@@ -66,30 +66,30 @@ namespace GetBack.Spinometer.TrackerNeuralNetImpl
       using var croppedResizedBrightnessNormalizedInputTensor = _brightnessNormalizer.DoIt(croppedResizedInputTensor);
 
       //
-      _worker.Execute(croppedResizedBrightnessNormalizedInputTensor);
+      _worker.Schedule(croppedResizedBrightnessNormalizedInputTensor);
 
       //
       var face = new Face();
       {
-        var results = _worker.PeekOutput("pos_size") as TensorFloat;
-        results.CompleteOperationsAndDownload();
+        var results_ = _worker.PeekOutput("pos_size") as Tensor<float>;
+        var results = results_.DownloadToNativeArray();
         face.center = patchCenter + 0.5f * patchSize * new float2(results[0], results[1]);
         face.size = 0.5f * patchSize * results[2];
       }
       {
-        var results = _worker.PeekOutput("pos_size_scales") as TensorFloat;
-        results.CompleteOperationsAndDownload();
+        var results_ = _worker.PeekOutput("pos_size_scales") as Tensor<float>;
+        var results = results_.DownloadToNativeArray();
         face.centerStdDev = 0.5f * patchSize * new float2(results[0], results[1]);
         face.sizeStdDev = 0.5f * patchSize * results[2];
       }
       {
-        var results = _worker.PeekOutput("quat") as TensorFloat;
-        results.CompleteOperationsAndDownload();
+        var results_ = _worker.PeekOutput("quat") as Tensor<float>;
+        var results = results_.DownloadToNativeArray();
         face.rotation = new Quaternion(results[0], results[1], results[2], results[3]);
       }
       {
-        var results = _worker.PeekOutput("rotaxis_scales_tril") as TensorFloat;
-        results.CompleteOperationsAndDownload();
+        var results_ = _worker.PeekOutput("rotaxis_scales_tril") as Tensor<float>;
+        var results = results_.DownloadToNativeArray();
         face.matrix = Matrix4x4.identity;
         face.matrix.m00 = results[0];
         face.matrix.m10 = results[1];
@@ -102,8 +102,8 @@ namespace GetBack.Spinometer.TrackerNeuralNetImpl
         face.matrix.m22 = results[8];
       }
       {
-        var results = _worker.PeekOutput("box") as TensorFloat;
-        results.CompleteOperationsAndDownload();
+        var results_ = _worker.PeekOutput("box") as Tensor<float>;
+        var results = results_.DownloadToNativeArray();
         face.box = new TrackerNeuralNet.BoundingBox(patchCenter.x + 0.5f * patchSize * results[0],
                                                     patchCenter.y + 0.5f * patchSize * results[1],
                                                     patchCenter.x + 0.5f * patchSize * results[2],

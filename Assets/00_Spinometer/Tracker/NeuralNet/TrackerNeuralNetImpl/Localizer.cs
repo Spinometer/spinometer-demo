@@ -6,19 +6,19 @@ namespace GetBack.Spinometer.TrackerNeuralNetImpl
 {
   public class Localizer : IDisposable
   {
-    private IWorker _worker;
+    private Worker _worker;
 
     public Localizer(Model runtimeModel)
     {
       var backendType = SystemInfo.supportsComputeShaders ? BackendType.GPUCompute : BackendType.GPUPixel;
-      _worker = WorkerFactory.CreateWorker(backendType, runtimeModel);
+      _worker = new Worker(runtimeModel, backendType);
     }
 
-    public (float, TrackerNeuralNet.BoundingBox) Run(TensorFloat inputTensor)
+    public (float, TrackerNeuralNet.BoundingBox) Run(Tensor<float> inputTensor)
     {
-      _worker.Execute(inputTensor);
-      var results = _worker.PeekOutput() as TensorFloat;
-      results.CompleteOperationsAndDownload();
+      _worker.Schedule(inputTensor);
+      var results_ = _worker.PeekOutput() as Tensor<float>;
+      var results = results_.DownloadToNativeArray();
       float localizerProbability = Sigmoid(results[0]);
       var normalizedRoi = new TrackerNeuralNet.BoundingBox(results[1], results[2], results[3], results[4]);
       return ValueTuple.Create(localizerProbability, normalizedRoi);

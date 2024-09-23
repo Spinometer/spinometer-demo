@@ -18,7 +18,7 @@ namespace GetBack.Spinometer.TrackerNeuralNetImpl
 #endif
     }
 
-    public TensorFloat DoIt(TensorFloat inputTensor)
+    public Tensor<float> DoIt(Tensor<float> inputTensor)
     {
       //var t0 = s_Ops.Add(inputTensor, -128f);
       //var t1 = s_Ops.Mul(inputTensor, 1f / 100f);
