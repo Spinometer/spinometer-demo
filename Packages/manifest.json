@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "com.cysharp.r3": "https://github.com/Cysharp/R3.git?path=src/R3.Unity/Assets/R3.Unity",
+    "org.nuget.observablecollections.r3": "3.0.4",
     "com.unity.ai.navigation": "2.0.4",
     "com.unity.burst": "1.8.17",
     "com.unity.collab-proxy": "2.5.1",
@@ -46,5 +48,15 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  }
+  },
+  "scopedRegistries": [
+    {
+      "name": "OpenUPM",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "org.nuget",
+        "com.cysharp"
+      ]
+    }
+  ]
 }
