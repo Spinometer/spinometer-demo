@@ -6,6 +6,7 @@
  */
 
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace GetBack.Spinometer.SpinalAlignment
 {
@@ -49,5 +50,12 @@ namespace GetBack.Spinometer.SpinalAlignment
 
     /// absolute angles in deg.  forward = 0, up = 90
     public Dictionary<AbsoluteAngleId, float> absoluteAngles = new();
+
+    public SpinalAlignment Clone()
+    {
+      var serialized = JsonConvert.SerializeObject(this);
+      var cloned = JsonConvert.DeserializeObject<SpinalAlignment>(serialized);
+      return cloned;
+    }
   }
 }
