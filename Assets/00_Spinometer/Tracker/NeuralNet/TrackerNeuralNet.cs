@@ -1,5 +1,6 @@
 using System;
 using Drawing;
+using GetBack.Spinometer.SpinalAlignmentAux;
 using GetBack.Spinometer.SpinalAlignmentCore;
 using GetBack.Spinometer.SpinalAlignmentVisualizer;
 using GetBack.Spinometer.TrackerNeuralNetImpl;
@@ -59,8 +60,9 @@ namespace GetBack.Spinometer
     private VisualElement _warningMessageTrackingUnstable = null;
     private VisualElement _warningMessageCameraOffline = null;
 
-    private SpinalAlignmentCore.SpinalAlignment _spinalAlignment = new SpinalAlignmentCore.SpinalAlignment();
+    private SpinalAlignment _spinalAlignment = new();
     private SpinalAlignmentEstimator _spinalAlignmentEstimator = null;
+    private SpinalAlignmentScore _spinalAlignmentScore = new();
     private float _dt = 1.0f;
 
     public bool WebCamFocused
@@ -108,10 +110,16 @@ namespace GetBack.Spinometer
       }
     }
 
-    public SpinalAlignmentCore.SpinalAlignment spinalAlignment
+    public SpinalAlignment spinalAlignment
     {
       get => _spinalAlignment;
       set => _spinalAlignment = value;
+    }
+
+    public SpinalAlignmentScore spinalAlignmentScore
+    {
+      get => _spinalAlignmentScore;
+      set => _spinalAlignmentScore = value;
     }
 
     private void UpdateSkeletonVisualizerVisibility()
@@ -196,7 +204,7 @@ namespace GetBack.Spinometer
       }
 
       if (_showStickFigure) {
-        _visualizerStickFigure.DrawAlignment(_spinalAlignment, true, _stickFigureOnSide, _uiDataSource.distance, _uiDataSource.pitch);
+        _visualizerStickFigure.DrawAlignment(spinalAlignment, _spinalAlignmentScore, true, _stickFigureOnSide, _uiDataSource.distance, _uiDataSource.pitch);
       }
     }
 
@@ -348,6 +356,7 @@ namespace GetBack.Spinometer
         _uiDataSource.distance = CorrectDistance(Damp(_uiDataSource.distance, -pose.position.z, smoothingLambda, dt));
 
         _spinalAlignmentEstimator.Estimate(_uiDataSource.distance, _uiDataSource.pitch, _spinalAlignment);
+        SpinalAlignmentScoreCalculator.CalculateScore(spinalAlignment, _spinalAlignmentScore);
       }
     }
 
