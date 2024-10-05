@@ -26,17 +26,17 @@ namespace GetBack.Spinometer.SpinalAlignmentAux
         scoreOut.normalizedRelativeAngles[id] = NormalizedAngle(angle, normalCenter, normalHalfWidth);
       }
 
-      calc(30f, 5f,
+      calc(31.3f, 5f,
            SpinalAlignment.RelativeAngleId.C2_C7_vert_new);
-      calc(40f, 10f,
+      calc(41.7f, 10f,
            SpinalAlignment.RelativeAngleId.C7_T3_vert_new);
-      calc(150f, 8f,
+      calc(158.4f, 8f,
            SpinalAlignment.RelativeAngleId.C7_T3_T8);
-      calc(155f, 1f,
+      calc(155.0f, 1f,
            SpinalAlignment.RelativeAngleId.T3_T8_T12);
-      calc(177.7f, 2.5f,
+      calc(178.3f, 2.5f,
            SpinalAlignment.RelativeAngleId.T8_T12_L3);
-      calc(172.5f, 1.5f,
+      calc(172.0f, 1.5f,
            SpinalAlignment.RelativeAngleId.T12_L3_S);
     }
 
