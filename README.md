@@ -41,7 +41,7 @@ Note: Setup information is saved in the registry. If you uninstall the program, 
 
 ## Building from Source
 
-This is a [Unity](https://unity.com/) project.  At the time of writing, development is done using Unity Editor version 6000.0.16f1.
+This is a [Unity](https://unity.com/) project.  At the time of writing, development is done using Unity Editor version 6000.0.21f1.
 
 Following third-party assets/files are not included in this repository.  You will need download and place them separately.
 
@@ -49,7 +49,7 @@ Following third-party assets/files are not included in this repository.  You wil
     - head-localizer: [https://github.com/opentrack/opentrack/raw/master/tracker-neuralnet/models/head-localizer.onnx](https://github.com/opentrack/opentrack/raw/master/tracker-neuralnet/models/head-localizer.onnx)
     - head-pose-0.2-small: [https://github.com/opentrack/opentrack/raw/master/tracker-neuralnet/models/head-pose-0.2-small.onnx](https://github.com/opentrack/opentrack/raw/master/tracker-neuralnet/models/head-pose-0.2-small.onnx)
 
-  Note that `.meta` files are also needed.  They are already included in this repo, but if you lose or overwritten them by an accident (e.g. by launching Unity Editor before placing the onnx files), restore them by `git checkout -f Assets/00_Spinometer/Tracker/NeuralNet/Model/head-{localizer,pose-0.2-small}.onnx.meta`.
+  Note that `.meta` files are also needed and they are already included in this repo.  If you lose or overwritten them by an accident (e.g. by launching Unity Editor before placing the onnx files), restore them by `git checkout -f Assets/00_Spinometer/Tracker/NeuralNet/Model/head-{localizer,pose-0.2-small}.onnx.meta`.
 
 - ALINE: [https://assetstore.unity.com/packages/tools/gui/aline-162772](https://assetstore.unity.com/packages/tools/gui/aline-162772)
 
@@ -71,6 +71,6 @@ Now you can run the application.
 
 ## License
 
-The proprietary portions of this software (the implementation of the algorithm for estimating spine posture) are subject to separate license terms from the other parts.  See [Assets/00_Spinometer/SpinalAlignment/LICENSE.md](Assets/00_Spinometer/SpinalAlignment/LICENSE.md) for more information.
+The proprietary portions of this software (the implementation of the algorithm for estimating spine posture) are subject to separate license terms from the other parts.  See [Assets/00_Spinometer/SpinalAlignmentCore/LICENSE.md](Assets/00_Spinometer/SpinalAlignmentCore/LICENSE.md) for more information.
 
 Other parts are licensed under [The ISC License](https://en.wikipedia.org/wiki/ISC_license).
