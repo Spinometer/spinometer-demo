@@ -98,14 +98,12 @@ namespace GetBack.Spinometer.SpinalAlignmentCore
     };
 
     private readonly Settings _settings;
-    private readonly UiDataSource _uiDataSource;
 
     public readonly int _thisYear = DateTime.Now.Year;
 
-    public SpinalAlignmentEstimator(Settings settings, UiDataSource uiDataSource)
+    public SpinalAlignmentEstimator(Settings settings)
     {
       _settings = settings;
-      _uiDataSource = uiDataSource;
     }
 
     public ParamSet AvailableParamSet()
@@ -183,17 +181,6 @@ namespace GetBack.Spinometer.SpinalAlignmentCore
 
       relativeAngles[SpinalAlignment.RelativeAngleId.EyePost_C2_C7] = 90f;
       // rel_EyePost_C2_C7 = relativeAngles[RelativeAngleId.EyePost_C2_C7].ToString("0.0");
-      if (!_settings.opt_useNew)
-        _uiDataSource.rel_C2_C7_vert = relativeAngles[SpinalAlignment.RelativeAngleId.C2_C7_vert].ToString("0.0");
-      else {
-        _uiDataSource.rel_C2_C7_vert = relativeAngles[SpinalAlignment.RelativeAngleId.C2_C7_vert_new].ToString("0.0");
-        _uiDataSource.rel_C7_T3_vert = relativeAngles[SpinalAlignment.RelativeAngleId.C7_T3_vert_new].ToString("0.0");
-      }
-      _uiDataSource.rel_T1_slope = relativeAngles[SpinalAlignment.RelativeAngleId.T1_slope].ToString("0.0");
-      _uiDataSource.rel_C7_T3_T8 = relativeAngles[SpinalAlignment.RelativeAngleId.C7_T3_T8].ToString("0.0");
-      _uiDataSource.rel_T3_T8_T12 = relativeAngles[SpinalAlignment.RelativeAngleId.T3_T8_T12].ToString("0.0");
-      _uiDataSource.rel_T8_T12_L3 = relativeAngles[SpinalAlignment.RelativeAngleId.T8_T12_L3].ToString("0.0");
-      _uiDataSource.rel_T12_L3_S = relativeAngles[SpinalAlignment.RelativeAngleId.T12_L3_S].ToString("0.0");
 
 #if false
     foreach (var id_ in Enum.GetValues(typeof(RelativeAngleId))) {
@@ -241,15 +228,6 @@ namespace GetBack.Spinometer.SpinalAlignmentCore
       // FIXME: treating S specially for more natural motion.
       var mult = distance < 0.5f ? _settings.opt_s_distance_multiplier_forward : _settings.opt_s_distance_multiplier_backward;
       absoluteAngles[SpinalAlignment.AbsoluteAngleId.L3_S] = _settings.opt_s_distance_offset + mult * (distance - 0.5f);
-
-      _uiDataSource.abs_EyePost = absoluteAngles[SpinalAlignment.AbsoluteAngleId.EyePost].ToString("0.0");
-      _uiDataSource.abs_C2 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.C2].ToString("0.0");
-      _uiDataSource.abs_C7 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.C2_C7].ToString("0.0");
-      _uiDataSource.abs_T3 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.C7_T3].ToString("0.0");
-      _uiDataSource.abs_T8 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.T3_T8].ToString("0.0");
-      _uiDataSource.abs_T12 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.T8_T12].ToString("0.0");
-      _uiDataSource.abs_L3 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.T12_L3].ToString("0.0");
-      _uiDataSource.abs_S = absoluteAngles[SpinalAlignment.AbsoluteAngleId.L3_S].ToString("0.0");
 
 #if false
     foreach (var id_ in Enum.GetValues(typeof(AbsoluteAngleId))) {

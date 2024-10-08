@@ -132,7 +132,7 @@ namespace GetBack.Spinometer
 
     void Awake()
     {
-      _spinalAlignmentEstimator = new SpinalAlignmentEstimator(_settings, _uiDataSource);
+      _spinalAlignmentEstimator = new SpinalAlignmentEstimator(_settings);
       _visualizerSkeleton = GetComponent<SpinalAlignmentVisualizerSkeleton>();
       _visualizerStickFigure = GetComponent<SpinalAlignmentVisualizerStickFigure>();
     }
@@ -356,6 +356,32 @@ namespace GetBack.Spinometer
         _uiDataSource.distance = CorrectDistance(Damp(_uiDataSource.distance, -pose.position.z, smoothingLambda, dt));
 
         _spinalAlignmentEstimator.Estimate(_uiDataSource.distance, _uiDataSource.pitch, _spinalAlignment);
+        // TODO: FIXME: HOGE: _uiDataSource
+        {
+          var relativeAngles = _spinalAlignment.relativeAngles;
+          var absoluteAngles = _spinalAlignment.absoluteAngles;
+
+          if (!_settings.opt_useNew)
+            _uiDataSource.rel_C2_C7_vert = relativeAngles[SpinalAlignment.RelativeAngleId.C2_C7_vert].ToString("0.0");
+          else {
+            _uiDataSource.rel_C2_C7_vert = relativeAngles[SpinalAlignment.RelativeAngleId.C2_C7_vert_new].ToString("0.0");
+            _uiDataSource.rel_C7_T3_vert = relativeAngles[SpinalAlignment.RelativeAngleId.C7_T3_vert_new].ToString("0.0");
+          }
+          _uiDataSource.rel_T1_slope = relativeAngles[SpinalAlignment.RelativeAngleId.T1_slope].ToString("0.0");
+          _uiDataSource.rel_C7_T3_T8 = relativeAngles[SpinalAlignment.RelativeAngleId.C7_T3_T8].ToString("0.0");
+          _uiDataSource.rel_T3_T8_T12 = relativeAngles[SpinalAlignment.RelativeAngleId.T3_T8_T12].ToString("0.0");
+          _uiDataSource.rel_T8_T12_L3 = relativeAngles[SpinalAlignment.RelativeAngleId.T8_T12_L3].ToString("0.0");
+          _uiDataSource.rel_T12_L3_S = relativeAngles[SpinalAlignment.RelativeAngleId.T12_L3_S].ToString("0.0");
+
+          _uiDataSource.abs_EyePost = absoluteAngles[SpinalAlignment.AbsoluteAngleId.EyePost].ToString("0.0");
+          _uiDataSource.abs_C2 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.C2].ToString("0.0");
+          _uiDataSource.abs_C7 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.C2_C7].ToString("0.0");
+          _uiDataSource.abs_T3 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.C7_T3].ToString("0.0");
+          _uiDataSource.abs_T8 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.T3_T8].ToString("0.0");
+          _uiDataSource.abs_T12 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.T8_T12].ToString("0.0");
+          _uiDataSource.abs_L3 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.T12_L3].ToString("0.0");
+          _uiDataSource.abs_S = absoluteAngles[SpinalAlignment.AbsoluteAngleId.L3_S].ToString("0.0");
+        }
         SpinalAlignmentScoreCalculator.CalculateScore(spinalAlignment, _spinalAlignmentScore);
       }
     }
