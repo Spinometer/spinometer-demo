@@ -44,7 +44,7 @@ namespace GetBack.Spinometer.SpinalAlignmentAux
     {
       foreach (var kv in scoreOut.normalizedRelativeAngles) {
         var score = -(Mathf.Abs(kv.Value) - 1.0f);
-        scoreOut.scores[kv.Key] = score;
+        scoreOut.relativeAngleScores[kv.Key] = score;
       }
     }
   }

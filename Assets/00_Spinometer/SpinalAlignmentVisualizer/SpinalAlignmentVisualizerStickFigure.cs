@@ -183,7 +183,7 @@ namespace GetBack.Spinometer.SpinalAlignmentVisualizer
         // FIXME:  differentiate or merge verbose and _showAlignmentValues.
 
         float angle = spinalAlignment.relativeAngles[id];
-        float score = spinalAlignmentScore.scores[id];
+        float score = spinalAlignmentScore.relativeAngleScores[id];
         DrawAngle_(pos0, pos1, pos2,
                    angle,
                    score,
