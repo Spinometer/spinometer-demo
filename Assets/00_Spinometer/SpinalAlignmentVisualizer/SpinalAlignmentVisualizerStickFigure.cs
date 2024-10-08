@@ -90,7 +90,7 @@ namespace GetBack.Spinometer.SpinalAlignmentVisualizer
                               float face_dist, float face_pitch)
     {
       // FIXME:  pitch and dist should not be here
-      if (!spinalAlignment.absoluteAngles.ContainsKey(SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.S))
+      if (!spinalAlignment.absoluteAngles.ContainsKey(SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.L3_S))
         return;
 
       float scale = _avatar_skeleton.localScale.x;
@@ -191,12 +191,12 @@ namespace GetBack.Spinometer.SpinalAlignmentVisualizer
       }
 
       var pos_s = _refS.position;
-      var pos_l3 = DrawSegment(pos_s, _dist_S_L3, SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.S);
-      var pos_t12 = DrawSegment(pos_l3, _dist_L3_T12, SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.L3);
-      var pos_t8 = DrawSegment(pos_t12, _dist_T12_T8, SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.T12);
-      var pos_t3 = DrawSegment(pos_t8, _dist_T8_T3, SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.T8);
-      var pos_c7 = DrawSegment(pos_t3, _dist_T3_C7, SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.T3);
-      var pos_c2 = DrawSegment(pos_c7, _dist_C7_C2, SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.C7);
+      var pos_l3 = DrawSegment(pos_s, _dist_S_L3, SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.L3_S);
+      var pos_t12 = DrawSegment(pos_l3, _dist_L3_T12, SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.T12_L3);
+      var pos_t8 = DrawSegment(pos_t12, _dist_T12_T8, SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.T8_T12);
+      var pos_t3 = DrawSegment(pos_t8, _dist_T8_T3, SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.T3_T8);
+      var pos_c7 = DrawSegment(pos_t3, _dist_T3_C7, SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.C7_T3);
+      var pos_c2 = DrawSegment(pos_c7, _dist_C7_C2, SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.C2_C7);
       // pos0 = NextPos(pos0, _dist_EyePost_EyeAnt, SpinalAlignment.SpinalAlignment.AbsoluteAngleId.EyePost);
       var headJointOffset = new Vector3(-0.086f, 0.102f, 0f); // FIXME: scale 
       var pos_eyepost = pos_c2 + headJointOffset + Quaternion.AngleAxis(-face_pitch, Vector3.forward) * (new Vector3(-0.480f, 0.200f, 0f) - headJointOffset); // FIXME: scale

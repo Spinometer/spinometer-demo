@@ -106,11 +106,11 @@ namespace GetBack.Spinometer.SpinalAlignmentVisualizer
 
     private void UpdateAvatarSkeletonPoseWholeBody(SpinalAlignmentCore.SpinalAlignment spinalAlignment)
     {
-      _bone_pelvis.rotation = Quaternion.Euler(0f, 0f, -spinalAlignment.absoluteAngles[SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.S]);
-      _bone_spine_01.rotation = Quaternion.Euler(0f, 0f, -spinalAlignment.absoluteAngles[SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.L3] - 13f);
-      _bone_spine_02.rotation = Quaternion.Euler(0f, 0f, -spinalAlignment.absoluteAngles[SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.T12]/* - 15f*/);
-      _bone_spine_03.rotation = Quaternion.Euler(0f, 0f, -spinalAlignment.absoluteAngles[SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.T3]/* - 15f*/);
-      _bone_neck_01.rotation = Quaternion.Euler(0f, 0f, -spinalAlignment.absoluteAngles[SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.C7]);
+      _bone_pelvis.rotation = Quaternion.Euler(0f, 0f, -spinalAlignment.absoluteAngles[SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.L3_S]);
+      _bone_spine_01.rotation = Quaternion.Euler(0f, 0f, -spinalAlignment.absoluteAngles[SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.T12_L3] - 13f);
+      _bone_spine_02.rotation = Quaternion.Euler(0f, 0f, -spinalAlignment.absoluteAngles[SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.T8_T12]/* - 15f*/);
+      _bone_spine_03.rotation = Quaternion.Euler(0f, 0f, -spinalAlignment.absoluteAngles[SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.C7_T3]/* - 15f*/);
+      _bone_neck_01.rotation = Quaternion.Euler(0f, 0f, -spinalAlignment.absoluteAngles[SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.C2_C7]);
       _bone_head.rotation = Quaternion.Euler(0f, 0f, -spinalAlignment.absoluteAngles[SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.C2]/* + 15f*/);
       var thigh_l = _bone_pelvis.Find("thigh_l");
       var calf_l = thigh_l.Find("calf_l");
@@ -137,11 +137,11 @@ namespace GetBack.Spinometer.SpinalAlignmentVisualizer
 
     private void UpdateAvatarSkeletonPoseNeckOnly(SpinalAlignmentCore.SpinalAlignment spinalAlignment)
     {
-      _bone_pelvis.rotation = Quaternion.Euler(0f, 0f, -spinalAlignment.absoluteAngles[SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.S] + _angleAdjustment_pelvis);
-      _bone_spine_01.rotation = Quaternion.Euler(0f, 0f, -spinalAlignment.absoluteAngles[SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.L3] + _angleAdjustment_spine_01);
-      _bone_spine_02.rotation = Quaternion.Euler(0f, 0f, -spinalAlignment.absoluteAngles[SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.T12] + _angleAdjustment_spine_02);
-      _bone_spine_03.rotation = Quaternion.Euler(0f, 0f, -spinalAlignment.absoluteAngles[SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.T3] + _angleAdjustment_spine_03);
-      _bone_neck_01.rotation = Quaternion.Euler(0f, 0f, -spinalAlignment.absoluteAngles[SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.C7] + _angleAdjustment_neck_01);
+      _bone_pelvis.rotation = Quaternion.Euler(0f, 0f, -spinalAlignment.absoluteAngles[SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.L3_S] + _angleAdjustment_pelvis);
+      _bone_spine_01.rotation = Quaternion.Euler(0f, 0f, -spinalAlignment.absoluteAngles[SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.T12_L3] + _angleAdjustment_spine_01);
+      _bone_spine_02.rotation = Quaternion.Euler(0f, 0f, -spinalAlignment.absoluteAngles[SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.T8_T12] + _angleAdjustment_spine_02);
+      _bone_spine_03.rotation = Quaternion.Euler(0f, 0f, -spinalAlignment.absoluteAngles[SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.C7_T3] + _angleAdjustment_spine_03);
+      _bone_neck_01.rotation = Quaternion.Euler(0f, 0f, -spinalAlignment.absoluteAngles[SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.C2_C7] + _angleAdjustment_neck_01);
       _bone_head.rotation = Quaternion.Euler(0f, 0f, -spinalAlignment.absoluteAngles[SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.C2] + _angleAdjustment_head);
 
       // sit down regardless if it is neck only or not
@@ -182,7 +182,7 @@ namespace GetBack.Spinometer.SpinalAlignmentVisualizer
     {
       if (!_avatar_skeleton)
         return;
-      if (!spinalAlignment.absoluteAngles.ContainsKey(SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.S))
+      if (!spinalAlignment.absoluteAngles.ContainsKey(SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.L3_S))
         return;
 
       if (_neckOnly)
@@ -193,7 +193,7 @@ namespace GetBack.Spinometer.SpinalAlignmentVisualizer
 
     public void DrawAlignment(SpinalAlignmentCore.SpinalAlignment spinalAlignment, bool verbose)
     {
-      if (!spinalAlignment.absoluteAngles.ContainsKey(SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.S))
+      if (!spinalAlignment.absoluteAngles.ContainsKey(SpinalAlignmentCore.SpinalAlignment.AbsoluteAngleId.L3_S))
         return;
 
       void DrawAngle(Vector3 pos0, Vector3 pos1, Vector3 pos2,

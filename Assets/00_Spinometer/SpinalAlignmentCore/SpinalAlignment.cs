@@ -37,12 +37,12 @@ namespace GetBack.Spinometer.SpinalAlignmentCore
        */
       EyePost,
       C2, // Mechanim の Head (おおよそ)
-      C7, // Neck
-      T3, // UpperChest
-      T8, // Chest
-      T12,
-      L3, // Spine
-      S // Hips
+      C2_C7, // Neck
+      C7_T3, // UpperChest
+      T3_T8, // Chest
+      T8_T12,
+      T12_L3, // Spine
+      L3_S // Hips
     }
 
     /// "the alignment"
