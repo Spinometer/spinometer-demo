@@ -71,6 +71,6 @@ Now you can run the application.
 
 ## License
 
-The proprietary portions of this software (the implementation of the algorithm for estimating spine posture) are subject to separate license terms from the other parts.  See [Assets/00_Spinometer/SpinalAlignmentCore/LICENSE.md](Assets/00_Spinometer/SpinalAlignmentCore/LICENSE.md) for more information.
+The proprietary portions of this software (the implementation of the algorithm for estimating spine posture) are subject to separate license terms from the other parts.  See [https://github.com/Spinometer/spinometer-core/blob/main/LICENSE.md](https://github.com/Spinometer/spinometer-core/blob/main/LICENSE.md) for more information.
 
 Other parts are licensed under [The ISC License](https://en.wikipedia.org/wiki/ISC_license).
