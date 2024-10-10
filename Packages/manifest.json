@@ -16,6 +16,7 @@
     "com.unity.test-framework": "1.4.5",
     "com.unity.timeline": "1.8.7",
     "com.unity.visualscripting": "1.9.4",
+    "jp.get-back.spinometer.spinometer-aux": "https://github.com/Spinometer/spinometer-aux.git",
     "jp.get-back.spinometer.spinometer-core": "https://github.com/Spinometer/spinometer-core.git",
     "org.nuget.observablecollections.r3": "3.0.4",
     "com.unity.modules.accessibility": "1.0.0",
