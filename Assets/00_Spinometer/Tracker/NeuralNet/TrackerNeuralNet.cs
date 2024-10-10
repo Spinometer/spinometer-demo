@@ -1,8 +1,8 @@
 using System;
 using Drawing;
+using GetBack.Spinometer.SpinalAlignmentVisualizer;
 using GetBack.Spinometer.SpinometerAux;
 using GetBack.Spinometer.SpinometerCore;
-using GetBack.Spinometer.SpinalAlignmentVisualizer;
 using GetBack.Spinometer.TrackerNeuralNetImpl;
 using GetBack.Spinometer.UI;
 using Unity.Mathematics;
@@ -126,7 +126,9 @@ namespace GetBack.Spinometer
     {
       _visualizerSkeleton.ShowSkeleton = _showSkeleton;
       _visualizerSkeleton.ShowAlignmentValues = _showSkeleton && !_showStickFigure;
-      _visualizerStickFigure.ShowAlignmentValues = _showStickFigure;
+      _visualizerStickFigure.AlignmentValueDisplayMode = _showStickFigure ?
+        SpinalAlignmentVisualizerStickFigure.AlignmentValueDisplayModeEnum.ShowRelativeAngles :
+        SpinalAlignmentVisualizerStickFigure.AlignmentValueDisplayModeEnum.Hidden;
     }
 
 
