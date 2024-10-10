@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using GetBack.Spinometer.SpinalAlignmentCore;
+using GetBack.Spinometer.SpinometerCore;
 using UnityEngine;
 using UnityEngine.UIElements;
 

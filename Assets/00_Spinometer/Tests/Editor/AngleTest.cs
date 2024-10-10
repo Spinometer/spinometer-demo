@@ -1,4 +1,4 @@
-using GetBack.Spinometer.SpinalAlignmentCore;
+using GetBack.Spinometer.SpinometerCore;
 using NUnit.Framework;
 
 public class AngleTest

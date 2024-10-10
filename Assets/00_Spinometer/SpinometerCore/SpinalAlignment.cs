@@ -8,7 +8,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace GetBack.Spinometer.SpinalAlignmentCore
+namespace GetBack.Spinometer.SpinometerCore
 {
   public class SpinalAlignment
   {

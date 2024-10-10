@@ -8,7 +8,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace GetBack.Spinometer.SpinalAlignmentCore
+namespace GetBack.Spinometer.SpinometerCore
 {
   public class SpinalAlignmentEstimator
   {
