@@ -12,6 +12,21 @@ namespace GetBack.Spinometer.SpinalAlignmentCore
 {
   public class SpinalAlignmentEstimator
   {
+    [Serializable]
+    public class Options
+    {
+      public bool useNew = true;
+
+      public int user_sex = -1; // m:1, f:0
+      public int user_birthYear = -1;
+      public float user_height_cm = -1f; // not in [m]
+      public float user_weight_kg = -1f;
+
+      public float s_distance_offset = 80.0f;
+      public float s_distance_multiplier_forward = 45.0f;
+      public float s_distance_multiplier_backward = 120.0f;
+    }
+
     public enum ParamName
     {
       HA = 1,
@@ -97,22 +112,22 @@ namespace GetBack.Spinometer.SpinalAlignmentCore
 
     };
 
-    private readonly Settings _settings;
+    private readonly Options _options;
 
     public readonly int _thisYear = DateTime.Now.Year;
 
-    public SpinalAlignmentEstimator(Settings settings)
+    public SpinalAlignmentEstimator(Options options)
     {
-      _settings = settings;
+      _options = options;
     }
 
     public ParamSet AvailableParamSet()
     {
       var actualSet = (ParamSet)((int)ParamName.HA + ParamName.VD +
-                                 (_settings.opt_user_sex < 0 ? 0 : (int)ParamName.S) +
-                                 (_settings.opt_user_birthYear < 0 ? 0 : (int)ParamName.A) +
-                                 (_settings.opt_user_height_cm < 0f ? 0 : (int)ParamName.H) +
-                                 (_settings.opt_user_weight_kg < 0f ? 0 : (int)ParamName.W));
+                                 (_options.user_sex < 0 ? 0 : (int)ParamName.S) +
+                                 (_options.user_birthYear < 0 ? 0 : (int)ParamName.A) +
+                                 (_options.user_height_cm < 0f ? 0 : (int)ParamName.H) +
+                                 (_options.user_weight_kg < 0f ? 0 : (int)ParamName.W));
 
       foreach (var setToUse in preferredParamSet)
         if ((actualSet & setToUse) == setToUse)
@@ -153,15 +168,15 @@ namespace GetBack.Spinometer.SpinalAlignmentCore
           /* BUG: ?? wrong direction???  this should not be correct.  there is something wrong in the process... */
           // var a1 = pitch; // hide a1 with negated value as workaround to address unnatural neck rotation issue.
           /* BUG: ?? wrong direction??? */
-          var age1 = _thisYear - _settings.opt_user_birthYear;
+          var age1 = _thisYear - _options.user_birthYear;
           var age2 = age1 * age1;
-          var height1 = _settings.opt_user_height_cm;
+          var height1 = _options.user_height_cm;
           var height2 = height1 * height1;
-          var weight1 = _settings.opt_user_weight_kg;
+          var weight1 = _options.user_weight_kg;
           var weight2 = weight1 * weight1;
           var y = coeffs[0] * a1 + coeffs[1] * a2 +
                   coeffs[2] * d1 + coeffs[3] * d2 +
-                  coeffs[4] * _settings.opt_user_sex +
+                  coeffs[4] * _options.user_sex +
                   coeffs[5] * age1 + coeffs[6] * age2 +
                   coeffs[7] * height1 + coeffs[8] * height2 +
                   coeffs[9] * weight1 + coeffs[10] * weight2 +
@@ -196,7 +211,7 @@ namespace GetBack.Spinometer.SpinalAlignmentCore
       var relativeAngles = alignmentOut.relativeAngles;
       var absoluteAngles = alignmentOut.absoluteAngles;
 
-      if (false && _settings.opt_useNew) {
+      if (false && _options.useNew) {
         relativeAngles[SpinalAlignment.RelativeAngleId.C7_T3_T8] = 180f;
         relativeAngles[SpinalAlignment.RelativeAngleId.C2_C7_vert] = 180f;
         relativeAngles[SpinalAlignment.RelativeAngleId.T1_slope] = 0f;
@@ -209,7 +224,7 @@ namespace GetBack.Spinometer.SpinalAlignmentCore
       absoluteAngles[SpinalAlignment.AbsoluteAngleId.EyePost] = pitch;
       absoluteAngles[SpinalAlignment.AbsoluteAngleId.C2] = absoluteAngles[SpinalAlignment.AbsoluteAngleId.EyePost] +
                                                            (180f - relativeAngles[SpinalAlignment.RelativeAngleId.EyePost_C2_C7]);
-      if (!_settings.opt_useNew) {
+      if (!_options.useNew) {
         absoluteAngles[SpinalAlignment.AbsoluteAngleId.C2_C7] = 90f - relativeAngles[SpinalAlignment.RelativeAngleId.C2_C7_vert];
         absoluteAngles[SpinalAlignment.AbsoluteAngleId.C7_T3] = 90f - (relativeAngles[SpinalAlignment.RelativeAngleId.T1_slope] - 7.158f) / 0.7338f;
       } else {
@@ -226,8 +241,8 @@ namespace GetBack.Spinometer.SpinalAlignmentCore
         absoluteAngles[SpinalAlignment.AbsoluteAngleId.T12_L3] + (-180f + relativeAngles[SpinalAlignment.RelativeAngleId.T12_L3_S]);
 
       // FIXME: treating S specially for more natural motion.
-      var mult = distance < 0.5f ? _settings.opt_s_distance_multiplier_forward : _settings.opt_s_distance_multiplier_backward;
-      absoluteAngles[SpinalAlignment.AbsoluteAngleId.L3_S] = _settings.opt_s_distance_offset + mult * (distance - 0.5f);
+      var mult = distance < 0.5f ? _options.s_distance_multiplier_forward : _options.s_distance_multiplier_backward;
+      absoluteAngles[SpinalAlignment.AbsoluteAngleId.L3_S] = _options.s_distance_offset + mult * (distance - 0.5f);
 
 #if false
     foreach (var id_ in Enum.GetValues(typeof(AbsoluteAngleId))) {

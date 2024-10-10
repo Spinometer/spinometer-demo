@@ -132,7 +132,7 @@ namespace GetBack.Spinometer
 
     void Awake()
     {
-      _spinalAlignmentEstimator = new SpinalAlignmentEstimator(_settings);
+      _spinalAlignmentEstimator = new SpinalAlignmentEstimator(_settings.opt_spinalAlignmentEstimatorOptions);
       _visualizerSkeleton = GetComponent<SpinalAlignmentVisualizerSkeleton>();
       _visualizerStickFigure = GetComponent<SpinalAlignmentVisualizerStickFigure>();
     }
@@ -361,7 +361,7 @@ namespace GetBack.Spinometer
           var relativeAngles = _spinalAlignment.relativeAngles;
           var absoluteAngles = _spinalAlignment.absoluteAngles;
 
-          if (!_settings.opt_useNew)
+          if (!_settings.opt_spinalAlignmentEstimatorOptions.useNew)
             _uiDataSource.rel_C2_C7_vert = relativeAngles[SpinalAlignment.RelativeAngleId.C2_C7_vert].ToString("0.0");
           else {
             _uiDataSource.rel_C2_C7_vert = relativeAngles[SpinalAlignment.RelativeAngleId.C2_C7_vert_new].ToString("0.0");
