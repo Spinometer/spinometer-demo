@@ -1,6 +1,6 @@
 using System;
 using Drawing;
-using GetBack.Spinometer.SpinalAlignmentAux;
+using GetBack.Spinometer.SpinometerAux;
 using GetBack.Spinometer.SpinometerCore;
 using GetBack.Spinometer.SpinalAlignmentVisualizer;
 using GetBack.Spinometer.TrackerNeuralNetImpl;

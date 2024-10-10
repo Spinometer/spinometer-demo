@@ -1,7 +1,7 @@
 ﻿using GetBack.Spinometer.SpinometerCore;
 using UnityEngine;
 
-namespace GetBack.Spinometer.SpinalAlignmentAux
+namespace GetBack.Spinometer.SpinometerAux
 {
   public class SpinalAlignmentScoreCalculator
   {

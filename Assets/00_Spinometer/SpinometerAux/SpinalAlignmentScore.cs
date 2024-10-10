@@ -2,7 +2,7 @@
 using GetBack.Spinometer.SpinometerCore;
 using Newtonsoft.Json;
 
-namespace GetBack.Spinometer.SpinalAlignmentAux
+namespace GetBack.Spinometer.SpinometerAux
 {
   public class SpinalAlignmentScore
   {
