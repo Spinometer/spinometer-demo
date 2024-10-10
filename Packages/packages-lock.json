@@ -270,6 +270,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "jp.get-back.spinometer.spinometer-core": {
+      "version": "https://github.com/Spinometer/spinometer-core.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "f98f5d5d856957e43fd994ff7e3cdee947f4a065"
+    },
     "org.nuget.microsoft.bcl.asyncinterfaces": {
       "version": "6.0.0",
       "depth": 3,

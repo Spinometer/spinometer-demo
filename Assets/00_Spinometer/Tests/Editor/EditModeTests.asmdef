@@ -4,7 +4,8 @@
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "Spinometer"
+        "Spinometer",
+        "GetBack.Spinometer.SpinometerCore"
     ],
     "includePlatforms": [
         "Editor"
