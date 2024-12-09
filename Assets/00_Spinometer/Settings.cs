@@ -71,6 +71,8 @@ namespace GetBack.Spinometer
     {
       Debug.Log("Settings#LoadSettings(): loading settings...");
       opt_spinalAlignmentEstimatorOptions = JsonUtility.FromJson<SpinalAlignmentEstimator.Options>(PlayerPrefs.GetString("opt_spinalAlignmentEstimatorOptions", "{}"));
+      opt_spinalAlignmentEstimatorOptions.user_height_cm = -1f;
+      opt_spinalAlignmentEstimatorOptions.user_weight_kg = -1f;
       opt_webCamDeviceName = PlayerPrefs.GetString("opt_webCamDeviceName", null);
       opt_displaySurfaceAngle = PlayerPrefs.GetFloat("opt_displaySurfaceAngle", 65f);
       opt_additionalPitchOffset = PlayerPrefs.GetFloat("opt_additionalPitchOffset", 15f);
