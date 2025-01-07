@@ -31,5 +31,29 @@
 }
 
 #settings .unity-text-element {
-    font-size: 10px;
+    font-size: 24px;
+}
+
+.button-framed {
+    flex-direction: column;
+    flex-basis: 140px;
+    right: auto;
+    bottom: 0;
+    justify-content: flex-start;
+    margin-top: auto;
+    margin-bottom: 12px;
+    margin-right: auto;
+    margin-left: auto;
+    background-image: url("project://database/Assets/00_Spinometer/UI/images/button-frame.png?fileID=21300000&guid=125c06f7c66dd5a479121d9b602589c8&type=3#button-frame");
+    width: auto;
+    height: 140px;
+    background-color: rgba(188, 188, 188, 0);
+    font-size: 46px;
+    color: rgb(252, 253, 253);
+    min-width: 360px;
+    max-width: 720px;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
 }
