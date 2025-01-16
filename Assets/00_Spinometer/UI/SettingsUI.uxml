@@ -1,5 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="LocaleChanger" src="project://database/Assets/00_Spinometer/UI/LocaleChanger.uxml?fileID=9197481963319205126&amp;guid=675491ccc64a5de4386f983af1864a39&amp;type=3#LocaleChanger" />
+    <Style src="project://database/Assets/00_Spinometer/UI/00_SpinometerCommon.uss?fileID=7433441132597879392&amp;guid=b97393fae9002d34c8231b6fb663f156&amp;type=3#00_SpinometerCommon" />
     <Style src="project://database/Assets/00_Spinometer/UI/SettingsUI.uss?fileID=7433441132597879392&amp;guid=ef243047774edd543b1753aaba09eaee&amp;type=3#SettingsUI" />
     <ui:VisualElement style="flex-grow: 1; flex-direction: row; background-color: rgba(0, 0, 0, 0.88); -unity-font-definition: url(&quot;project://database/Assets/00_Spinometer/Fonts/NotoSansJP-Regular%20SDF.asset?fileID=11400000&amp;guid=553ed431a1bc1644397dd555742559a5&amp;type=2#NotoSansJP-Regular SDF&quot;);">
         <ui:VisualElement style="flex-grow: 1; width: 400px; align-items: flex-end;">
@@ -7,44 +8,44 @@
             <ui:VisualElement name="settings" style="flex-grow: 1;">
                 <ui:Slider label="display surface angle" high-value="120" low-value="0" show-input-field="true" value="1" name="field-display-surface-angle">
                     <Bindings>
-                        <ui:DataBinding property="value" binding-mode="TwoWay" data-source="project://database/Assets/00_SpineMeter/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_displaySurfaceAngle" />
+                        <ui:DataBinding property="value" binding-mode="TwoWay" data-source="project://database/Assets/00_Spinometer/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_displaySurfaceAngle" />
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(576385572159488)" />
                     </Bindings>
                 </ui:Slider>
                 <ui:Slider label="additional pitch offset" high-value="45" low-value="-45" show-input-field="true" value="30" name="field-additional-pitch-offset">
                     <Bindings>
-                        <ui:DataBinding property="value" binding-mode="TwoWay" data-source="project://database/Assets/00_SpineMeter/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_additionalPitchOffset" />
+                        <ui:DataBinding property="value" binding-mode="TwoWay" data-source="project://database/Assets/00_Spinometer/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_additionalPitchOffset" />
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(576743727972352)" />
                     </Bindings>
                 </ui:Slider>
                 <ui:Slider label="display diagonal fov" high-value="180" low-value="30" show-input-field="true" value="30" name="field-display-diagonal-fov">
                     <Bindings>
-                        <ui:DataBinding property="value" binding-mode="TwoWay" data-source="project://database/Assets/00_SpineMeter/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_displayDiagonalFov" />
+                        <ui:DataBinding property="value" binding-mode="TwoWay" data-source="project://database/Assets/00_Spinometer/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_displayDiagonalFov" />
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(577110205284352)" />
                     </Bindings>
                 </ui:Slider>
                 <ui:DropdownField label="webCamDeviceName" index="-1" name="field-webcam-device-name">
                     <Bindings>
-                        <ui:DataBinding property="index" binding-mode="TwoWay" data-source="project://database/Assets/00_SpineMeter/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_webCamDeviceNameIndex" />
-                        <ui:DataBinding property="choices" binding-mode="TwoWay" data-source="project://database/Assets/00_SpineMeter/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_webCamDeviceNameList" />
+                        <ui:DataBinding property="index" binding-mode="TwoWay" data-source="project://database/Assets/00_Spinometer/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_webCamDeviceNameIndex" />
+                        <ui:DataBinding property="choices" binding-mode="TwoWay" data-source="project://database/Assets/00_Spinometer/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_webCamDeviceNameList" />
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(578055211335680)" />
                     </Bindings>
                 </ui:DropdownField>
                 <ui:Slider label="display diagonal fov" high-value="30" low-value="1" show-input-field="true" value="30" name="field-pose-estimation-frequency" page-size="1">
                     <Bindings>
-                        <ui:DataBinding property="value" binding-mode="TwoWay" data-source="project://database/Assets/00_SpineMeter/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_poseEstimationFrequency" />
+                        <ui:DataBinding property="value" binding-mode="TwoWay" data-source="project://database/Assets/00_Spinometer/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_poseEstimationFrequency" />
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(583575573905408)" />
                     </Bindings>
                 </ui:Slider>
                 <ui:Slider label="display diagonal fov" high-value="30" low-value="1" show-input-field="true" value="30" name="field-target-framerate" page-size="1">
                     <Bindings>
-                        <ui:DataBinding property="value" binding-mode="TwoWay" data-source="project://database/Assets/00_SpineMeter/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_targetFrameRate" />
+                        <ui:DataBinding property="value" binding-mode="TwoWay" data-source="project://database/Assets/00_Spinometer/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_targetFrameRate" />
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(74087413160886272)" />
                     </Bindings>
                 </ui:Slider>
                 <ui:Slider label="display diagonal fov" high-value="30" low-value="1" show-input-field="true" value="30" name="field-extra-update-rate" page-size="1">
                     <Bindings>
-                        <ui:DataBinding property="value" binding-mode="TwoWay" data-source="project://database/Assets/00_SpineMeter/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_extra_updateFrequency" />
+                        <ui:DataBinding property="value" binding-mode="TwoWay" data-source="project://database/Assets/00_Spinometer/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_extra_updateFrequency" />
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(74090138531545088)" />
                     </Bindings>
                 </ui:Slider>

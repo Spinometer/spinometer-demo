@@ -1,0 +1,68 @@
+.unity-label.unity-text-element {
+    color: rgb(47, 39, 37);
+}
+
+.button-framed {
+    margin-top: auto;
+    margin-bottom: 12px;
+    margin-right: auto;
+    margin-left: auto;
+    background-image: url("project://database/Assets/00_Spinometer/UI/images/button-frame.png?fileID=1952995558&guid=125c06f7c66dd5a479121d9b602589c8&type=3#button-frame");
+    background-color: rgba(188, 188, 188, 0);
+    font-size: 30px;
+    color: rgb(252, 253, 253);
+    min-width: 230px;
+    max-width: 460px;
+    flex-basis: 90px;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    padding-bottom: 16px;
+    -unity-text-outline-width: 0;
+    min-height: 92px;
+}
+
+.button-framed:hover {
+    margin-top: auto;
+    margin-bottom: 12px;
+    margin-right: auto;
+    margin-left: auto;
+    background-image: url("project://database/Assets/00_Spinometer/UI/images/button-frame.png?fileID=1952995558&guid=125c06f7c66dd5a479121d9b602589c8&type=3#button-frame");
+    background-color: rgba(188, 188, 188, 0);
+    font-size: 30px;
+    color: rgb(252, 253, 253);
+    min-width: 230px;
+    max-width: 460px;
+    flex-basis: 90px;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    padding-bottom: 16px;
+    -unity-background-image-tint-color: rgb(204, 204, 204);
+    -unity-text-outline-width: 0;
+    min-height: 92px;
+}
+
+.button-framed:active {
+    margin-top: auto;
+    margin-bottom: 12px;
+    margin-right: auto;
+    margin-left: auto;
+    background-image: url("project://database/Assets/00_Spinometer/UI/images/button-frame.png?fileID=634291193&guid=125c06f7c66dd5a479121d9b602589c8&type=3#button-frame-active");
+    background-color: rgba(188, 188, 188, 0);
+    font-size: 30px;
+    color: rgb(252, 253, 253);
+    min-width: 230px;
+    max-width: 460px;
+    flex-basis: 90px;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    padding-bottom: 16px;
+    -unity-background-image-tint-color: rgb(170, 170, 170);
+    -unity-text-outline-width: 0;
+    min-height: 92px;
+}

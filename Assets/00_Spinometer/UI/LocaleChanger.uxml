@@ -1,7 +1,8 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/00_SpineMeter/UI/LocaleChanger.uss?fileID=7433441132597879392&amp;guid=0d01dadc4cb8d78449857cb458a15110&amp;type=3#LocaleChanger" />
+    <Style src="project://database/Assets/00_Spinometer/UI/00_SpinometerCommon.uss?fileID=7433441132597879392&amp;guid=b97393fae9002d34c8231b6fb663f156&amp;type=3#00_SpinometerCommon" />
+    <Style src="project://database/Assets/00_Spinometer/UI/LocaleChanger.uss?fileID=7433441132597879392&amp;guid=0d01dadc4cb8d78449857cb458a15110&amp;type=3#LocaleChanger" />
     <engine:VisualElement class="locale-changer locale-changer-row" style="flex-grow: 1; flex-direction: row; width: 160px; height: 24px;">
         <engine:Button text="English" name="change-locale-en" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=817c7f199c43c1743a0a831617403eb7&amp;type=3#NotInter-Regular&quot;);" />
-        <engine:Button text="日本語" name="change-locale-ja" style="-unity-font-definition: url(&quot;project://database/Assets/00_SpineMeter/Fonts/NotoSansJP-Regular%20SDF.asset?fileID=11400000&amp;guid=553ed431a1bc1644397dd555742559a5&amp;type=2#NotoSansJP-Regular SDF&quot;);" />
+        <engine:Button text="日本語" name="change-locale-ja" style="-unity-font-definition: url(&quot;project://database/Assets/00_Spinometer/Fonts/NotoSansJP-Regular%20SDF.asset?fileID=11400000&amp;guid=553ed431a1bc1644397dd555742559a5&amp;type=2#NotoSansJP-Regular SDF&quot;);" />
     </engine:VisualElement>
 </engine:UXML>

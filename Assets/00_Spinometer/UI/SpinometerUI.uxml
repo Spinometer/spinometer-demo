@@ -1,5 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="LocaleChanger" src="project://database/Assets/00_Spinometer/UI/LocaleChanger.uxml?fileID=9197481963319205126&amp;guid=675491ccc64a5de4386f983af1864a39&amp;type=3#LocaleChanger" />
+    <Style src="project://database/Assets/00_Spinometer/UI/00_SpinometerCommon.uss?fileID=7433441132597879392&amp;guid=b97393fae9002d34c8231b6fb663f156&amp;type=3#00_SpinometerCommon" />
     <Style src="project://database/Assets/00_Spinometer/UI/SpinometerUI.uss?fileID=7433441132597879392&amp;guid=496a4715e9f92874fa5834cc9fa7717c&amp;type=3#SpinometerUI" />
     <ui:Instance template="LocaleChanger" name="LocaleChanger" enabled="true" style="align-self: stretch; align-items: flex-end;" />
     <ui:VisualElement style="flex-grow: 1; flex-direction: row; -unity-font-definition: url(&quot;project://database/Assets/00_Spinometer/Fonts/NotoSansJP-Regular%20SDF.asset?fileID=11400000&amp;guid=553ed431a1bc1644397dd555742559a5&amp;type=2#NotoSansJP-Regular SDF&quot;);">
@@ -52,7 +53,7 @@
         </Bindings>
     </ui:VisualElement>
     <ui:VisualElement name="alignment-values" picking-mode="Ignore" style="flex-grow: 1; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%;" />
-    <ui:VisualElement name="warning-messages" picking-mode="Ignore" style="flex-grow: 1; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; -unity-text-align: upper-left; align-items: center; align-self: center; align-content: center; justify-content: center;">
+    <ui:VisualElement name="warning-messages" picking-mode="Ignore" style="flex-grow: 1; position: absolute; top: -3px; left: -3px; bottom: 4px; right: 4px; width: 100%; height: 100%; -unity-text-align: upper-left; align-items: center; align-self: center; align-content: center; justify-content: center;">
         <ui:Label text="Tracking Unstable" name="warning-tracking-unstable" style="position: absolute; top: auto; left: auto; color: rgb(0, 0, 0); font-size: 96px; background-color: rgba(255, 229, 46, 0.38); padding-right: 60px; padding-left: 60px;" />
         <ui:Label text="Tracking Lost" name="warning-tracking-lost" style="position: absolute; top: auto; left: auto; color: rgb(0, 0, 0); font-size: 96px; background-color: rgba(255, 58, 46, 0.38); padding-right: 80px; padding-left: 80px;" />
         <ui:Label text="Camera Offline" name="warning-camera-offline" style="position: absolute; top: auto; left: auto; color: rgb(143, 143, 143); font-size: 96px;" />

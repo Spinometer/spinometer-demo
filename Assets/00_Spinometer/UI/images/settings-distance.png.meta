@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 125c06f7c66dd5a479121d9b602589c8
+guid: 57543d95b23f8cb499042c4b9e99dd20
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,8 +48,8 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 150
-  spriteBorder: {x: 57, y: 0, z: 57, w: 0}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -110,45 +110,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: button-frame
+      name: settings-distance_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 4
-        width: 352
-        height: 145
+        x: 180
+        y: 180
+        width: 820
+        height: 820
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 74, y: 2, z: 74, w: 2}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 486f554c784da274d81e9b5643a4393c
-      internalID: 1952995558
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: button-frame-active
-      rect:
-        serializedVersion: 2
-        x: 359
-        y: 5
-        width: 348
-        height: 145
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 74, y: 2, z: 74, w: 2}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4485335ef8ed73b48badea332a8cea97
-      internalID: 634291193
+      spriteID: 11d20b0220df781409788c00b33776a7
+      internalID: -1865136292
       vertices: []
       indices: 
       edges: []
@@ -157,8 +135,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 00f0cea59e486604cb6516f07631d465
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -167,8 +145,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      button-frame: 1952995558
-      button-frame-active: 634291193
+      settings-distance_0: -1865136292
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

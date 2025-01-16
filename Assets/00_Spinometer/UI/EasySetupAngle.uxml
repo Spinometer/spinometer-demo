@@ -1,17 +1,20 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="LocaleChanger" src="project://database/Assets/00_Spinometer/UI/LocaleChanger.uxml?fileID=9197481963319205126&amp;guid=675491ccc64a5de4386f983af1864a39&amp;type=3#LocaleChanger" />
+    <Style src="project://database/Assets/00_Spinometer/UI/00_SpinometerCommon.uss?fileID=7433441132597879392&amp;guid=b97393fae9002d34c8231b6fb663f156&amp;type=3#00_SpinometerCommon" />
     <Style src="project://database/Assets/00_Spinometer/UI/SettingsUI.uss?fileID=7433441132597879392&amp;guid=ef243047774edd543b1753aaba09eaee&amp;type=3#SettingsUI" />
-    <ui:VisualElement style="flex-grow: 1; flex-direction: row; background-color: rgba(0, 0, 0, 0.88); -unity-font-definition: url(&quot;project://database/Assets/00_Spinometer/Fonts/NotoSansJP-Regular%20SDF.asset?fileID=11400000&amp;guid=553ed431a1bc1644397dd555742559a5&amp;type=2#NotoSansJP-Regular SDF&quot;);">
-        <ui:VisualElement style="flex-grow: 1; width: 400px; align-items: center;">
-            <ui:Instance template="LocaleChanger" name="LocaleChanger" />
-            <ui:VisualElement name="easy-setup-instruction" style="flex-grow: 1; left: auto; right: auto; bottom: auto; top: auto; width: 100%;">
+    <ui:VisualElement style="flex-grow: 1; flex-direction: row; background-color: rgba(211, 237, 249, 0.24); -unity-font-definition: url(&quot;project://database/Assets/00_Spinometer/Fonts/NotoSansJP-Regular%20SDF.asset?fileID=11400000&amp;guid=553ed431a1bc1644397dd555742559a5&amp;type=2#NotoSansJP-Regular SDF&quot;);">
+        <ui:Instance template="LocaleChanger" name="LocaleChanger" style="position: absolute; top: 18px; left: auto; right: 18px;" />
+        <ui:VisualElement style="flex-grow: 1; width: 400px; align-items: center; height: 100%;">
+            <ui:VisualElement style="flex-grow: 1; min-height: 80px; max-height: 160px;" />
+            <ui:VisualElement name="easy-setup-instruction-label" style="left: auto; right: auto; bottom: auto; top: auto; width: 100%; position: relative;">
                 <ui:Label text="顔を水平正面に向けた状態で、&lt;b&gt;次へ&lt;/b&gt;をクリックしてください。�" style="align-items: auto; justify-content: flex-start; align-self: auto; align-content: auto; flex-grow: 1; -unity-text-align: middle-center; font-size: 32px; white-space: normal;">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="text" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(26292494862401536)" />
                     </Bindings>
                 </ui:Label>
             </ui:VisualElement>
-            <ui:VisualElement name="layout-buttons" picking-mode="Ignore" style="flex-grow: 1; flex-direction: row; position: absolute; height: 100%; top: auto; left: auto; bottom: 0; right: auto; padding-bottom: 44px;">
+            <ui:VisualElement name="easy-setup-instruction-image" style="background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/settings-angle.png?fileID=1723404919&amp;guid=cdccecd7a49862f488e0d46656d397b6&amp;type=3#settings-angle_0&quot;); position: relative; min-width: 400px; min-height: 400px; max-height: 1200px; max-width: 1200px; height: 100%; flex-grow: 1; -unity-background-scale-mode: scale-to-fit; width: 100%;" />
+            <ui:VisualElement name="layout-buttons" picking-mode="Ignore" style="flex-grow: 1; flex-direction: row; position: relative; top: auto; left: auto; bottom: 0; right: auto; padding-bottom: 66px;">
                 <ui:Button text="Save" name="btn-easy-setup-back" class="button-framed" style="bottom: 0; top: 0; left: 0; right: 0; margin-right: 44px;">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="text" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(575189557985280)" />

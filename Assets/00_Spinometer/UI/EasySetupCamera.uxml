@@ -1,18 +1,19 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="LocaleChanger" src="project://database/Assets/00_Spinometer/UI/LocaleChanger.uxml?fileID=9197481963319205126&amp;guid=675491ccc64a5de4386f983af1864a39&amp;type=3#LocaleChanger" />
+    <Style src="project://database/Assets/00_Spinometer/UI/00_SpinometerCommon.uss?fileID=7433441132597879392&amp;guid=b97393fae9002d34c8231b6fb663f156&amp;type=3#00_SpinometerCommon" />
     <Style src="project://database/Assets/00_Spinometer/UI/SettingsUI.uss?fileID=7433441132597879392&amp;guid=ef243047774edd543b1753aaba09eaee&amp;type=3#SettingsUI" />
-    <ui:VisualElement style="flex-grow: 1; flex-direction: row; background-color: rgba(0, 0, 0, 0.88); -unity-font-definition: url(&quot;project://database/Assets/00_Spinometer/Fonts/NotoSansJP-Regular%20SDF.asset?fileID=11400000&amp;guid=553ed431a1bc1644397dd555742559a5&amp;type=2#NotoSansJP-Regular SDF&quot;);">
+    <ui:VisualElement style="flex-grow: 1; flex-direction: row; background-color: rgba(211, 237, 249, 0.24); -unity-font-definition: url(&quot;project://database/Assets/00_Spinometer/Fonts/NotoSansJP-Regular%20SDF.asset?fileID=11400000&amp;guid=553ed431a1bc1644397dd555742559a5&amp;type=2#NotoSansJP-Regular SDF&quot;);">
         <ui:VisualElement style="flex-grow: 1; width: 400px; align-items: center;">
             <ui:Instance template="LocaleChanger" name="LocaleChanger" />
             <ui:VisualElement name="easy-setup-instruction" style="flex-grow: 1; left: auto; right: auto; bottom: auto; top: auto; width: 100%;">
-                <ui:Label text="Label" style="align-items: auto; justify-content: flex-start; align-self: auto; align-content: auto; flex-grow: 1; -unity-text-align: middle-center; font-size: 48px; white-space: normal;">
+                <ui:Label text="Label" style="align-items: auto; justify-content: flex-start; align-self: auto; align-content: auto; flex-grow: 1; -unity-text-align: middle-center; font-size: 30px; white-space: normal;">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="text" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(26299129311805440)" />
                     </Bindings>
                 </ui:Label>
             </ui:VisualElement>
             <ui:VisualElement name="settings" style="flex-grow: 0; margin-bottom: 0;">
-                <ui:DropdownField label="webCamDeviceName" index="-1" name="field-webcam-device-name">
+                <ui:DropdownField label="webCamDeviceName" index="-1" name="field-webcam-device-name" style="font-size: 30px;">
                     <Bindings>
                         <ui:DataBinding property="index" binding-mode="TwoWay" data-source="project://database/Assets/00_Spinometer/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_webCamDeviceNameIndex" />
                         <ui:DataBinding property="choices" binding-mode="TwoWay" data-source="project://database/Assets/00_Spinometer/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_webCamDeviceNameList" />

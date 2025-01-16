@@ -1,4 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/00_Spinometer/UI/00_SpinometerCommon.uss?fileID=7433441132597879392&amp;guid=b97393fae9002d34c8231b6fb663f156&amp;type=3#00_SpinometerCommon" />
     <Style src="project://database/Assets/00_Spinometer/UI/DebugUI.uss?fileID=7433441132597879392&amp;guid=2bb42f3bbcd86804ab424b5cd3d88baa&amp;type=3#DebugUI" />
     <ui:VisualElement name="VisualElement" picking-mode="Ignore" style="flex-grow: 1; flex-direction: row;">
         <ui:VisualElement style="flex-grow: 1; flex-direction: column; width: 400px; margin-top: 260px; margin-bottom: 4px;">
@@ -9,7 +10,7 @@
                             <ui:Label text="C2_C7_vert" class="field-label" />
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_SpineMeter/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="rel_C2_C7_vert" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="rel_C2_C7_vert" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
@@ -17,7 +18,7 @@
                             <ui:Label text="C7_T3_vert" class="field-label" />
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" data-source-path="rel_C7_T3_vert" data-source="project://database/Assets/00_SpineMeter/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" binding-mode="ToTarget" />
+                                    <ui:DataBinding property="text" data-source-path="rel_C7_T3_vert" data-source="project://database/Assets/00_Spinometer/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" binding-mode="ToTarget" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
@@ -25,7 +26,7 @@
                             <ui:Label text="T1_slope" class="field-label" />
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_SpineMeter/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="rel_T1_slope" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="rel_T1_slope" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
@@ -33,7 +34,7 @@
                             <ui:Label text="C7_T3_T8" class="field-label" />
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_SpineMeter/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="rel_C7_T3_T8" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="rel_C7_T3_T8" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
@@ -41,7 +42,7 @@
                             <ui:Label text="T3_T8_T12" class="field-label" />
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_SpineMeter/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="rel_T3_T8_T12" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="rel_T3_T8_T12" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
@@ -49,7 +50,7 @@
                             <ui:Label text="T8_T12_L3" class="field-label" />
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_SpineMeter/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="rel_T8_T12_L3" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="rel_T8_T12_L3" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
@@ -57,7 +58,7 @@
                             <ui:Label text="T12_L3_S" class="field-label" />
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_SpineMeter/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="rel_T12_L3_S" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="rel_T12_L3_S" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
@@ -67,7 +68,7 @@
                             <ui:Label text="EyePost" class="field-label" />
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_SpineMeter/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="abs_EyePost" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="abs_EyePost" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
@@ -75,7 +76,7 @@
                             <ui:Label text="C2" class="field-label" />
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_SpineMeter/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="abs_C2" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="abs_C2" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
@@ -83,7 +84,7 @@
                             <ui:Label text="C7" class="field-label" />
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_SpineMeter/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="abs_C7" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="abs_C7" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
@@ -91,7 +92,7 @@
                             <ui:Label text="T3" class="field-label" />
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_SpineMeter/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="abs_T3" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="abs_T3" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
@@ -99,7 +100,7 @@
                             <ui:Label text="T8" class="field-label" />
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_SpineMeter/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="abs_T8" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="abs_T8" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
@@ -107,7 +108,7 @@
                             <ui:Label text="T12" class="field-label" />
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_SpineMeter/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="abs_T12" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="abs_T12" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
@@ -115,7 +116,7 @@
                             <ui:Label text="L3" class="field-label" />
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_SpineMeter/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="abs_L3" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="abs_L3" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
@@ -123,7 +124,7 @@
                             <ui:Label text="S" class="field-label" />
                             <ui:Label text="Label">
                                 <Bindings>
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_SpineMeter/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="abs_S" />
+                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="abs_S" />
                                 </Bindings>
                             </ui:Label>
                         </ui:VisualElement>
