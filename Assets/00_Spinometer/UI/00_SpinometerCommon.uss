@@ -66,3 +66,26 @@
     -unity-text-outline-width: 0;
     min-height: 92px;
 }
+
+.page-disclaimer {
+    flex-grow: 1;
+    flex-direction: row;
+    -unity-font-definition: url("project://database/Assets/00_Spinometer/Fonts/NotoSansJP-Regular%20SDF.asset?fileID=11400000&guid=553ed431a1bc1644397dd555742559a5&type=2#NotoSansJP-Regular SDF");
+}
+
+.page-spinometer {
+    flex-grow: 1;
+    flex-direction: row;
+    -unity-font-definition: url("project://database/Assets/00_Spinometer/Fonts/NotoSansJP-Regular%20SDF.asset?fileID=11400000&guid=553ed431a1bc1644397dd555742559a5&type=2#NotoSansJP-Regular SDF");
+}
+
+.page-easy-setup {
+    flex-grow: 1;
+    flex-direction: row;
+    background-color: rgba(211, 237, 249, 0.67);
+    -unity-font-definition: url("project://database/Assets/00_Spinometer/Fonts/NotoSansJP-Regular%20SDF.asset?fileID=11400000&guid=553ed431a1bc1644397dd555742559a5&type=2#NotoSansJP-Regular SDF");
+}
+
+.page-easy-setup-camera {}
+.page-easy-setup-angle {}
+.page-easy-setup-distance {}
