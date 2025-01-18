@@ -27,6 +27,7 @@
                 </ui:Button>
             </ui:VisualElement>
         </ui:VisualElement>
+        <ui:VisualElement name="camera" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00_Spinometer/Tracker/NeuralNet/WebCamPlaneDummyTexture.png?fileID=2800000&amp;guid=b71fe345ea559ef439528f9a76f6c00c&amp;type=3#WebCamPlaneDummyTexture&quot;); position: absolute; width: 400px; height: 300px; top: 60px; left: auto; right: 60px; display: none;" />
         <Bindings>
             <UnityEngine.Localization.LocalizedObject property="style.unityFontDefinition" table="GUID:5a6cc37294238534a8128b0d74fe6ab4" entry="Id(94932467040256)" />
         </Bindings>

@@ -239,6 +239,21 @@ namespace GetBack.Spinometer
           };
           RegisterLocaleChangeButtonEvents(uidoc);
         }
+        {
+          // TODO: FIXME: not working with WebCamTexture
+          var el = uidoc.rootVisualElement.Q<VisualElement>("camera");
+
+          var tex = GameObject.Find("/WebCam/Plane").GetComponent<MeshRenderer>().material.mainTexture as Texture2D;
+          Debug.Log(el);
+          Debug.Log(tex);
+          Debug.Log(GameObject.Find("/WebCam"));
+          Debug.Log(GameObject.Find("/WebCam/Plane"));
+          Debug.Log(GameObject.Find("/WebCam/Plane").GetComponent<MeshRenderer>());
+          Debug.Log(GameObject.Find("/WebCam/Plane").GetComponent<MeshRenderer>().material);
+          Debug.Log(GameObject.Find("/WebCam/Plane").GetComponent<MeshRenderer>().material.mainTexture);
+          Debug.Log(GameObject.Find("/WebCam/Plane").GetComponent<MeshRenderer>().material.mainTexture as Texture2D);
+          el.style.backgroundImage = Background.FromTexture2D(tex);
+        }
       }
     }
 
