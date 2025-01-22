@@ -31,19 +31,19 @@
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(578055211335680)" />
                     </Bindings>
                 </ui:DropdownField>
-                <ui:Slider label="display diagonal fov" high-value="30" low-value="1" show-input-field="true" value="30" name="field-pose-estimation-frequency" page-size="1">
+                <ui:Slider label="pose estimation frequency" high-value="30" low-value="1" show-input-field="true" value="30" name="field-pose-estimation-frequency" page-size="1">
                     <Bindings>
                         <ui:DataBinding property="value" binding-mode="TwoWay" data-source="project://database/Assets/00_Spinometer/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_poseEstimationFrequency" />
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(583575573905408)" />
                     </Bindings>
                 </ui:Slider>
-                <ui:Slider label="display diagonal fov" high-value="30" low-value="1" show-input-field="true" value="30" name="field-target-framerate" page-size="1">
+                <ui:Slider label="target framerate" high-value="60" low-value="1" show-input-field="true" value="30" name="field-target-framerate" page-size="1">
                     <Bindings>
                         <ui:DataBinding property="value" binding-mode="TwoWay" data-source="project://database/Assets/00_Spinometer/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_targetFrameRate" />
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(74087413160886272)" />
                     </Bindings>
                 </ui:Slider>
-                <ui:Slider label="display diagonal fov" high-value="30" low-value="1" show-input-field="true" value="30" name="field-extra-update-rate" page-size="1">
+                <ui:Slider label="extra update frequency" high-value="30" low-value="1" show-input-field="true" value="30" name="field-extra-update-rate" page-size="1">
                     <Bindings>
                         <ui:DataBinding property="value" binding-mode="TwoWay" data-source="project://database/Assets/00_Spinometer/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_extra_updateFrequency" />
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(74090138531545088)" />

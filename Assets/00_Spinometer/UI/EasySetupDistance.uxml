@@ -13,7 +13,7 @@
                     </Bindings>
                 </ui:Label>
             </ui:VisualElement>
-            <ui:VisualElement name="easy-setup-instruction-image" style="background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/settings-distance.png?fileID=-1865136292&amp;guid=57543d95b23f8cb499042c4b9e99dd20&amp;type=3#settings-distance_0&quot;); position: relative; min-width: 400px; min-height: 400px; max-height: 1200px; max-width: 1200px; height: 100%; flex-grow: 1; -unity-background-scale-mode: scale-to-fit; width: 100%;" />
+            <ui:VisualElement name="easy-setup-instruction-image" style="background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/settings-distance.png?fileID=-1865136292&amp;guid=57543d95b23f8cb499042c4b9e99dd20&amp;type=3#settings-distance_0&quot;); position: relative; min-width: 400px; min-height: 400px; max-height: 1200px; max-width: 1200px; height: 60%; flex-grow: 1; -unity-background-scale-mode: scale-to-fit; width: 100%;" />
             <ui:VisualElement name="layout-buttons" picking-mode="Ignore" style="flex-grow: 1; flex-direction: row; position: relative; top: auto; left: auto; bottom: 0; right: auto; padding-bottom: 66px;">
                 <ui:Button text="Save" name="btn-easy-setup-back" class="button-framed" style="bottom: 0; top: 0; left: 0; right: 0; margin-right: 44px;">
                     <Bindings>

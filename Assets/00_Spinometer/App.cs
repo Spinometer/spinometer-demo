@@ -1,4 +1,5 @@
 using DG.Tweening;
+using GetBack.Spinometer.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Localization.Settings;
@@ -18,6 +19,7 @@ namespace GetBack.Spinometer
 
     [SerializeField] private UiDataSource _uiDataSource;
     [SerializeField] private Settings _settings;
+    [SerializeField] private ScreenTransitionOverlay _screenTransitionOverlay;
 
     private string _sceneName_debug = "Debug";
     private string _sceneName_extra = "Extra";
@@ -146,8 +148,10 @@ namespace GetBack.Spinometer
         SceneManager.UnloadSceneAsync(scene);
       }
 
-      if (!InitialSetupAlreadyCompleted)
+      if (!InitialSetupAlreadyCompleted) {
+        _screenTransitionOverlay.StartTransition(transitionStyle: ScreenTransitionOverlay.TransitionStyle.Open);
         LoadSettingsOrEasySetupScene();
+      }
     }
 
     private async void LoadSpinometerScene()
@@ -159,7 +163,11 @@ namespace GetBack.Spinometer
       if (uidoc != null) {
         {
           var btn = uidoc.rootVisualElement.Q<Button>("settings");
-          btn.clicked += LoadSettingsOrEasySetupScene;
+          btn.clicked += () =>
+          {
+            _screenTransitionOverlay.StartTransition(transitionStyle: ScreenTransitionOverlay.TransitionStyle.Open);
+            LoadSettingsOrEasySetupScene();
+          };
         }
         RegisterLocaleChangeButtonEvents(uidoc);
       }
@@ -206,7 +214,11 @@ namespace GetBack.Spinometer
       var uidoc = GameObject.Find("/SettingsUIDocument")?.GetComponent<UIDocument>();
       if (uidoc != null) {
         var btnOk = uidoc.rootVisualElement.Q<Button>("btn-settings-close");
-        btnOk.clicked += () => CloseScene(_sceneName_settings);
+        btnOk.clicked += () =>
+        {
+          _screenTransitionOverlay.StartTransition(transitionStyle: ScreenTransitionOverlay.TransitionStyle.Close);
+          CloseScene(_sceneName_settings);
+        };
         RegisterLocaleChangeButtonEvents(uidoc);
       }
     }
@@ -228,31 +240,21 @@ namespace GetBack.Spinometer
       if (uidoc != null) {
         {
           var btn = uidoc.rootVisualElement.Q<Button>("btn-easy-setup-close");
-          btn.clicked += () => CloseScene(_sceneName_easySetupCamera);
+          btn.clicked += () =>
+          {
+            _screenTransitionOverlay.StartTransition(ScreenTransitionOverlay.TransitionStyle.Close);
+            CloseScene(_sceneName_easySetupCamera);
+          };
           RegisterLocaleChangeButtonEvents(uidoc);
         }
         {
           var btn = uidoc.rootVisualElement.Q<Button>("btn-easy-setup-next");
           btn.clicked += () => {
+            _screenTransitionOverlay.StartTransition(ScreenTransitionOverlay.TransitionStyle.Next);
             CloseScene(_sceneName_easySetupCamera);
             LoadEasySetupAngleScene();
           };
           RegisterLocaleChangeButtonEvents(uidoc);
-        }
-        {
-          // TODO: FIXME: not working with WebCamTexture
-          var el = uidoc.rootVisualElement.Q<VisualElement>("camera");
-
-          var tex = GameObject.Find("/WebCam/Plane").GetComponent<MeshRenderer>().material.mainTexture as Texture2D;
-          Debug.Log(el);
-          Debug.Log(tex);
-          Debug.Log(GameObject.Find("/WebCam"));
-          Debug.Log(GameObject.Find("/WebCam/Plane"));
-          Debug.Log(GameObject.Find("/WebCam/Plane").GetComponent<MeshRenderer>());
-          Debug.Log(GameObject.Find("/WebCam/Plane").GetComponent<MeshRenderer>().material);
-          Debug.Log(GameObject.Find("/WebCam/Plane").GetComponent<MeshRenderer>().material.mainTexture);
-          Debug.Log(GameObject.Find("/WebCam/Plane").GetComponent<MeshRenderer>().material.mainTexture as Texture2D);
-          el.style.backgroundImage = Background.FromTexture2D(tex);
         }
       }
     }
@@ -267,6 +269,7 @@ namespace GetBack.Spinometer
         {
           var btn = uidoc.rootVisualElement.Q<Button>("btn-easy-setup-back");
           btn.clicked += () => {
+            _screenTransitionOverlay.StartTransition(transitionStyle: ScreenTransitionOverlay.TransitionStyle.Prev);
             CloseScene(_sceneName_easySetupAngle);
             LoadEasySetupCameraScene();
           };
@@ -277,6 +280,7 @@ namespace GetBack.Spinometer
           btn.clicked += () => {
             var tracker = GameObject.Find("/Tracker").GetComponent<TrackerNeuralNet>();
             tracker?.CalibrateAngle();
+            _screenTransitionOverlay.StartTransition(transitionStyle: ScreenTransitionOverlay.TransitionStyle.Next);
             CloseScene(_sceneName_easySetupAngle);
             LoadEasySetupDistanceScene();
           };
@@ -295,6 +299,7 @@ namespace GetBack.Spinometer
         {
           var btn = uidoc.rootVisualElement.Q<Button>("btn-easy-setup-back");
           btn.clicked += () => {
+            _screenTransitionOverlay.StartTransition(transitionStyle: ScreenTransitionOverlay.TransitionStyle.Prev);
             CloseScene(_sceneName_easySetupDistance);
             LoadEasySetupAngleScene();
           };
@@ -306,6 +311,7 @@ namespace GetBack.Spinometer
           {
             var tracker = GameObject.Find("/Tracker").GetComponent<TrackerNeuralNet>();
             tracker?.CalibrateDistance();
+            _screenTransitionOverlay.StartTransition(transitionStyle: ScreenTransitionOverlay.TransitionStyle.Close);
             CloseScene(_sceneName_easySetupDistance);
             _settings.SaveSettings();
             InitialSetupAlreadyCompleted = true;

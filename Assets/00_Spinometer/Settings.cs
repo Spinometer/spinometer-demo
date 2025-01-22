@@ -34,7 +34,7 @@ namespace GetBack.Spinometer
 
     [Range(1, 30)] public int opt_poseEstimationFrequency = 4; // per sec
 
-    [Range(1, 30)] public int opt_targetFrameRate = 15;
+    [Range(1, 60)] public int opt_targetFrameRate = 60;
 
     [Range(1, 30)] public int opt_extra_updateFrequency = 2;
 
@@ -77,7 +77,7 @@ namespace GetBack.Spinometer
       opt_displaySurfaceAngle = PlayerPrefs.GetFloat("opt_displaySurfaceAngle", 65f);
       opt_additionalPitchOffset = PlayerPrefs.GetFloat("opt_additionalPitchOffset", 15f);
       opt_displayDiagonalFov = PlayerPrefs.GetFloat("opt_displayDiagonalFov", 56f);
-      opt_targetFrameRate = PlayerPrefs.GetInt("opt_targetFrameRate", 15);
+      opt_targetFrameRate = PlayerPrefs.GetInt("opt_targetFrameRate", 60);
       opt_poseEstimationFrequency = PlayerPrefs.GetInt("opt_poseEstimationFrequency", 15);
       opt_extra_updateFrequency = PlayerPrefs.GetInt("opt_extra_updateFrequency", 2);
 
@@ -92,6 +92,7 @@ namespace GetBack.Spinometer
       PlayerPrefs.SetFloat("opt_additionalPitchOffset", opt_additionalPitchOffset);
       PlayerPrefs.SetFloat("opt_displayDiagonalFov", opt_displayDiagonalFov);
       PlayerPrefs.SetString("opt_spinalAlignmentEstimatorOptions", JsonUtility.ToJson(opt_spinalAlignmentEstimatorOptions));
+      PlayerPrefs.SetInt("opt_targetFrameRate", opt_targetFrameRate);
       PlayerPrefs.SetInt("opt_poseEstimationFrequency", opt_poseEstimationFrequency);
       PlayerPrefs.SetInt("opt_extra_updateFrequency", opt_extra_updateFrequency);
       Debug.Log("Settings#SaveSettings(): done.");

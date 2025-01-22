@@ -12,23 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e41275f11f413685aa1380abfcb0bd, type: 3}
   m_Name: settingsInstance
   m_EditorClassIdentifier: 
-  opt_useNew: 1
+  opt_spinalAlignmentEstimatorOptions:
+    useNew: 1
+    user_sex: -1
+    user_birthYear: -1
+    user_height_cm: -1
+    user_weight_kg: -1
+    s_distance_offset: 80
+    s_distance_multiplier_forward: 45
+    s_distance_multiplier_backward: 120
   opt_webCamDeviceName: Integrated Camera
   opt_webCamDeviceNameList:
   - Integrated Camera
+  - OBS Virtual Camera
   opt_webCamDeviceNameIndex: 0
-  opt_displaySurfaceAngle: 64.82746
-  opt_additionalPitchOffset: 15
-  opt_displayDiagonalFov: 50.568848
-  opt_poseEstimationFrequency: 15
-  opt_targetFrameRate: 15
-  opt_user_sex: -1
-  opt_user_birthYear: -1
-  opt_user_height_cm: -1
-  opt_user_weight_kg: -1
-  opt_s_distance_offset: 80
-  opt_s_distance_multiplier_forward: 45
-  opt_s_distance_multiplier_backward: 120
   opt_distance_correction_angle_distance_factor: 0
   opt_distance_correction_cos_factor: 64
+  opt_displaySurfaceAngle: 89.17403
+  opt_additionalPitchOffset: 15
+  opt_displayDiagonalFov: 46.04212
+  opt_poseEstimationFrequency: 30
+  opt_targetFrameRate: 60
   opt_extra_updateFrequency: 2

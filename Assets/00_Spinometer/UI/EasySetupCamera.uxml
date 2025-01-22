@@ -12,7 +12,7 @@
                     </Bindings>
                 </ui:Label>
             </ui:VisualElement>
-            <ui:VisualElement name="settings" style="flex-grow: 0; margin-bottom: 0;">
+            <ui:VisualElement name="settings" style="flex-grow: 1; margin-bottom: 0;">
                 <ui:DropdownField label="webCamDeviceName" index="-1" name="field-webcam-device-name" style="font-size: 30px;">
                     <Bindings>
                         <ui:DataBinding property="index" binding-mode="TwoWay" data-source="project://database/Assets/00_Spinometer/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_webCamDeviceNameIndex" />
@@ -22,7 +22,7 @@
                 </ui:DropdownField>
             </ui:VisualElement>
             <ui:VisualElement name="spacer" style="flex-grow: 1;" />
-            <ui:VisualElement name="layout-buttons" picking-mode="Ignore" style="flex-grow: 1; flex-direction: row; position: absolute; height: 100%; top: auto; left: auto; bottom: 0; right: auto; padding-bottom: 44px;">
+            <ui:VisualElement name="layout-buttons" picking-mode="Ignore" style="flex-grow: 1; flex-direction: row; top: auto; left: auto; bottom: 0; right: auto; padding-bottom: 66px;">
                 <ui:Button text="Save" name="btn-easy-setup-close" class="button-framed" style="bottom: 0; top: 0; left: 0; right: 0; margin-right: 44px;">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="text" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(575189557985280)" />
