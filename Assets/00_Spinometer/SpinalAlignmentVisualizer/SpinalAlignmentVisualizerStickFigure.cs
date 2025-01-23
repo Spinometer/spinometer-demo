@@ -177,13 +177,17 @@ namespace GetBack.Spinometer.SpinalAlignmentVisualizer
               var uiPosX = screenPos.x / Screen.width * _alignmentValueLabelContainer.layout.width;
               var uiPosY = (1.0f - screenPos.y / Screen.height) * _alignmentValueLabelContainer.layout.height;
               el.visible = true;
-              el.text = $"{label}\n{angle:0.0}";
-              el.style.left = uiPosX + labelOffset.x * scale * _textScale * 0.25f;
-              el.style.top = uiPosY + (labelOffset.y - 80f) * scale * _textScale * 0.25f;
-              el.style.color = color;
-              el.style.fontSize = 22.0f * scale * _textScale;
+              // el.text = $"{label}\n{angle:0.0}";
+              el.text = $"{label}:{angle:0.0}";
+              el.style.left = uiPosX + (labelOffset.x + 40f) * scale * _textScale * 0.25f;
+              el.style.top = uiPosY + (labelOffset.y - 120f) * scale * _textScale * 0.25f;
+              //el.style.color = color;
+              el.style.fontSize = 16.0f * scale * _textScale;
               bool withinNormalBound = score >= _scoreWarningIndicatorSensitivity;
-              el.style.backgroundColor = withinNormalBound ? new Color(0f, 0f, 0f, 0f) : new Color(1f, 0f, 0f, 0.2f);
+              //el.style.backgroundColor = withinNormalBound ? new Color(0f, 0f, 0f, 0f) : new Color(1f, 0f, 0f, 0.2f);
+              el.style.unityBackgroundImageTintColor = withinNormalBound ?
+                new Color(0x34 / 255.0f, 0x5a / 255.0f, 0x9e / 255.0f) :
+                new Color(0xb2 / 255.0f, 0x31 / 255.0f, 0x40 / 255.0f);
             }
           }
         }
@@ -306,31 +310,31 @@ namespace GetBack.Spinometer.SpinalAlignmentVisualizer
                           pos_c7,
                           SpinalAlignment.RelativeAngleId.C7_T3_vert_new,
                           SpinalAlignment.AbsoluteAngleId.C7_T3,
-                          "C7_T3_vert", new Vector2(10f, -40f), color1, n++);
+                          "C7_T3_vert", new Vector2(10f, -80f), color1, n++);
         // T1_slope
         DrawRelativeAngle(pos_c7,
                           pos_t3,
                           pos_t8,
                           SpinalAlignment.RelativeAngleId.C7_T3_T8,
                           SpinalAlignment.AbsoluteAngleId.C7_T3,
-                          "C7_T3_T8", new Vector2(25f, 10f), color0, n++);
+                          "C7_T3_T8", new Vector2(25f, 40f), color0, n++);
         DrawRelativeAngle(pos_t3,
                           pos_t8,
                           pos_t12,
                           SpinalAlignment.RelativeAngleId.T3_T8_T12,
                           SpinalAlignment.AbsoluteAngleId.T3_T8,
-                          "T3_T8_T12", new Vector2(20f, 0f), color1, n++);
+                          "T3_T8_T12", new Vector2(10f, 0f), color1, n++);
         DrawRelativeAngleWithoutScore(pos_t8,
                                       pos_t12,
                                       pos_l3,
                                       SpinalAlignment.RelativeAngleId.T8_T12_L3,
-                                      "T8_T12_L3", new Vector2(20f, 0f), color0, n++);
+                                      "T8_T12_L3", new Vector2(10f, 0f), color0, n++);
         DrawRelativeAngle(pos_s,
                           pos_l3,
                           pos_t12,
                           SpinalAlignment.RelativeAngleId.T12_L3_S,
                           SpinalAlignment.AbsoluteAngleId.L3_S,
-                          "T12_L3_S", new Vector2(30f, 0f), color1, n++);
+                          "T12_L3_S", new Vector2(10f, 0f), color1, n++);
         break;
 
       case AlignmentValueDisplayModeEnum.ShowAbsoluteAngles:
