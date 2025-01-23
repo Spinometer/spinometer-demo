@@ -355,6 +355,7 @@ GameObject:
   - component: {fileID: 1902505487}
   - component: {fileID: 1902505486}
   - component: {fileID: 1902505485}
+  - component: {fileID: 1902505488}
   m_Layer: 0
   m_Name: BackgroundPlane
   m_TagString: Untagged
@@ -430,6 +431,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1902505488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902505483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20cff5b9a5fa4774fbb79460d502c287, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1921642138
 GameObject:
   m_ObjectHideFlags: 0

@@ -149,8 +149,12 @@ namespace GetBack.Spinometer
       }
 
       if (!InitialSetupAlreadyCompleted) {
-        _screenTransitionOverlay.StartTransition(transitionStyle: ScreenTransitionOverlay.TransitionStyle.Open);
+        _screenTransitionOverlay.StartTransition(durationSeconds: 2f,
+                                                 transitionStyle: ScreenTransitionOverlay.TransitionStyle.Open);
         LoadSettingsOrEasySetupScene();
+      } else {
+        _screenTransitionOverlay.StartTransition(durationSeconds: 2f,
+                                                 transitionStyle: ScreenTransitionOverlay.TransitionStyle.Close);
       }
     }
 
