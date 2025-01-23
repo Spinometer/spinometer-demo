@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprite_frame
+      name: sprite_frame_01
       rect:
         serializedVersion: 2
-        x: 47
-        y: 849
-        width: 254
-        height: 225
+        x: 50
+        y: 852
+        width: 249
+        height: 220
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 48, y: 48, z: 48, w: 48}
@@ -175,6 +175,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: sprite_frame_00
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1145
+        width: 101
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 26, y: 26, z: 26, w: 26}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d7ca9cf9c51ef46b38379917572555
+      internalID: 182052508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_good_ja
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 1096
+        width: 237
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d56d4416a1d07c41afcd08848c62d37
+      internalID: 2142850604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -189,7 +233,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sprite_frame: -473985854
+      sprite_frame_00: 182052508
+      sprite_frame_01: -473985854
+      sprite_good_ja: 2142850604
       sprite_settings_angle: -837242533
       sprites_settings_distance: -663468048
   mipmapLimitGroupName: 

@@ -1,5 +1,5 @@
 .unity-label.unity-text-element {
-    color: rgb(192, 192, 192);
+    color: rgb(253, 253, 253);
 }
 
 .button-framed {

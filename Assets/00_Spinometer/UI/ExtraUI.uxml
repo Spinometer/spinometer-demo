@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/00_Spinometer/UI/00_SpinometerCommon.uss?fileID=7433441132597879392&amp;guid=b97393fae9002d34c8231b6fb663f156&amp;type=3#00_SpinometerCommon" />
     <Style src="project://database/Assets/00_Spinometer/UI/ExtraUI.uss?fileID=7433441132597879392&amp;guid=dfa352d66e078634cb1c4c0498e4a7a8&amp;type=3#ExtraUI" />
     <ui:VisualElement picking-mode="Ignore" class="overlay-extra" style="flex-grow: 1; flex-direction: row; background-color: rgba(0, 0, 0, 0.41);">
-        <ui:VisualElement style="flex-grow: 1; flex-direction: column; width: 400px; margin-top: 134px; margin-bottom: 4px; margin-left: 20px;">
+        <ui:VisualElement style="flex-grow: 1; flex-direction: column; width: 400px; margin-top: 268px; margin-bottom: 4px; margin-left: 20px;">
             <ui:VisualElement picking-mode="Ignore" class="big" style="flex-grow: 1;">
                 <ui:VisualElement style="flex-direction: row;">
                     <ui:VisualElement picking-mode="Ignore" name="col" style="width: 288px; flex-basis: 620px;">

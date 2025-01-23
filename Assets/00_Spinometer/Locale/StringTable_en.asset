@@ -31,11 +31,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 48076676513792
-    m_Localized: 'distance [cm]'
+    m_Localized: 'Distance [cm]'
     m_Metadata:
       m_Items: []
   - m_Id: 48772670930944
-    m_Localized: 'pitch [deg]'
+    m_Localized: 'Pitch [deg]'
     m_Metadata:
       m_Items: []
   - m_Id: 49534134239232

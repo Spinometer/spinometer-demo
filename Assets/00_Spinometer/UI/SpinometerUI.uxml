@@ -4,37 +4,35 @@
     <Style src="project://database/Assets/00_Spinometer/UI/SpinometerUI.uss?fileID=7433441132597879392&amp;guid=496a4715e9f92874fa5834cc9fa7717c&amp;type=3#SpinometerUI" />
     <ui:VisualElement class="page-spinometer">
         <ui:Instance template="LocaleChanger" name="LocaleChanger" enabled="true" style="align-self: stretch; align-items: flex-end;" />
-        <ui:VisualElement style="flex-grow: 1; flex-direction: row; -unity-font-definition: url(&quot;project://database/Assets/00_Spinometer/Fonts/NotoSansJP-Regular%20SDF.asset?fileID=11400000&amp;guid=553ed431a1bc1644397dd555742559a5&amp;type=2#NotoSansJP-Regular SDF&quot;);">
-            <ui:VisualElement style="flex-grow: 1; flex-direction: column; width: 400px;">
-                <ui:VisualElement name="face-pose" class="big" style="flex-grow: 1; margin-left: 20px;">
-                    <ui:VisualElement style="flex-grow: initial; flex-direction: row;">
-                        <ui:Label class="field-label">
-                            <Bindings>
-                                <UnityEngine.Localization.LocalizedString property="text" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(48076676513792)">
-                                    <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="pitchStr" />
-                                </UnityEngine.Localization.LocalizedString>
-                            </Bindings>
-                        </ui:Label>
-                        <ui:Label text="Label">
-                            <Bindings>
-                                <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="distanceStr" />
-                            </Bindings>
-                        </ui:Label>
-                    </ui:VisualElement>
-                    <ui:VisualElement style="flex-grow: initial; flex-direction: row;">
-                        <ui:Label class="field-label">
-                            <Bindings>
-                                <UnityEngine.Localization.LocalizedString property="text" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(48772670930944)" />
-                            </Bindings>
-                        </ui:Label>
-                        <ui:Label text="Label">
-                            <Bindings>
-                                <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="pitchStr" />
-                            </Bindings>
-                        </ui:Label>
-                    </ui:VisualElement>
-                </ui:VisualElement>
+        <ui:VisualElement name="face-pose" class="big" style="flex-grow: 0; margin-left: 0; background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/sprites.png?fileID=182052508&amp;guid=f4521ab1d014fcf4a8a53f9106dee12a&amp;type=3#sprite_frame_00&quot;); padding-top: 18px; padding-bottom: 18px; padding-left: 30px; padding-right: 30px; width: 340px; position: absolute; top: 64px; left: 64px; font-size: 22px;">
+            <ui:VisualElement style="flex-grow: initial; flex-direction: row;">
+                <ui:Label class="field-label" style="width: 140px;">
+                    <Bindings>
+                        <UnityEngine.Localization.LocalizedString property="text" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(48076676513792)">
+                            <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="pitchStr" />
+                        </UnityEngine.Localization.LocalizedString>
+                    </Bindings>
+                </ui:Label>
+                <ui:Label text="Label">
+                    <Bindings>
+                        <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="distanceStr" />
+                    </Bindings>
+                </ui:Label>
             </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: initial; flex-direction: row;">
+                <ui:Label class="field-label" style="width: 140px;">
+                    <Bindings>
+                        <UnityEngine.Localization.LocalizedString property="text" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(48772670930944)" />
+                    </Bindings>
+                </ui:Label>
+                <ui:Label text="Label">
+                    <Bindings>
+                        <ui:DataBinding property="text" binding-mode="ToTarget" data-source="project://database/Assets/00_Spinometer/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" data-source-path="pitchStr" />
+                    </Bindings>
+                </ui:Label>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row; -unity-font-definition: url(&quot;project://database/Assets/00_Spinometer/Fonts/NotoSansJP-Regular%20SDF.asset?fileID=11400000&amp;guid=553ed431a1bc1644397dd555742559a5&amp;type=2#NotoSansJP-Regular SDF&quot;);">
             <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 400px; align-items: flex-end;">
                 <ui:VisualElement name="VisualElement" style="flex-grow: 1;">
                     <ui:Label text="webcam state" style="align-items: flex-start; align-self: flex-start;">
