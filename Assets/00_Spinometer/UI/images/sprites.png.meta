@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cdccecd7a49862f488e0d46656d397b6
+guid: f4521ab1d014fcf4a8a53f9106dee12a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 180, y: 180, z: 180, w: 180}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -110,23 +110,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: settings-angle_0
+      name: sprite_frame
       rect:
         serializedVersion: 2
-        x: 180
-        y: 180
-        width: 820
-        height: 820
+        x: 47
+        y: 849
+        width: 254
+        height: 225
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 48, y: 48, z: 48, w: 48}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8f91f941a5a03b4cb2fa2d7d7ce8178
+      internalID: -473985854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_settings_angle
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 998
+        height: 840
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7414623f4484104f9d08f68fa996ec3
-      internalID: 1723404919
+      spriteID: ce932bc145b66374c8d13a4bf6bd92f7
+      internalID: -837242533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprites_settings_distance
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 0
+        width: 998
+        height: 840
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8fd2fd25a9d88d49b59fa34fae5693f
+      internalID: -663468048
       vertices: []
       indices: 
       edges: []
@@ -135,8 +179,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: f1806b2b862b43c43a19430743a310c0
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -145,7 +189,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      settings-angle_0: 1723404919
+      sprite_frame: -473985854
+      sprite_settings_angle: -837242533
+      sprites_settings_distance: -663468048
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 .unity-label.unity-text-element {
-    color: rgb(47, 39, 37);
+    color: rgb(192, 192, 192);
 }
 
 .button-framed {
@@ -89,3 +89,4 @@
 .page-easy-setup-camera {}
 .page-easy-setup-angle {}
 .page-easy-setup-distance {}
+.overlay-extra {}

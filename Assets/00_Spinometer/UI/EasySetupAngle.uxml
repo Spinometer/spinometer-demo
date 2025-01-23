@@ -2,7 +2,7 @@
     <ui:Template name="LocaleChanger" src="project://database/Assets/00_Spinometer/UI/LocaleChanger.uxml?fileID=9197481963319205126&amp;guid=675491ccc64a5de4386f983af1864a39&amp;type=3#LocaleChanger" />
     <Style src="project://database/Assets/00_Spinometer/UI/00_SpinometerCommon.uss?fileID=7433441132597879392&amp;guid=b97393fae9002d34c8231b6fb663f156&amp;type=3#00_SpinometerCommon" />
     <Style src="project://database/Assets/00_Spinometer/UI/SettingsUI.uss?fileID=7433441132597879392&amp;guid=ef243047774edd543b1753aaba09eaee&amp;type=3#SettingsUI" />
-    <ui:VisualElement class="page-easy-setup page-easy-setup-angle">
+    <ui:VisualElement class="page-easy-setup page-easy-setup-angle" style="background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/background.png?fileID=2800000&amp;guid=cb864e5477f32e44aa6278bcddef5268&amp;type=3#background&quot;); -unity-background-image-tint-color: rgba(255, 255, 255, 0.67); background-color: rgba(211, 237, 249, 0);">
         <ui:Instance template="LocaleChanger" name="LocaleChanger" style="position: absolute; top: 18px; left: auto; right: 18px;" />
         <ui:VisualElement style="flex-grow: 1; width: 400px; align-items: center; height: 100%;">
             <ui:VisualElement style="flex-grow: 1; min-height: 80px; max-height: 160px;" />
@@ -13,7 +13,7 @@
                     </Bindings>
                 </ui:Label>
             </ui:VisualElement>
-            <ui:VisualElement name="easy-setup-instruction-image" style="background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/settings-angle.png?fileID=1723404919&amp;guid=cdccecd7a49862f488e0d46656d397b6&amp;type=3#settings-angle_0&quot;); position: relative; min-width: 400px; min-height: 400px; max-height: 1200px; max-width: 1200px; height: 60%; flex-grow: 1; -unity-background-scale-mode: scale-to-fit; width: 100%;" />
+            <ui:VisualElement name="easy-setup-instruction-image" style="background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/sprites.png?fileID=-837242533&amp;guid=f4521ab1d014fcf4a8a53f9106dee12a&amp;type=3#sprite_settings_angle&quot;); position: relative; min-width: 400px; min-height: 400px; max-height: 1200px; max-width: 1200px; height: 60%; flex-grow: 1; -unity-background-scale-mode: scale-to-fit; width: 100%; scale: 0.7 0.7;" />
             <ui:VisualElement name="layout-buttons" picking-mode="Ignore" style="flex-grow: 1; flex-direction: row; position: relative; top: auto; left: auto; bottom: 0; right: auto; padding-bottom: 66px;">
                 <ui:Button text="Save" name="btn-easy-setup-back" class="button-framed" style="bottom: 0; top: 0; left: 0; right: 0; margin-right: 44px;">
                     <Bindings>
