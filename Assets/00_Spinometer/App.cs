@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using GetBack.Spinometer.UI;
 using UnityEngine;
@@ -13,6 +14,7 @@ namespace GetBack.Spinometer
   public class App : MonoBehaviour
   {
     public enum State {
+      Opening,
       Disclaimer,
       Running
     };
@@ -23,6 +25,7 @@ namespace GetBack.Spinometer
 
     private string _sceneName_debug = "Debug";
     private string _sceneName_extra = "Extra";
+    private string _sceneName_opening = "Opening";
     private string _sceneName_disclaimer = "Disclaimer";
     private string _sceneName_settings = "Settings";
     private string _sceneName_easySetupCamera = "EasySetupCamera";
@@ -47,16 +50,11 @@ namespace GetBack.Spinometer
     void Start()
     {
       ChangeLocale("en");
-      _state = State.Disclaimer;
-      {
-        var scene = SceneManager.GetSceneByName(_sceneName_spinometer);
-        if (scene != null && scene.isLoaded)
-          _state = State.Running;
-      }
-      if (_state != State.Disclaimer)
-        CloseDisclaimerScene();
+      _state = !SceneLoaded(_sceneName_spinometer) ? State.Opening : State.Running;
+      if (_state == State.Opening)
+        LoadOpeningScene();
       else
-        LoadDisclaimerScene();
+        CloseOpeningScene();
     }
 
     private bool SceneLoaded(string sceneName)
@@ -75,8 +73,8 @@ namespace GetBack.Spinometer
       }
       Application.targetFrameRate = _settings.opt_targetFrameRate;
 #if !UNITY_EDITOR
-    int vSyncCount = 60 / _settings.opt_targetFrameRate;
-    QualitySettings.vSyncCount = (int)Mathf.Clamp(vSyncCount, 1, 4);
+      int vSyncCount = 60 / _settings.opt_targetFrameRate;
+      QualitySettings.vSyncCount = (int)Mathf.Clamp(vSyncCount, 1, 4);
 #endif
 
 #if false
@@ -107,6 +105,30 @@ namespace GetBack.Spinometer
         await SceneManager.UnloadSceneAsync(scene);
         GameObject.Find("/SK_Skeleton/FaceProxyOrigin/CameraOrigin/FaceProxy/Cube").SetActive(false);
       }
+    }
+
+    private async void LoadOpeningScene()
+    {
+      if (!SceneLoaded(_sceneName_opening)) {
+        await SceneManager.LoadSceneAsync(_sceneName_opening, LoadSceneMode.Additive);
+      }
+
+      await UniTask.WaitForSeconds(5);
+      CloseOpeningScene();
+    }
+
+    private async void CloseOpeningScene()
+    {
+      LoadDisclaimerScene();
+
+      var scene = SceneManager.GetSceneByName(_sceneName_opening);
+      if (scene != null && scene.isLoaded) {
+        Debug.Log("Unload");
+        SceneManager.UnloadSceneAsync(scene);
+      }
+
+      _screenTransitionOverlay.StartTransition(durationSeconds: 2f,
+                                               transitionStyle: ScreenTransitionOverlay.TransitionStyle.Fade);
     }
 
     private async void LoadDisclaimerScene()

@@ -3,7 +3,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 namespace GetBack.Spinometer.UI
@@ -12,6 +11,7 @@ namespace GetBack.Spinometer.UI
   {
     public enum TransitionStyle
     {
+      Fade,
       Open,
       Close,
       Prev,
@@ -59,10 +59,16 @@ namespace GetBack.Spinometer.UI
                                       int delayFrames = 1,
                                       float durationSeconds = 0.3f)
     {
+      // TODO accept cancellation token
+
       void ApplyPhase(float phase)
       {
         _panelElement.style.opacity = 1f - phase;
         switch (transitionStyle) {
+        case TransitionStyle.Fade:
+          _panelElement.style.translate = new StyleTranslate(new Translate(0f, 0f));
+          _panelElement.style.scale = new StyleScale(new Scale(new Vector2(1f, -1f)));
+          break;
         case TransitionStyle.Open:
           _panelElement.style.translate = new StyleTranslate(new Translate(0f, 0f));
           _panelElement.style.scale = new StyleScale(new Scale(new Vector2(1f + 0.1f * phase, -(1f + 0.1f * phase))));
