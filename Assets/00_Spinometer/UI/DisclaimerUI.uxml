@@ -2,14 +2,14 @@
     <ui:Template name="LocaleChanger" src="project://database/Assets/00_Spinometer/UI/LocaleChanger.uxml?fileID=9197481963319205126&amp;guid=675491ccc64a5de4386f983af1864a39&amp;type=3#LocaleChanger" />
     <Style src="project://database/Assets/00_Spinometer/UI/00_SpinometerCommon.uss?fileID=7433441132597879392&amp;guid=b97393fae9002d34c8231b6fb663f156&amp;type=3#00_SpinometerCommon" />
     <Style src="project://database/Assets/00_Spinometer/UI/DisclaimerUI.uss?fileID=7433441132597879392&amp;guid=3bacd3be4f9abc6468b691f7f3126120&amp;type=3#DisclaimerUI" />
-    <ui:VisualElement style="flex-grow: 1; background-color: rgb(0, 0, 0); opacity: 1; -unity-font-definition: url(&quot;project://database/Assets/00_Spinometer/Fonts/NotoSansJP-Regular%20SDF.asset?fileID=11400000&amp;guid=553ed431a1bc1644397dd555742559a5&amp;type=2#NotoSansJP-Regular SDF&quot;); margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 40px; padding-right: 40px; padding-bottom: 40px; padding-left: 40px;">
+    <ui:VisualElement style="flex-grow: 1; background-color: rgb(0, 0, 0); opacity: 1; -unity-font-definition: url(&quot;project://database/Assets/00_Spinometer/Fonts/NotoSansJP-Regular%20SDF.asset?fileID=11400000&amp;guid=553ed431a1bc1644397dd555742559a5&amp;type=2#NotoSansJP-Regular SDF&quot;); margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 100px; padding-right: 140px; padding-bottom: 100px; padding-left: 140px;">
         <ui:Instance template="LocaleChanger" name="LocaleChanger" style="align-self: flex-end;" />
-        <ui:Label class="h1" style="font-size: 102px;">
+        <ui:Label name="Label" class="h1" style="font-size: 102px;">
             <Bindings>
                 <UnityEngine.Localization.LocalizedString property="text" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(562715803648)" />
             </Bindings>
         </ui:Label>
-        <ui:Label class="p" style="flex-wrap: nowrap; flex-grow: 0; height: 60%; white-space: normal; font-size: 38px; flex-direction: column; margin-top: 4px;">
+        <ui:Label class="p" style="flex-wrap: nowrap; flex-grow: 0; height: 60%; font-size: 38px; flex-direction: column; margin-top: 4px; white-space: normal;">
             <Bindings>
                 <UnityEngine.Localization.LocalizedString property="text" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(140533940224)" />
             </Bindings>

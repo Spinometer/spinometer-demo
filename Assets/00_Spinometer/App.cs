@@ -113,7 +113,7 @@ namespace GetBack.Spinometer
         await SceneManager.LoadSceneAsync(_sceneName_opening, LoadSceneMode.Additive);
       }
 
-      await UniTask.WaitForSeconds(5);
+      await UniTask.WaitForSeconds(6);
       CloseOpeningScene();
     }
 
@@ -197,7 +197,7 @@ namespace GetBack.Spinometer
         }
         RegisterLocaleChangeButtonEvents(uidoc);
       }
-      ToggleExtraUI();
+      // ToggleExtraUI();
     }
 
     private static void RegisterLocaleChangeButtonEvents(UIDocument uidoc)
