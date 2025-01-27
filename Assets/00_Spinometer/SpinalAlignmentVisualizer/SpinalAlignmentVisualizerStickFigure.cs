@@ -373,8 +373,8 @@ namespace GetBack.Spinometer.SpinalAlignmentVisualizer
 
       {
         DrawAngle_(pos_eyepost + Vector3.left * 2.0f, pos_eyepost, pos_eyepost + vec_sight, // FIXME: scale
-                   0f, 1f,
-                   "pitch", new Vector2(-240f, -180f), color0, n++, true);
+                   face_pitch, 1f,
+                   "pitch", new Vector2(-340f, -80f), color0, n++, true);
       }
 
       for (; n < _alignmentValueLabelElements.Length; n++) {
