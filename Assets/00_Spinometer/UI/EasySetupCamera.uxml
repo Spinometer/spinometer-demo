@@ -5,6 +5,7 @@
     <ui:VisualElement class="page-easy-setup page-easy-setup-camera" style="background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/background.png?fileID=2800000&amp;guid=cb864e5477f32e44aa6278bcddef5268&amp;type=3#background&quot;); -unity-background-image-tint-color: rgb(255, 255, 255); background-color: rgba(211, 237, 249, 0);">
         <ui:VisualElement style="flex-grow: 1; width: 400px; align-items: center;">
             <ui:Instance template="LocaleChanger" name="LocaleChanger" />
+            <ui:VisualElement style="flex-grow: 1; min-height: 80px; max-height: 160px;" />
             <ui:VisualElement name="easy-setup-instruction" style="flex-grow: 1; left: auto; right: auto; bottom: auto; top: auto; width: 100%;">
                 <ui:Label text="Label" style="align-items: auto; justify-content: flex-start; align-self: auto; align-content: auto; flex-grow: 1; -unity-text-align: middle-center; font-size: 30px; white-space: normal;">
                     <Bindings>
@@ -12,8 +13,11 @@
                     </Bindings>
                 </ui:Label>
             </ui:VisualElement>
+            <ui:VisualElement name="camera-frame" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/sprites.png?fileID=-473985854&amp;guid=f4521ab1d014fcf4a8a53f9106dee12a&amp;type=3#sprite_frame_01&quot;); padding-top: 22px; padding-right: 22px; padding-bottom: 22px; padding-left: 22px; margin-top: 60px; margin-right: 80px; margin-bottom: 60px; margin-left: 80px;">
+                <ui:VisualElement name="camera" picking-mode="Ignore" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00_Spinometer/Tracker/NeuralNet/WebCamPlaneDummyTexture.png?fileID=2800000&amp;guid=b71fe345ea559ef439528f9a76f6c00c&amp;type=3#WebCamPlaneDummyTexture&quot;); position: relative; width: 320px; height: 240px; top: auto; left: auto; right: auto; display: flex;" />
+            </ui:VisualElement>
             <ui:VisualElement name="settings" style="flex-grow: 1; margin-bottom: 0;">
-                <ui:DropdownField label="webCamDeviceName" index="-1" name="field-webcam-device-name" style="font-size: 30px;">
+                <ui:DropdownField label="webCamDeviceName" index="-1" name="field-webcam-device-name" style="font-size: 30px; display: flex; left: -80px;">
                     <Bindings>
                         <ui:DataBinding property="index" binding-mode="TwoWay" data-source="project://database/Assets/00_Spinometer/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_webCamDeviceNameIndex" />
                         <ui:DataBinding property="choices" binding-mode="TwoWay" data-source="project://database/Assets/00_Spinometer/settingsInstance.asset?fileID=11400000&amp;guid=51542d75c233bb946a18c77104c4c333&amp;type=2#settingsInstance" data-source-path="opt_webCamDeviceNameList" />
@@ -23,7 +27,7 @@
             </ui:VisualElement>
             <ui:VisualElement name="spacer" style="flex-grow: 1;" />
             <ui:VisualElement name="layout-buttons" picking-mode="Ignore" style="flex-grow: 1; flex-direction: row; top: auto; left: auto; bottom: 0; right: auto; padding-bottom: 66px;">
-                <ui:Button text="Save" name="btn-easy-setup-close" class="button-framed" style="bottom: 0; top: 0; left: 0; right: 0; margin-right: 44px;">
+                <ui:Button text="Save" name="btn-easy-setup-close" class="button-framed" style="bottom: 0; top: 0; left: 0; right: 0; margin-right: 222px;">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="text" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(575189557985280)" />
                     </Bindings>
@@ -34,7 +38,6 @@
                     </Bindings>
                 </ui:Button>
             </ui:VisualElement>
-            <ui:VisualElement name="camera" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00_Spinometer/Tracker/NeuralNet/WebCamPlaneDummyTexture.png?fileID=2800000&amp;guid=b71fe345ea559ef439528f9a76f6c00c&amp;type=3#WebCamPlaneDummyTexture&quot;); position: absolute; width: 400px; height: 300px; top: 60px; left: auto; right: 60px; display: none;" />
         </ui:VisualElement>
         <Bindings>
             <UnityEngine.Localization.LocalizedObject property="style.unityFontDefinition" table="GUID:5a6cc37294238534a8128b0d74fe6ab4" entry="Id(94932467040256)" />

@@ -87,6 +87,14 @@
 }
 
 .page-easy-setup-camera {}
+.page-easy-setup-camera #field-webcam-device-name .unity-popup-field__input {
+    background-color: #fff;
+    border-color: #fff;
+    border-left-width: 24px;
+    border-right-width: 24px;
+    border-radius: 8px;
+}
+.page-easy-setup-camera #field-webcam-device-name .unity-base-popup-field__arrow {}
 .page-easy-setup-angle {}
 .page-easy-setup-distance {}
 .overlay-extra {}

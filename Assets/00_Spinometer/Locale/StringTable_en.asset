@@ -55,7 +55,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 578055211335680
-    m_Localized: WebCam Device Name
+    m_Localized: ' '
     m_Metadata:
       m_Items: []
   - m_Id: 577110205284352
@@ -83,7 +83,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 26299129311805440
-    m_Localized: Select webcam device, then click <b>Next</b>.
+    m_Localized: Select webcam device.
     m_Metadata:
       m_Items: []
   - m_Id: 26299427128360960

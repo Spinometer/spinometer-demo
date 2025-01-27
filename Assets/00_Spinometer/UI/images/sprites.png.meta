@@ -113,13 +113,13 @@ TextureImporter:
       name: sprite_frame_01
       rect:
         serializedVersion: 2
-        x: 50
-        y: 852
-        width: 249
-        height: 220
+        x: 121
+        y: 914
+        width: 125
+        height: 111
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 48, y: 48, z: 48, w: 48}
+      border: {x: 22, y: 22, z: 22, w: 22}
       customData: 
       outline: []
       physicsShape: []
@@ -219,6 +219,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: sprite_frame_02
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 910
+        width: 321
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cce6c9e179bf474e8d64d1abf4c1459
+      internalID: 1466369963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_frame_02_frame
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 910
+        width: 321
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cdb06db39674654fb4b69dc64aff1cd
+      internalID: 550573830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -235,6 +279,8 @@ TextureImporter:
     nameFileIdTable:
       sprite_frame_00: 182052508
       sprite_frame_01: -473985854
+      sprite_frame_02: 1466369963
+      sprite_frame_02_frame: 550573830
       sprite_good_ja: 2142850604
       sprite_settings_angle: -837242533
       sprites_settings_distance: -663468048
