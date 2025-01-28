@@ -544,7 +544,7 @@ namespace GetBack.Spinometer
 
     public void CalibrateDistance()
     {
-      const float targetDistance = 0.5f;
+      const float targetDistance = 0.55f;
       float r = 1.1f;
       for (int i = 0; i < 16; i++) {
         var pose = TransformToWorldPose(_lastPoseEstimatorFace, _lastInputTensorShape);
