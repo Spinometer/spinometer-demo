@@ -54,7 +54,7 @@ namespace GetBack.Spinometer
       if (_state == State.Opening)
         LoadOpeningScene();
       else
-        CloseOpeningScene();
+        CloseDisclaimerScene();
     }
 
     private bool SceneLoaded(string sceneName)
