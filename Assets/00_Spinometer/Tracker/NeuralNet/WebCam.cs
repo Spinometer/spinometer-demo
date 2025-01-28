@@ -29,7 +29,6 @@ namespace GetBack.Spinometer
     private WebCamTexture _webcamRaw;
     private RenderTexture _webcamBufferColor;
     private RenderTexture _webcamBufferGrayscale;
-    private WebCamView _webcamView;
     private StateEnum _state;
     private DateTime _lastSeen;
 
@@ -71,11 +70,6 @@ namespace GetBack.Spinometer
       // this is needed when the app is started with Spinometer scene loaded.
       await Awaitable.NextFrameAsync();
       await Awaitable.NextFrameAsync();
-
-      {
-        var renderer = GetComponentInChildren<MeshRenderer>();
-        _webcamView = new WebCamView(renderer);
-      }
 
       _webcamBufferColor = new RenderTexture(288, 224, 0);
       _webcamBufferColor.Create();
@@ -120,7 +114,6 @@ namespace GetBack.Spinometer
     private void SelectDeviceByName(string deviceName)
     {
       if (_webcamRaw != null) {
-        _webcamView.InputTexture = null;
         _webcamRaw.Stop();
         _webcamRaw = null;
       }
@@ -142,7 +135,6 @@ namespace GetBack.Spinometer
         return;
       }
 
-      _webcamView.InputTexture = _webcamRaw;
       _webcamRaw.Play();
       State = StateEnum.running;
       _lastSeen = DateTime.Now;
@@ -150,7 +142,6 @@ namespace GetBack.Spinometer
 
     void OnDestroy()
     {
-      _webcamView.InputTexture = null;
       if (_webcamRaw != null) Destroy(_webcamRaw);
       if (_webcamBufferColor != null) Destroy(_webcamBufferColor);
       if (_webcamBufferGrayscale != null) Destroy(_webcamBufferGrayscale);
@@ -158,14 +149,11 @@ namespace GetBack.Spinometer
 
     void Update()
     {
-      if (_webcamView == null) // FIXME: workaround for workaround in Start().
-        return;
-
       if (_settings.opt_webCamDeviceNameIndex < 0)
         return;
       if (_settings.opt_webCamDeviceNameIndex >= _settings.opt_webCamDeviceNameList.Count)
         return;
-          
+
       {
         var deviceName = _settings.opt_webCamDeviceNameList[_settings.opt_webCamDeviceNameIndex];
         if (_deviceName != deviceName) {

@@ -1,5 +1,4 @@
 using System;
-using Drawing;
 using GetBack.Spinometer.SpinalAlignmentVisualizer;
 using GetBack.Spinometer.SpinometerAux;
 using GetBack.Spinometer.SpinometerCore;
@@ -8,6 +7,7 @@ using GetBack.Spinometer.UI;
 using Unity.Mathematics;
 using Unity.Sentis;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
 namespace GetBack.Spinometer
@@ -32,6 +32,7 @@ namespace GetBack.Spinometer
     [SerializeField] private ExtraUiDataSource _extraUiDataSource;
     [SerializeField] private UIDocument _uiDocument;
     [SerializeField] private Transform _webCamPlane;
+    [SerializeField] private WebCamViewRenderer _webCamViewRenderer;
     private SpinalAlignmentVisualizerSkeleton _visualizerSkeleton = null;
     private SpinalAlignmentVisualizerStickFigure _visualizerStickFigure = null;
     private Model _localizerRuntimeModel;
@@ -59,7 +60,7 @@ namespace GetBack.Spinometer
     private VisualElement _warningMessageTrackingLost = null;
     private VisualElement _warningMessageTrackingUnstable = null;
     private VisualElement _warningMessageCameraOffline = null;
-
+    
     private SpinalAlignment _spinalAlignment = new();
     private SpinalAlignmentEstimator _spinalAlignmentEstimator = null;
     private SpinalAlignmentScore _spinalAlignmentScore = new();
@@ -139,6 +140,17 @@ namespace GetBack.Spinometer
       _visualizerStickFigure = GetComponent<SpinalAlignmentVisualizerStickFigure>();
     }
 
+    void OnEnable()
+    {
+    }
+
+    void OnDisable()
+    {
+      // Tell the GPU we're finished with the memory the engine used
+      _localizer.Dispose();
+      _poseEstimator.Dispose();
+    }
+
     void Start()
     {
       _localizerRuntimeModel = ModelLoader.Load(_localizerModel);
@@ -157,13 +169,6 @@ namespace GetBack.Spinometer
       }
     }
 
-    void OnDisable()
-    {
-      // Tell the GPU we're finished with the memory the engine used
-      _localizer.Dispose();
-      _poseEstimator.Dispose();
-    }
-
     void Update()
     {
       _extraUiDataSource.NextTick(Time.deltaTime);
@@ -174,27 +179,12 @@ namespace GetBack.Spinometer
         UpdatePositions();
       }
 
-      {
-        var tr = _webCamPlane.transform;
-        var scale = tr.localScale.y; // FIXME:
-        var lw = (!_smallScreenMode ? 1.0f : 2.0f) * (_webCamFocused ? 1f : 0.8f);
-        using (Draw.ingame.WithLineWidth(lw)) {
-          if (_localizerLastRoi.HasValue) {
-            Draw.ingame.WireRectangle(tr.position + scale * _localizerRect.Center3,
-                                      Quaternion.Euler(-90f, 0f, 0f),
-                                      scale * _localizerRect.Size2,
-                                      Color.magenta);
-          }
-
-          Draw.ingame.WireRectangle(tr.position + scale * _faceRect.Center3,
-                                    Quaternion.Euler(-90f, 0f, 0f),
-                                    scale * _faceRect.Size2,
-                                    Color.green);
-
-          Draw.ingame.Circle(tr.position + scale * new Vector3(_faceCircleCenter.x, _faceCircleCenter.y, 0f),
-                             Vector3.back, scale * _faceCircleRadius, Color.white);
-        }
-      }
+      _webCamViewRenderer.UpdateRenderTexture(_webCam.InputTexture,
+                                              _localizerLastRoi,
+                                              _localizerRect,
+                                              _faceRect,
+                                              _faceCircleCenter,
+                                              _faceCircleRadius);
 
       if (_showSkeleton || _showStickFigure) {
         // stick figure depends on skeleton bone positions
@@ -244,9 +234,6 @@ namespace GetBack.Spinometer
           Iou(_localizerLastRoi.Value, _poseEstimatorLastRoi.Value) < 0.25f) {
         //Debug.Log("***BBB***");
         var (localizerProbability, localizerNormalizedRoi) = _localizer.Run(inputTensor);
-        _localizerRect = UnNormalize(localizerNormalizedRoi,
-                                     float2.zero, new float2(4f, -3f));
-
         var localizerUnNormalizedRoi = UnNormalize(localizerNormalizedRoi,
                                                    new float2(1f, 1f),
                                                    new float2(inputTensor.shape[3], inputTensor.shape[2]));
@@ -256,6 +243,7 @@ namespace GetBack.Spinometer
 
         _extraUiDataSource.localizerProbability = localizerProbability;
         _extraUiDataSource.localizerNormalizedRoi = localizerNormalizedRoi;
+        _localizerRect = localizerUnNormalizedRoi;
         _extraUiDataSource.localizerRect = _localizerRect;
         _extraUiDataSource.localizerUnNormalizedRoi = localizerUnNormalizedRoi;
 
@@ -322,14 +310,9 @@ namespace GetBack.Spinometer
                                       new float2(1f, 1f),
                                       new float2(inputTensor.shape[3], inputTensor.shape[2]));
         _lastPoseEstimatorFace = face;
-        _faceRect = UnNormalize(normalizedBox,
-                                float2.zero, new float2(4f, -3f));
-        _faceCircleCenter = UnNormalize(Normalize(
-                                          face.center,
-                                          new float2(1f, 1f),
-                                          new float2(inputTensor.shape[3], inputTensor.shape[2])),
-                                        float2.zero, new float2(4f, -3f));
-        _faceCircleRadius = face.size / inputTensor.shape[2] * 3f;
+        _faceRect = face.box;
+        _faceCircleCenter = face.center;
+        _faceCircleRadius = face.size * 0.5f;
 
         var pose = TransformToWorldPose(face, inputTensorShape);
 //        var angles = pose.rotation.eulerAngles;
