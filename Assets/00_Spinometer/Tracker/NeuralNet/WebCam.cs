@@ -34,6 +34,7 @@ namespace GetBack.Spinometer
     private DateTime _lastSeen;
 
     public Texture InputTexture => _webcamBufferGrayscale;
+    public Texture ViewTexture => _webcamBufferColor;
 
     public StateEnum State
     {

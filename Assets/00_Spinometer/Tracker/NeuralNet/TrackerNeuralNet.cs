@@ -179,7 +179,7 @@ namespace GetBack.Spinometer
         UpdatePositions();
       }
 
-      _webCamViewRenderer.UpdateRenderTexture(_webCam.InputTexture,
+      _webCamViewRenderer.UpdateRenderTexture(_webCam.ViewTexture,
                                               _localizerLastRoi,
                                               _localizerRect,
                                               _faceRect,
