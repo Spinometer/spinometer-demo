@@ -7,6 +7,7 @@ using UnityEngine.Experimental.Rendering;
 
 namespace GetBack.Spinometer
 {
+  [DefaultExecutionOrder(-1)]
   public class WebCam : MonoBehaviour
   {
     public enum StateEnum
