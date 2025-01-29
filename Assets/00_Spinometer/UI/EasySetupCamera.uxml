@@ -13,7 +13,7 @@
                     </Bindings>
                 </ui:Label>
             </ui:VisualElement>
-            <ui:VisualElement name="camera-frame" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/sprites.png?fileID=-473985854&amp;guid=f4521ab1d014fcf4a8a53f9106dee12a&amp;type=3#sprite_frame_01&quot;); padding-top: 22px; padding-right: 22px; padding-bottom: 22px; padding-left: 22px; margin-top: 60px; margin-right: 80px; margin-bottom: 60px; margin-left: 80px;">
+            <ui:VisualElement name="camera-frame" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/sprites-misc.png?fileID=1458214035&amp;guid=50e5753e3eec34b4e8bed384ed2cdb26&amp;type=3#sprites-misc_frame-02&quot;); padding-top: 22px; padding-right: 22px; padding-bottom: 22px; padding-left: 22px; margin-top: 60px; margin-right: 80px; margin-bottom: 60px; margin-left: 80px;">
                 <ui:VisualElement name="camera" picking-mode="Ignore" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00_Spinometer/Tracker/NeuralNet/WebCamView.renderTexture?fileID=8400000&amp;guid=b01553d96982aff4eb7ee305f8f04d2e&amp;type=2#WebCamView&quot;); position: relative; width: 320px; height: 240px; top: auto; left: auto; right: auto; display: flex;" />
             </ui:VisualElement>
             <ui:VisualElement name="settings" style="flex-grow: 1; margin-bottom: 0;">

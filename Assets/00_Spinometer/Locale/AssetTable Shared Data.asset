@@ -16,29 +16,36 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: 5a6cc37294238534a8128b0d74fe6ab4
   m_Entries:
   - m_Id: 94932467040256
+    m_Key: face-pose-good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 122680278124085248
     m_Key: New Entry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 122680368989487104
+    m_Key: face-pose-good
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items:
-    - rid: 830135121397678786
+    - rid: 5420311520232865944
   m_KeyGenerator:
     rid: 7564533899483152688
   references:
     version: 2
     RefIds:
-    - rid: 830135121397678786
+    - rid: 5420311520232865944
       type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_Entries:
-        - m_KeyId: 94932467040256
+        - m_KeyId: 122680368989487104
           m_TableCodes:
-          - ja
           - en
-        m_TypeString: UnityEngine.TextCore.Text.FontAsset, UnityEngine.TextCoreTextEngineModule,
-          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+          - ja
+        m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
     - rid: 7564533899483152688
-      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
-        asm: Unity.Localization}
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
         m_CustomEpoch: 1708912882755

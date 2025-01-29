@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ea9206ee79ea3bb4696fae97c82f9c75
+guid: cafe4ac8ca4e09842a11f88f7c38d2cc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,12 +45,12 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 80
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: buttons_agree_ja
+      name: sprites-logo_ja-light
       rect:
         serializedVersion: 2
-        x: 10
-        y: 962
-        width: 360
-        height: 140
+        x: 974
+        y: 1149
+        width: 760
+        height: 278
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,20 +125,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c97a4851a7e66c84db057821ca59a23c
-      internalID: 820999659
+      spriteID: 1581ff0b501802949b214bd681310adf
+      internalID: -1840485995
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_start_ja
+      name: sprites-logo_en-light
       rect:
         serializedVersion: 2
-        x: 10
-        y: 824
-        width: 360
-        height: 140
+        x: 803
+        y: 236
+        width: 1126
+        height: 266
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,20 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 904286a59e26e52489b87120a02f796c
-      internalID: -77394578
+      spriteID: 344ca5706ca9c2e4db0e184efa59194c
+      internalID: -171693313
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_agree_en
+      name: sprites-logo_ja-logo
       rect:
         serializedVersion: 2
-        x: 388
-        y: 963
-        width: 360
-        height: 140
+        x: 976
+        y: 1554
+        width: 760
+        height: 278
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,20 +169,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1313c600501975f43b0178ab1df6b534
-      internalID: 440515710
+      spriteID: 9d177a4ae55914743afef6e9587fe188
+      internalID: 155747977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_start_en
+      name: sprites-logo_en-logo
       rect:
         serializedVersion: 2
-        x: 388
-        y: 824
-        width: 360
-        height: 140
+        x: 808
+        y: 652
+        width: 1126
+        height: 266
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,8 +191,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6117551f3d56a74f80e91be23411c41
-      internalID: 766317280
+      spriteID: 28e83b825b8b8c74fb3b209f31cc463a
+      internalID: 1342362303
       vertices: []
       indices: 
       edges: []
@@ -201,7 +201,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7fd66eecf33255646ba3eb639af7bd13
+    spriteID: e85d4ea2769f6064fab4ec738063b6ff
     internalID: 0
     vertices: []
     indices: 
@@ -211,10 +211,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      buttons_agree_en: 440515710
-      buttons_agree_ja: 820999659
-      buttons_start_en: 766317280
-      buttons_start_ja: -77394578
+      sprites-logo_en-light: -171693313
+      sprites-logo_en-logo: 1342362303
+      sprites-logo_ja-light: -1840485995
+      sprites-logo_ja-logo: 155747977
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

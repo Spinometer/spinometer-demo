@@ -178,7 +178,7 @@ namespace GetBack.Spinometer.SpinalAlignmentVisualizer
               var uiPosY = (1.0f - screenPos.y / Screen.height) * _alignmentValueLabelContainer.layout.height;
               el.visible = true;
               // el.text = $"{label}\n{angle:0.0}";
-              el.text = $"{label}:{angle:0.0}";
+              el.text = $"{label}<size=15> : </size>{angle:0.0}";
               el.style.left = uiPosX + (labelOffset.x + 40f) * scale * _textScale * 0.25f;
               el.style.top = uiPosY + (labelOffset.y - 120f) * scale * _textScale * 0.25f;
               //el.style.color = color;

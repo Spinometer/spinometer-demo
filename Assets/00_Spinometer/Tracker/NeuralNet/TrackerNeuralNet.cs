@@ -7,7 +7,6 @@ using GetBack.Spinometer.UI;
 using Unity.Mathematics;
 using Unity.Sentis;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
 namespace GetBack.Spinometer

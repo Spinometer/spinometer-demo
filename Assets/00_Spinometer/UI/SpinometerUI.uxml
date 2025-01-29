@@ -4,7 +4,7 @@
     <Style src="project://database/Assets/00_Spinometer/UI/SpinometerUI.uss?fileID=7433441132597879392&amp;guid=496a4715e9f92874fa5834cc9fa7717c&amp;type=3#SpinometerUI" />
     <ui:VisualElement class="page-spinometer">
         <ui:Instance template="LocaleChanger" name="LocaleChanger" enabled="true" style="align-self: stretch; align-items: flex-end;" />
-        <ui:VisualElement name="face-pose" class="big" style="flex-grow: 0; margin-left: 0; background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/sprites.png?fileID=182052508&amp;guid=f4521ab1d014fcf4a8a53f9106dee12a&amp;type=3#sprite_frame_00&quot;); padding-top: 18px; padding-bottom: 18px; padding-left: 30px; padding-right: 20px; position: absolute; top: 64px; left: 64px; font-size: 22px; flex-direction: row; width: 430px; -unity-background-image-tint-color: rgb(90, 189, 231);">
+        <ui:VisualElement name="face-pose" class="big" style="flex-grow: 0; margin-left: 0; background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/sprites-misc.png?fileID=1135197212&amp;guid=50e5753e3eec34b4e8bed384ed2cdb26&amp;type=3#sprites-misc_frame-00&quot;); padding-top: 18px; padding-bottom: 25px; padding-left: 26px; padding-right: 30px; position: absolute; top: 64px; left: 64px; font-size: 22px; flex-direction: row; width: 430px;">
             <ui:VisualElement style="flex-grow: 1;">
                 <ui:VisualElement name="VisualElement" style="flex-grow: initial; flex-direction: row;">
                     <ui:Label class="field-label" style="width: 160px;">
@@ -33,7 +33,11 @@
                     </ui:Label>
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="good" picking-mode="Ignore" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/sprites.png?fileID=2142850604&amp;guid=f4521ab1d014fcf4a8a53f9106dee12a&amp;type=3#sprite_good_ja&quot;); right: 0; width: 98px; height: 100%; -unity-background-scale-mode: scale-to-fit; background-position-x: right 0;" />
+            <ui:VisualElement name="good" picking-mode="Ignore" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/sprites-misc.png?fileID=1873784217&amp;guid=50e5753e3eec34b4e8bed384ed2cdb26&amp;type=3#sprites-misc_good-ja&quot;); right: 0; width: 98px; height: 100%; -unity-background-scale-mode: scale-to-fit; background-position-x: right 0;">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedSprite property="style.backgroundImage" table="GUID:5a6cc37294238534a8128b0d74fe6ab4" entry="Id(122680368989487104)" />
+                </Bindings>
+            </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement style="flex-grow: 1; flex-direction: row; -unity-font-definition: url(&quot;project://database/Assets/00_Spinometer/Fonts/NotoSansJP-Regular%20SDF.asset?fileID=11400000&amp;guid=553ed431a1bc1644397dd555742559a5&amp;type=2#NotoSansJP-Regular SDF&quot;);">
             <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 400px; align-items: flex-end;">
@@ -44,7 +48,7 @@
                         </Bindings>
                     </ui:Label>
                 </ui:VisualElement>
-                <ui:Button text="Settings" name="settings" class="button-framed" style="margin-right: 60px; margin-bottom: 60px;">
+                <ui:Button text="Settings" name="settings" class="button-framed" style="margin-right: 60px; margin-bottom: 40px; background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/sprites-misc.png?fileID=-1241420292&amp;guid=50e5753e3eec34b4e8bed384ed2cdb26&amp;type=3#sprites-misc_button-01&quot;); padding-bottom: 4px; padding-left: 0; padding-top: 0; padding-right: 0; min-height: 68px; flex-basis: 68px; min-width: 173px; font-size: 22px;">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="text" table="GUID:c97d4cf749952e94f876d9e7f397b00d" entry="Id(49534134239232)" />
                     </Bindings>
@@ -55,13 +59,13 @@
             </Bindings>
         </ui:VisualElement>
         <ui:VisualElement name="alignment-values" picking-mode="Ignore" style="flex-grow: 1; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%;" />
-        <ui:VisualElement name="warning-messages" picking-mode="Ignore" style="flex-grow: 1; position: absolute; top: -3px; left: -3px; bottom: 4px; right: 4px; width: 100%; height: 100%; -unity-text-align: upper-left; align-items: center; align-self: center; align-content: center; justify-content: center;">
+        <ui:VisualElement name="warning-messages" picking-mode="Ignore" style="flex-grow: 1; position: absolute; top: -9px; left: -2px; bottom: 10px; right: 2px; width: 100%; height: 100%; -unity-text-align: upper-left; align-items: center; align-self: center; align-content: center; justify-content: center;">
             <ui:Label text="Tracking Unstable" name="warning-tracking-unstable" style="position: absolute; top: auto; left: auto; color: rgb(0, 0, 0); font-size: 96px; background-color: rgba(255, 229, 46, 0.38); padding-right: 60px; padding-left: 60px;" />
             <ui:Label text="Tracking Lost" name="warning-tracking-lost" style="position: absolute; top: auto; left: auto; color: rgb(0, 0, 0); font-size: 96px; background-color: rgba(255, 58, 46, 0.38); padding-right: 80px; padding-left: 80px;" />
             <ui:Label text="Camera Offline" name="warning-camera-offline" style="position: absolute; top: auto; left: auto; color: rgb(143, 143, 143); font-size: 96px;" />
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="camera-frame" picking-mode="Ignore" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/sprites.png?fileID=550573830&amp;guid=f4521ab1d014fcf4a8a53f9106dee12a&amp;type=3#sprite_frame_02_frame&quot;); padding-top: 12px; padding-right: 12px; padding-bottom: 12px; padding-left: 12px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; position: absolute; top: 43px; left: auto; right: 27px;">
+    <ui:VisualElement name="camera-frame" picking-mode="Ignore" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/sprites-misc.png?fileID=589728730&amp;guid=50e5753e3eec34b4e8bed384ed2cdb26&amp;type=3#sprites-misc_frame-01&quot;); padding-top: 12px; padding-right: 18px; padding-bottom: 18px; padding-left: 12px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; position: absolute; top: 48px; left: auto; right: 48px;">
         <ui:VisualElement name="camera" picking-mode="Ignore" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00_Spinometer/Tracker/NeuralNet/WebCamView.renderTexture?fileID=8400000&amp;guid=b01553d96982aff4eb7ee305f8f04d2e&amp;type=2#WebCamView&quot;); position: relative; width: 220px; height: 165px; top: auto; left: auto; right: auto; -unity-background-image-tint-color: rgb(255, 255, 255);" />
     </ui:VisualElement>
 </ui:UXML>

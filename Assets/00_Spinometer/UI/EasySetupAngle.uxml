@@ -13,7 +13,7 @@
                     </Bindings>
                 </ui:Label>
             </ui:VisualElement>
-            <ui:VisualElement name="easy-setup-instruction-image" style="background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/sprites.png?fileID=-837242533&amp;guid=f4521ab1d014fcf4a8a53f9106dee12a&amp;type=3#sprite_settings_angle&quot;); position: relative; min-width: 400px; min-height: 400px; max-height: 1200px; max-width: 1200px; height: 60%; flex-grow: 1; -unity-background-scale-mode: scale-to-fit; width: 100%; scale: 0.7 0.7;" />
+            <ui:VisualElement name="easy-setup-instruction-image" style="background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/sprites-misc.png?fileID=326779073&amp;guid=50e5753e3eec34b4e8bed384ed2cdb26&amp;type=3#sprites-misc_setup-instruction-angle&quot;); position: relative; min-width: 400px; min-height: 400px; max-height: 1200px; max-width: 1200px; height: 60%; flex-grow: 1; -unity-background-scale-mode: scale-to-fit; width: 100%; scale: 0.7 0.7;" />
             <ui:VisualElement name="layout-buttons" picking-mode="Ignore" style="flex-grow: 1; flex-direction: row; position: relative; top: auto; left: auto; bottom: 0; right: auto; padding-bottom: 66px;">
                 <ui:Button text="Save" name="btn-easy-setup-back" class="button-framed" style="bottom: 0; top: 0; left: 0; right: 0; margin-right: 222px;">
                     <Bindings>

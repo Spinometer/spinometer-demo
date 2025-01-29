@@ -79,7 +79,10 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 26297724660367360
-    m_Localized: While keeping your face at 50cm from the screen, click <b>Finish</b>.
+    m_Localized: 'Face the computer with good posture as shown in the illustration.
+
+      Don''t
+      bow your head and press the "Exit" button.'
     m_Metadata:
       m_Items: []
   - m_Id: 26299129311805440

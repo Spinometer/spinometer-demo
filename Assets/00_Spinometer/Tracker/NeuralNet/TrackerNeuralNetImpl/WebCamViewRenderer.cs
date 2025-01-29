@@ -1,6 +1,5 @@
 ﻿using System;
 using Drawing;
-using GetBack.Spinometer.UI;
 using Unity.Mathematics;
 using UnityEngine;
 using Camera = UnityEngine.Camera;

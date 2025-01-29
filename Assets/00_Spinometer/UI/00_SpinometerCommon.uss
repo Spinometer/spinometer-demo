@@ -7,7 +7,7 @@
     margin-bottom: 12px;
     margin-right: auto;
     margin-left: auto;
-    background-image: url("project://database/Assets/00_Spinometer/UI/images/button-frame.png?fileID=1952995558&guid=125c06f7c66dd5a479121d9b602589c8&type=3#button-frame");
+    background-image: url("project://database/Assets/00_Spinometer/UI/images/sprites-misc.png?fileID=-1911998746&guid=50e5753e3eec34b4e8bed384ed2cdb26&type=3#sprites-misc_button-02");
     background-color: rgba(188, 188, 188, 0);
     font-size: 30px;
     color: rgb(252, 253, 253);
@@ -28,7 +28,7 @@
     margin-bottom: 12px;
     margin-right: auto;
     margin-left: auto;
-    background-image: url("project://database/Assets/00_Spinometer/UI/images/button-frame.png?fileID=1952995558&guid=125c06f7c66dd5a479121d9b602589c8&type=3#button-frame");
+    background-image: url("project://database/Assets/00_Spinometer/UI/images/sprites-misc.png?fileID=-1911998746&guid=50e5753e3eec34b4e8bed384ed2cdb26&type=3#sprites-misc_button-02");
     background-color: rgba(188, 188, 188, 0);
     font-size: 30px;
     color: rgb(252, 253, 253);
@@ -50,7 +50,7 @@
     margin-bottom: 12px;
     margin-right: auto;
     margin-left: auto;
-    background-image: url("project://database/Assets/00_Spinometer/UI/images/button-frame.png?fileID=634291193&guid=125c06f7c66dd5a479121d9b602589c8&type=3#button-frame-active");
+    background-image: url("project://database/Assets/00_Spinometer/UI/images/sprites-misc.png?fileID=2042441879&guid=50e5753e3eec34b4e8bed384ed2cdb26&type=3#sprites-misc_button-02-active");
     background-color: rgba(188, 188, 188, 0);
     font-size: 30px;
     color: rgb(252, 253, 253);
@@ -86,15 +86,25 @@
     -unity-font-definition: url("project://database/Assets/00_Spinometer/Fonts/NotoSansJP-Regular%20SDF.asset?fileID=11400000&guid=553ed431a1bc1644397dd555742559a5&type=2#NotoSansJP-Regular SDF");
 }
 
-.page-easy-setup-camera {}
+.page-easy-setup-camera {
+}
+
 .page-easy-setup-camera #field-webcam-device-name .unity-popup-field__input {
-    background-color: #fff;
-    border-color: #fff;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
     border-left-width: 24px;
     border-right-width: 24px;
     border-radius: 8px;
 }
-.page-easy-setup-camera #field-webcam-device-name .unity-base-popup-field__arrow {}
-.page-easy-setup-angle {}
-.page-easy-setup-distance {}
-.overlay-extra {}
+
+.page-easy-setup-camera #field-webcam-device-name .unity-base-popup-field__arrow {
+}
+
+.page-easy-setup-angle {
+}
+
+.page-easy-setup-distance {
+}
+
+.overlay-extra {
+}

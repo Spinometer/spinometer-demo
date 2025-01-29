@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using GetBack.Spinometer.TrackerNeuralNetImpl;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 
