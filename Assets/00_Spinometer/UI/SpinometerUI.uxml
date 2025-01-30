@@ -35,7 +35,7 @@
             </ui:VisualElement>
             <ui:VisualElement name="good" picking-mode="Ignore" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/sprites-misc.png?fileID=1873784217&amp;guid=50e5753e3eec34b4e8bed384ed2cdb26&amp;type=3#sprites-misc_good-ja&quot;); right: 0; width: 98px; height: 100%; -unity-background-scale-mode: scale-to-fit; background-position-x: right 0;">
                 <Bindings>
-                    <UnityEngine.Localization.LocalizedSprite property="style.backgroundImage" table="GUID:5a6cc37294238534a8128b0d74fe6ab4" entry="Id(122680368989487104)" />
+                    <UnityEngine.Localization.LocalizedSprite property="style.backgroundImage" table="GUID:5a6cc37294238534a8128b0d74fe6ab4" entry="Id(94932467040256)" />
                 </Bindings>
             </ui:VisualElement>
         </ui:VisualElement>

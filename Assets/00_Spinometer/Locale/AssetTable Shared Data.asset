@@ -20,26 +20,34 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 122680278124085248
-    m_Key: New Entry
+    m_Key: opening-logo-light
     m_Metadata:
       m_Items: []
-  - m_Id: 122680368989487104
-    m_Key: face-pose-good
+  - m_Id: 122992204389564416
+    m_Key: opening-logo-logo
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items:
-    - rid: 5420311520232865944
+    - rid: 5420311520232866062
   m_KeyGenerator:
     rid: 7564533899483152688
   references:
     version: 2
     RefIds:
-    - rid: 5420311520232865944
+    - rid: 5420311520232866062
       type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_Entries:
-        - m_KeyId: 122680368989487104
+        - m_KeyId: 122992204389564416
+          m_TableCodes:
+          - en
+          - ja
+        - m_KeyId: 122680278124085248
+          m_TableCodes:
+          - en
+          - ja
+        - m_KeyId: 94932467040256
           m_TableCodes:
           - en
           - ja

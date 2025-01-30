@@ -49,7 +49,7 @@ namespace GetBack.Spinometer
 
     void Start()
     {
-      ChangeLocale("en");
+      //ChangeLocale("en");
       _state = !SceneLoaded(_sceneName_spinometer) ? State.Opening : State.Running;
       if (_state == State.Opening)
         LoadOpeningScene();
