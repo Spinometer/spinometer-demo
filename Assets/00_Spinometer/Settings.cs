@@ -81,6 +81,10 @@ namespace GetBack.Spinometer
       opt_poseEstimationFrequency = PlayerPrefs.GetInt("opt_poseEstimationFrequency", 15);
       opt_extra_updateFrequency = PlayerPrefs.GetInt("opt_extra_updateFrequency", 2);
 
+      // override update rate stuff
+      opt_targetFrameRate = 60;
+      opt_poseEstimationFrequency = 15;
+
       Debug.Log("Settings#LoadSettings(): done.");
     }
 
