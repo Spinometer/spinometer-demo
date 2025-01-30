@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 [CreateAssetMenu(fileName = "uiDataSourceInstance", menuName = "ScriptableObjects/UiDataSource", order = 1)]
 public class UiDataSource : ScriptableObject
@@ -22,7 +23,10 @@ public class UiDataSource : ScriptableObject
   public string abs_T12;
   public string abs_L3;
   public string abs_S;
- 
+
+  public DisplayStyle poseGoodDisplayStyle = DisplayStyle.None;
+  public DisplayStyle poseBadDisplayStyle = DisplayStyle.None;
+  
   private float _distance;
 
   private float _pitch;
@@ -45,6 +49,15 @@ public class UiDataSource : ScriptableObject
     {
       _pitch = value;
       pitchStr = value.ToString("0.0");
+    }
+  }
+
+  public bool IsPoseGood
+  {
+    get => poseGoodDisplayStyle != DisplayStyle.None;
+    set {
+      poseGoodDisplayStyle = value ? DisplayStyle.Flex : DisplayStyle.None;
+      poseBadDisplayStyle = !value ? DisplayStyle.Flex : DisplayStyle.None;
     }
   }
 }

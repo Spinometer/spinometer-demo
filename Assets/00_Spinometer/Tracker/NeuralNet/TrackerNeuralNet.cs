@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using GetBack.Spinometer.SpinalAlignmentVisualizer;
 using GetBack.Spinometer.SpinometerAux;
 using GetBack.Spinometer.SpinometerCore;
@@ -196,6 +197,13 @@ namespace GetBack.Spinometer
 
       if (_showStickFigure) {
         _visualizerStickFigure.DrawAlignment(spinalAlignment, _spinalAlignmentScore, true, _stickFigureOnSide, _uiDataSource.distance, _uiDataSource.pitch);
+      }
+
+      {
+        var scores = _spinalAlignmentScore.absoluteAngleScores;
+        var average = scores.Count == 0 ? 0f : scores.Average(kv => kv.Value);
+        // Debug.Log($"Average absolute angle score: {average}");
+        _uiDataSource.IsPoseGood = average > 0.5f;
       }
     }
 

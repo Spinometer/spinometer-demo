@@ -27,6 +27,10 @@ MonoBehaviour:
     m_Key: opening-logo-logo
     m_Metadata:
       m_Items: []
+  - m_Id: 122996958276632576
+    m_Key: face-pose-bad
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items:
     - rid: 5420311520232866062
@@ -48,6 +52,10 @@ MonoBehaviour:
           - en
           - ja
         - m_KeyId: 94932467040256
+          m_TableCodes:
+          - en
+          - ja
+        - m_KeyId: 122996958276632576
           m_TableCodes:
           - en
           - ja

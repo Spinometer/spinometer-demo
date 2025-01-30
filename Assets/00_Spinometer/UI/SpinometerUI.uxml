@@ -33,9 +33,16 @@
                     </ui:Label>
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="good" picking-mode="Ignore" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/sprites-misc.png?fileID=1873784217&amp;guid=50e5753e3eec34b4e8bed384ed2cdb26&amp;type=3#sprites-misc_good-ja&quot;); right: 0; width: 98px; height: 100%; -unity-background-scale-mode: scale-to-fit; background-position-x: right 0;">
+            <ui:VisualElement name="face-pose-good" picking-mode="Ignore" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/sprites-misc.png?fileID=1873784217&amp;guid=50e5753e3eec34b4e8bed384ed2cdb26&amp;type=3#sprites-misc_good-ja&quot;); right: 0; width: 98px; height: 100%; -unity-background-scale-mode: scale-to-fit; background-position-x: right 0; display: none;">
                 <Bindings>
                     <UnityEngine.Localization.LocalizedSprite property="style.backgroundImage" table="GUID:5a6cc37294238534a8128b0d74fe6ab4" entry="Id(94932467040256)" />
+                    <ui:DataBinding property="style.display" data-source="project://database/Assets/00_Spinometer/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" binding-mode="ToTarget" data-source-path="poseGoodDisplayStyle" />
+                </Bindings>
+            </ui:VisualElement>
+            <ui:VisualElement name="face-pose-bad" picking-mode="Ignore" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/00_Spinometer/UI/images/sprites-misc.png?fileID=1873784217&amp;guid=50e5753e3eec34b4e8bed384ed2cdb26&amp;type=3#sprites-misc_good-ja&quot;); right: 0; width: 98px; height: 100%; -unity-background-scale-mode: scale-to-fit; background-position-x: right 0; display: none;">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedSprite property="style.backgroundImage" table="GUID:5a6cc37294238534a8128b0d74fe6ab4" entry="Id(122996958276632576)" />
+                    <ui:DataBinding property="style.display" data-source="project://database/Assets/00_Spinometer/UI/uiDataSourceInstance.asset?fileID=11400000&amp;guid=b0642bbdcbe8c274cbcf9e8f7dee90dc&amp;type=2#uiDataSourceInstance" binding-mode="ToTarget" data-source-path="poseBadDisplayStyle" />
                 </Bindings>
             </ui:VisualElement>
         </ui:VisualElement>
