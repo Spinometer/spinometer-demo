@@ -176,8 +176,10 @@ namespace GetBack.Spinometer
       _secondsToNextFrame -= Time.deltaTime;
       if (_secondsToNextFrame <= 0f) {
         _secondsToNextFrame += 1.0f / _settings.opt_poseEstimationFrequency;
-        UpdatePositions();
+        UpdateHeadPose();
       }
+
+      UpdatePositions();
 
       _webCamViewRenderer.UpdateRenderTexture(_webCam.ViewTexture,
                                               _localizerLastRoi,
@@ -207,7 +209,7 @@ namespace GetBack.Spinometer
       }
     }
 
-    void UpdatePositions()
+    void UpdateHeadPose()
     {
       if (_webCam == null) {
         _uiDataSource.webCamStateString = "";
@@ -216,11 +218,14 @@ namespace GetBack.Spinometer
         return;
       }
 
+      _extraUiDataSource.smoothingDt = 1.0f / _settings.opt_poseEstimationFrequency;
+
       _uiDataSource.webCamStateString = _webCam.StateString;
       if (_webCam.State != WebCam.StateEnum.running) {
         UpdateTrackerStatus(TrackerStatus.CameraOffline);
         return;
       }
+
       var inputTexture = _webCam.InputTexture;
       if (inputTexture == null) {
         // Debug.LogError("No webcam texture available");
@@ -272,6 +277,7 @@ namespace GetBack.Spinometer
           _localizerLastRoi = null;
           _poseEstimatorLastRoi = null;
         }
+
         _extraUiDataSource.localizerLastRoi = _localizerLastRoi;
         _extraUiDataSource.poseEstimatorLastRoi = _poseEstimatorLastRoi;
       }
@@ -300,6 +306,7 @@ namespace GetBack.Spinometer
           UpdateTrackerStatus(TrackerStatus.TrackingLost);
           return;
         }
+
         //Debug.Log("***OOO***");
         if (face.sizeStdDev.x >= 7f || face.sizeStdDev.y >= 7f) {
           UpdateTrackerStatus(TrackerStatus.TrackingUnstable);
@@ -330,52 +337,58 @@ namespace GetBack.Spinometer
         // now _extraUiDataSource has damped posePosition and poseRotation.  we use them below to translate/rotate face proxy.
         GameObject.Find("/SK_Skeleton/FaceProxyOrigin").transform.localRotation = Quaternion.AngleAxis(
           -90f + _settings.opt_displaySurfaceAngle + _settings.opt_additionalPitchOffset, Vector3.left);
-        GameObject.Find("/SK_Skeleton/FaceProxyOrigin/CameraOrigin/FaceProxy").transform.localPosition = _extraUiDataSource.posePosition;
-        GameObject.Find("/SK_Skeleton/FaceProxyOrigin/CameraOrigin/FaceProxy").transform.localRotation = _extraUiDataSource.poseRotation;
-
-        float smoothingLambda = 6.0f;
-        float dt = Time.deltaTime;
-        _dt = Damp(_dt, dt, smoothingLambda, dt);
-        dt = _dt;
-        float angle = -pose.rotation.eulerAngles.x;
-        float pitchSensitivity = 1.4f; // FIXME:  arbitrary adjustment using magic number.
-        _uiDataSource.pitch = Damp(_uiDataSource.pitch,
-                                   ((angle + 540f) % 360f - 180f) * pitchSensitivity +
-                                   (_settings.opt_displaySurfaceAngle - 90f) +
-                                   _settings.opt_additionalPitchOffset,
-                                   smoothingLambda, dt);
-
-        _uiDataSource.distance = CorrectDistance(Damp(_uiDataSource.distance, -pose.position.z, smoothingLambda, dt));
-
-        _spinalAlignmentEstimator.Estimate(_uiDataSource.distance, _uiDataSource.pitch, _spinalAlignment);
-        // TODO: FIXME: HOGE: _uiDataSource
-        {
-          var relativeAngles = _spinalAlignment.relativeAngles;
-          var absoluteAngles = _spinalAlignment.absoluteAngles;
-
-          if (!_settings.opt_spinalAlignmentEstimatorOptions.useNew)
-            _uiDataSource.rel_C2_C7_vert = relativeAngles[SpinalAlignment.RelativeAngleId.C2_C7_vert].ToString("0.0");
-          else {
-            _uiDataSource.rel_C2_C7_vert = relativeAngles[SpinalAlignment.RelativeAngleId.C2_C7_vert_new].ToString("0.0");
-            _uiDataSource.rel_C7_T3_vert = relativeAngles[SpinalAlignment.RelativeAngleId.C7_T3_vert_new].ToString("0.0");
-          }
-          _uiDataSource.rel_T1_slope = relativeAngles[SpinalAlignment.RelativeAngleId.T1_slope].ToString("0.0");
-          _uiDataSource.rel_C7_T3_T8 = relativeAngles[SpinalAlignment.RelativeAngleId.C7_T3_T8].ToString("0.0");
-          _uiDataSource.rel_T3_T8_T12 = relativeAngles[SpinalAlignment.RelativeAngleId.T3_T8_T12].ToString("0.0");
-          _uiDataSource.rel_T8_T12_L3 = relativeAngles[SpinalAlignment.RelativeAngleId.T8_T12_L3].ToString("0.0");
-          _uiDataSource.rel_T12_L3_S = relativeAngles[SpinalAlignment.RelativeAngleId.T12_L3_S].ToString("0.0");
-
-          _uiDataSource.abs_EyePost = absoluteAngles[SpinalAlignment.AbsoluteAngleId.EyePost].ToString("0.0");
-          _uiDataSource.abs_C2 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.C2].ToString("0.0");
-          _uiDataSource.abs_C7 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.C2_C7].ToString("0.0");
-          _uiDataSource.abs_T3 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.C7_T3].ToString("0.0");
-          _uiDataSource.abs_T8 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.T3_T8].ToString("0.0");
-          _uiDataSource.abs_T12 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.T8_T12].ToString("0.0");
-          _uiDataSource.abs_L3 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.T12_L3].ToString("0.0");
-          _uiDataSource.abs_S = absoluteAngles[SpinalAlignment.AbsoluteAngleId.L3_S].ToString("0.0");
-        }
-        SpinalAlignmentScoreCalculator.CalculateScore(spinalAlignment, _spinalAlignmentScore);
+        GameObject.Find("/SK_Skeleton/FaceProxyOrigin/CameraOrigin/FaceProxy").transform.localPosition =
+          _extraUiDataSource.posePosition;
+        GameObject.Find("/SK_Skeleton/FaceProxyOrigin/CameraOrigin/FaceProxy").transform.localRotation =
+          _extraUiDataSource.poseRotation;
       }
+    }
+
+    void UpdatePositions()
+    {
+      float smoothingLambda = 6.0f;
+      float dt = Time.deltaTime;
+      _dt = Damp(_dt, dt, smoothingLambda, dt);
+      dt = _dt;
+      // FIXME:  getting data from _extraUiDataSource
+      float angle = -_extraUiDataSource.poseRotation.eulerAngles.x;
+      float pitchSensitivity = 1.4f; // FIXME:  arbitrary adjustment using magic number.
+      _uiDataSource.pitch = Damp(_uiDataSource.pitch,
+                                 ((angle + 540f) % 360f - 180f) * pitchSensitivity +
+                                 (_settings.opt_displaySurfaceAngle - 90f) +
+                                 _settings.opt_additionalPitchOffset,
+                                 smoothingLambda, dt);
+
+      _uiDataSource.distance = CorrectDistance(Damp(_uiDataSource.distance, -_extraUiDataSource.posePosition.z, smoothingLambda, dt));
+
+      _spinalAlignmentEstimator.Estimate(_uiDataSource.distance, _uiDataSource.pitch, _spinalAlignment);
+      // TODO: FIXME: HOGE: _uiDataSource
+      {
+        var relativeAngles = _spinalAlignment.relativeAngles;
+        var absoluteAngles = _spinalAlignment.absoluteAngles;
+
+        if (!_settings.opt_spinalAlignmentEstimatorOptions.useNew)
+          _uiDataSource.rel_C2_C7_vert = relativeAngles[SpinalAlignment.RelativeAngleId.C2_C7_vert].ToString("0.0");
+        else {
+          _uiDataSource.rel_C2_C7_vert = relativeAngles[SpinalAlignment.RelativeAngleId.C2_C7_vert_new].ToString("0.0");
+          _uiDataSource.rel_C7_T3_vert = relativeAngles[SpinalAlignment.RelativeAngleId.C7_T3_vert_new].ToString("0.0");
+        }
+        _uiDataSource.rel_T1_slope = relativeAngles[SpinalAlignment.RelativeAngleId.T1_slope].ToString("0.0");
+        _uiDataSource.rel_C7_T3_T8 = relativeAngles[SpinalAlignment.RelativeAngleId.C7_T3_T8].ToString("0.0");
+        _uiDataSource.rel_T3_T8_T12 = relativeAngles[SpinalAlignment.RelativeAngleId.T3_T8_T12].ToString("0.0");
+        _uiDataSource.rel_T8_T12_L3 = relativeAngles[SpinalAlignment.RelativeAngleId.T8_T12_L3].ToString("0.0");
+        _uiDataSource.rel_T12_L3_S = relativeAngles[SpinalAlignment.RelativeAngleId.T12_L3_S].ToString("0.0");
+
+        _uiDataSource.abs_EyePost = absoluteAngles[SpinalAlignment.AbsoluteAngleId.EyePost].ToString("0.0");
+        _uiDataSource.abs_C2 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.C2].ToString("0.0");
+        _uiDataSource.abs_C7 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.C2_C7].ToString("0.0");
+        _uiDataSource.abs_T3 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.C7_T3].ToString("0.0");
+        _uiDataSource.abs_T8 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.T3_T8].ToString("0.0");
+        _uiDataSource.abs_T12 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.T8_T12].ToString("0.0");
+        _uiDataSource.abs_L3 = absoluteAngles[SpinalAlignment.AbsoluteAngleId.T12_L3].ToString("0.0");
+        _uiDataSource.abs_S = absoluteAngles[SpinalAlignment.AbsoluteAngleId.L3_S].ToString("0.0");
+      }
+      SpinalAlignmentScoreCalculator.CalculateScore(spinalAlignment, _spinalAlignmentScore);
     }
 
     private float CorrectDistance(float rawDistance)
