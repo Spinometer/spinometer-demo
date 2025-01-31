@@ -4,6 +4,7 @@ using GetBack.Spinometer.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Localization.Settings;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using Debug = UnityEngine.Debug;
@@ -67,14 +68,25 @@ namespace GetBack.Spinometer
     {
       if (!_uiDataSource || !_settings)
         return;
+
       if (!_settingsInitialized) {
         _settings.Awake();
         _settingsInitialized = true;
       }
+
       Application.targetFrameRate = _settings.opt_targetFrameRate;
+
 #if !UNITY_EDITOR
-      int vSyncCount = 60 / _settings.opt_targetFrameRate;
-      QualitySettings.vSyncCount = (int)Mathf.Clamp(vSyncCount, 1, 4);
+      var screenRefreshRate = Screen.currentResolution.refreshRateRatio;
+      long vSyncCount = screenRefreshRate.numerator / (screenRefreshRate.denominator * _settings.opt_targetFrameRate);
+      // QualitySettings.vSyncCount must be between 0 and 4 (by its API spec)
+      if (vSyncCount > 4) {
+        // desired vSyncCount is out of range.
+        // make Application.targetFrameRate take effect.  (however it may cause stuttering)
+        QualitySettings.vSyncCount = 0;
+      } else {
+        QualitySettings.vSyncCount = (int)Mathf.Clamp(vSyncCount, 1, 4);
+      }
 #endif
 
 #if false
