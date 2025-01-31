@@ -15,6 +15,13 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Shared
   m_GUID: 59032698cd2267d4891858f45c8c4f91
   m_SerializeEntries:
+  - m_GUID: 50e5753e3eec34b4e8bed384ed2cdb26
+    m_Address: sprites-misc
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5a6cc37294238534a8128b0d74fe6ab4
     m_Address: Assets/00_SpineMeter/Locale/AssetTable Shared Data.asset
     m_ReadOnly: 1
@@ -24,13 +31,6 @@ MonoBehaviour:
     m_Address: Assets/00_SpineMeter/Locale/StringTable Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cafe4ac8ca4e09842a11f88f7c38d2cc
-    m_Address: sprites-logo
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en
-    - Locale-ja
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: fc9d86520790bc14b9d682c963510d4c, type: 2}

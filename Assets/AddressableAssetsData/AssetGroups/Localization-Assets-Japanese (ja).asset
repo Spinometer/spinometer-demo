@@ -15,14 +15,8 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Japanese (ja)
   m_GUID: 99de3141d46364d4d89f9caa8ec62481
   m_SerializeEntries:
-  - m_GUID: 50e5753e3eec34b4e8bed384ed2cdb26
-    m_Address: sprites-misc
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ja
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b21255874f8d0ae4aab0fe85bb2da8ec
-    m_Address: logo_ja_680x198_backlight
+  - m_GUID: cafe4ac8ca4e09842a11f88f7c38d2cc
+    m_Address: sprites-logo
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ja

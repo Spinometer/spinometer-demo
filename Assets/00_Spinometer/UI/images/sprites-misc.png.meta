@@ -336,7 +336,7 @@ TextureImporter:
         x: 612
         y: 1816
         width: 237
-        height: 169
+        height: 170
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,9 +355,9 @@ TextureImporter:
       name: sprites-misc_good-en
       rect:
         serializedVersion: 2
-        x: 623
-        y: 1614
-        width: 208
+        x: 626
+        y: 1610
+        width: 207
         height: 164
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -369,6 +369,50 @@ TextureImporter:
       bones: []
       spriteID: b487d23a32831794d9f1027e4959a693
       internalID: 1283306873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprites-misc_bad-ja
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 1816
+        width: 237
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a244d54d6d98664484b47d36a033f1c
+      internalID: -1320331961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprites-misc_bad-en
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 1610
+        width: 207
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e588f4b9bc39bc94f9e9103e75998c00
+      internalID: -942343319
       vertices: []
       indices: 
       edges: []
@@ -387,7 +431,6 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sprites-misc_0: 1249346644
       sprites-misc_10: 479877611
       sprites-misc_11: -1857858402
       sprites-misc_12: -1500031628
@@ -411,6 +454,8 @@ TextureImporter:
       sprites-misc_8: -1301718076
       sprites-misc_9: 319809438
       sprites-misc_alignment-tag: -1753326016
+      sprites-misc_bad-en: -942343319
+      sprites-misc_bad-ja: 1249346644
       sprites-misc_button-01: -1241420292
       sprites-misc_button-01-active: 51753141
       sprites-misc_button-02: -1911998746
