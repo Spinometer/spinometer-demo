@@ -98,6 +98,10 @@
 }
 
 .page-easy-setup-camera #field-webcam-device-name .unity-base-popup-field__arrow {
+    background-image: url("project://database/Assets/00_Spinometer/UI/images/sprites-misc.png?fileID=794972432&guid=50e5753e3eec34b4e8bed384ed2cdb26&type=3#sprites-misc_popup-field-arrow");
+    -unity-background-scale-mode: scale-to-fit;
+    width: 36px;
+    height: 36px;
 }
 
 .page-easy-setup-angle {

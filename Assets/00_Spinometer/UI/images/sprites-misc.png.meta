@@ -382,7 +382,7 @@ TextureImporter:
         width: 237
         height: 170
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -404,7 +404,7 @@ TextureImporter:
         width: 207
         height: 164
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -413,6 +413,28 @@ TextureImporter:
       bones: []
       spriteID: e588f4b9bc39bc94f9e9103e75998c00
       internalID: -942343319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprites-misc_popup-field-arrow
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 1944
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d3fd9c2fe4d0f34687dc3b167f854d5
+      internalID: 794972432
       vertices: []
       indices: 
       edges: []
@@ -465,6 +487,7 @@ TextureImporter:
       sprites-misc_frame-02: 1458214035
       sprites-misc_good-en: 1283306873
       sprites-misc_good-ja: 1873784217
+      sprites-misc_popup-field-arrow: 794972432
       sprites-misc_setup-instruction-angle: 326779073
       sprites-misc_setup-instruction-distance: 1244879281
   mipmapLimitGroupName: 
