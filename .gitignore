@@ -84,3 +84,4 @@ crashlytics-build.properties
 /[Aa]ssets/Plugins/RootMotion.meta
 
 /\.idea/
+.aider*

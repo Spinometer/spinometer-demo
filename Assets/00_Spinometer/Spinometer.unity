@@ -2005,6 +2005,7 @@ GameObject:
   - component: {fileID: 2074200215}
   - component: {fileID: 2074200217}
   - component: {fileID: 2074200218}
+  - component: {fileID: 2074200219}
   m_Layer: 0
   m_Name: Tracker
   m_TagString: Untagged
@@ -2094,6 +2095,21 @@ MonoBehaviour:
   _alignmentValueLabelPrototype: {fileID: 9197481963319205126, guid: 967dc4b773ee4024ab9634d6d744adfc, type: 3}
   _textScale: 0.25
   _scoreWarningIndicatorSensitivity: 0.5
+--- !u!114 &2074200219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074200214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4afd39e96842c88e2511f72a8c88fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _exportInterval: 60
+  _trackerNeuralNet: {fileID: 2074200215}
+  _uiDataSource: {fileID: 11400000, guid: b0642bbdcbe8c274cbcf9e8f7dee90dc, type: 2}
 --- !u!4 &2146258008 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400034, guid: 314cd33b23684e24694478173d618d90, type: 3}

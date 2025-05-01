@@ -14,7 +14,7 @@ namespace GetBack.Spinometer
 {
   public class TrackerNeuralNet : MonoBehaviour
   {
-    public enum TrackerStatus
+    public enum TrackerStatusEnum
     {
       Initializing,
       InternalError,
@@ -56,7 +56,6 @@ namespace GetBack.Spinometer
     private bool _showStickFigure = false;
     private bool _stickFigureOnSide = false;
     private bool _smallScreenMode = false;
-    private TrackerStatus _trackerStatus = TrackerStatus.Initializing;
     private VisualElement _warningMessageTrackingLost = null;
     private VisualElement _warningMessageTrackingUnstable = null;
     private VisualElement _warningMessageCameraOffline = null;
@@ -122,6 +121,8 @@ namespace GetBack.Spinometer
       get => _spinalAlignmentScore;
       set => _spinalAlignmentScore = value;
     }
+
+    public TrackerStatusEnum TrackerStatus { get; private set; } = TrackerStatusEnum.Initializing;
 
     private void UpdateSkeletonVisualizerVisibility()
     {
@@ -213,7 +214,7 @@ namespace GetBack.Spinometer
     {
       if (_webCam == null) {
         _uiDataSource.webCamStateString = "";
-        UpdateTrackerStatus(TrackerStatus.CameraOffline);
+        UpdateTrackerStatus(TrackerStatusEnum.CameraOffline);
         // Debug.LogError("No webcam connected");
         return;
       }
@@ -222,14 +223,14 @@ namespace GetBack.Spinometer
 
       _uiDataSource.webCamStateString = _webCam.StateString;
       if (_webCam.State != WebCam.StateEnum.running) {
-        UpdateTrackerStatus(TrackerStatus.CameraOffline);
+        UpdateTrackerStatus(TrackerStatusEnum.CameraOffline);
         return;
       }
 
       var inputTexture = _webCam.InputTexture;
       if (inputTexture == null) {
         // Debug.LogError("No webcam texture available");
-        UpdateTrackerStatus(TrackerStatus.InternalError);
+        UpdateTrackerStatus(TrackerStatusEnum.InternalError);
         return;
       }
 
@@ -284,7 +285,7 @@ namespace GetBack.Spinometer
       //Debug.Log("***MMM***");
 
       if (!_poseEstimatorLastRoi.HasValue) {
-        UpdateTrackerStatus(TrackerStatus.TrackingLost);
+        UpdateTrackerStatus(TrackerStatusEnum.TrackingLost);
         return;
       }
       //Debug.Log("***NNN***");
@@ -303,15 +304,15 @@ namespace GetBack.Spinometer
         if (face.size < 0.001f) {
           _poseEstimatorLastRoi = null;
           _extraUiDataSource.poseEstimatorLastRoi = _poseEstimatorLastRoi;
-          UpdateTrackerStatus(TrackerStatus.TrackingLost);
+          UpdateTrackerStatus(TrackerStatusEnum.TrackingLost);
           return;
         }
 
         //Debug.Log("***OOO***");
         if (face.sizeStdDev.x >= 7f || face.sizeStdDev.y >= 7f) {
-          UpdateTrackerStatus(TrackerStatus.TrackingUnstable);
+          UpdateTrackerStatus(TrackerStatusEnum.TrackingUnstable);
         } else {
-          UpdateTrackerStatus(TrackerStatus.Normal);
+          UpdateTrackerStatus(TrackerStatusEnum.Normal);
         }
 
         float settings_roi_zoom = 1.0f;
@@ -400,29 +401,29 @@ namespace GetBack.Spinometer
       return d;
     }
 
-    private void UpdateTrackerStatus(TrackerStatus st)
+    private void UpdateTrackerStatus(TrackerStatusEnum st)
     {
-      _trackerStatus = st;
+      TrackerStatus = st;
 
       switch (st) {
-      case TrackerStatus.Initializing:
-      case TrackerStatus.Normal:
-      case TrackerStatus.InternalError:
+      case TrackerStatusEnum.Initializing:
+      case TrackerStatusEnum.Normal:
+      case TrackerStatusEnum.InternalError:
         _warningMessageTrackingLost.visible = false;
         _warningMessageTrackingUnstable.visible = false;
         _warningMessageCameraOffline.visible = false;
         break;
-      case TrackerStatus.CameraOffline:
+      case TrackerStatusEnum.CameraOffline:
         _warningMessageTrackingLost.visible = false;
         _warningMessageTrackingUnstable.visible = false;
         _warningMessageCameraOffline.visible = true;
         break;
-      case TrackerStatus.TrackingLost:
+      case TrackerStatusEnum.TrackingLost:
         _warningMessageTrackingLost.visible = true;
         _warningMessageTrackingUnstable.visible = false;
         _warningMessageCameraOffline.visible = false;
         break;
-      case TrackerStatus.TrackingUnstable:
+      case TrackerStatusEnum.TrackingUnstable:
         _warningMessageTrackingLost.visible = false;
         _warningMessageTrackingUnstable.visible = true;
         _warningMessageCameraOffline.visible = false;
