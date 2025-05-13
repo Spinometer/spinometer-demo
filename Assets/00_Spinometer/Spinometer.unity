@@ -2107,7 +2107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa4afd39e96842c88e2511f72a8c88fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _exportInterval: 60
+  _exportInterval: 5
   _trackerNeuralNet: {fileID: 2074200215}
   _uiDataSource: {fileID: 11400000, guid: b0642bbdcbe8c274cbcf9e8f7dee90dc, type: 2}
 --- !u!4 &2146258008 stripped
