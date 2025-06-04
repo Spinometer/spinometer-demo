@@ -184,9 +184,13 @@ namespace GetBack.Spinometer.SpinalAlignmentVisualizer
               //el.style.color = color;
               el.style.fontSize = 16.0f * scale * _textScale;
               bool withinNormalBound = score >= _scoreWarningIndicatorSensitivity;
+              bool withinNormalBound2 = score >= _scoreWarningIndicatorSensitivity * (1.0f / 0.75f);
               //el.style.backgroundColor = withinNormalBound ? new Color(0f, 0f, 0f, 0f) : new Color(1f, 0f, 0f, 0.2f);
               el.style.unityBackgroundImageTintColor = withinNormalBound ?
+                withinNormalBound2 ?
                 new Color(0x34 / 255.0f, 0x5a / 255.0f, 0x9e / 255.0f) :
+                new Color(0x34 / 255.0f, 0x9e / 255.0f, 0x5a / 255.0f) :
+
                 new Color(0xb2 / 255.0f, 0x31 / 255.0f, 0x40 / 255.0f);
             }
           }
