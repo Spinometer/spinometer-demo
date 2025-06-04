@@ -32,7 +32,7 @@ namespace GetBack.Spinometer.DataExporter
       string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
       string filename = $"spinometer-data-{DateTime.Now:yyyyMMddTHHmmss}.jsonl";
       _dataExporter = new DataExporter($"{desktop}/{filename}");
-      _dataExporter.Write("{\"data-version\": \"0\"}\n");
+      _dataExporter.Write("{\"data-version\": \"1\"}\n");
       _backgroundMeshRenderer.enabled = false;
     }
 
@@ -73,7 +73,7 @@ namespace GetBack.Spinometer.DataExporter
       var sas = _trackerNeuralNet.spinalAlignmentScore;
       var saJson = JsonConvert.SerializeObject(sa);
       var sasJson = JsonConvert.SerializeObject(sas);
-      string line = $"{{\"timestamp\": {timestamp}, " + 
+      string line = $"{{\"timestamp\": \"{timestamp}\", " +
 
                     $"\"tracker\": {{\"status\": \"{_trackerNeuralNet.TrackerStatus}\", " +
                     $"\"pitch\": {_uiDataSource.pitch}, " +
