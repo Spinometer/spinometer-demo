@@ -1,6 +1,6 @@
 using System;
 using Unity.Mathematics;
-using Unity.Sentis;
+
 using UnityEngine;
 using Matrix4x4 = UnityEngine.Matrix4x4;
 using Quaternion = UnityEngine.Quaternion;
@@ -9,15 +9,15 @@ namespace GetBack.Spinometer.TrackerNeuralNetImpl
 {
   public class PoseEstimator : IDisposable
   {
-    private Worker _worker;
+    private Unity.InferenceEngine.Worker _worker;
     private bool hasUncertainty = true;
     private bool hasEyeClosedDetection = false;
     private BrightnessNormalizer _brightnessNormalizer;
 
-    public PoseEstimator(Model poseEstimatorRuntimeModel)
+    public PoseEstimator(Unity.InferenceEngine.Model poseEstimatorRuntimeModel)
     {
-      var backendType = SystemInfo.supportsComputeShaders ? BackendType.GPUCompute : BackendType.GPUPixel;
-      _worker = new Worker(poseEstimatorRuntimeModel, backendType);
+      var backendType = SystemInfo.supportsComputeShaders ? Unity.InferenceEngine.BackendType.GPUCompute : Unity.InferenceEngine.BackendType.GPUPixel;
+      _worker = new Unity.InferenceEngine.Worker(poseEstimatorRuntimeModel, backendType);
       _brightnessNormalizer = new BrightnessNormalizer();
     }
 
@@ -27,7 +27,7 @@ namespace GetBack.Spinometer.TrackerNeuralNetImpl
     /// <param name="inputTensor">The input tensor containing the face image.</param>
     /// <param name="box">The bounding box that encloses the face in the input tensor.</param>
     /// <returns>A Face object containing the detected face information.</returns>
-    public Face Run(Tensor<float> inputTensor, TrackerNeuralNet.BoundingBox box)
+    public Face Run(Unity.InferenceEngine.Tensor<float> inputTensor, TrackerNeuralNet.BoundingBox box)
     {
       //int patchSize = Mathf.FloorToInt(Math.Max(box.Width, box.Height) * 1.05f);
       float patchSize = Math.Max(box.Width, box.Height) * 1.05f;
@@ -42,7 +42,7 @@ namespace GetBack.Spinometer.TrackerNeuralNetImpl
       }
 #endif
 
-      var tempTex0 = TextureConverter.ToTexture(inputTensor, inputTensor.shape[3], inputTensor.shape[2], 1, false);
+      var tempTex0 = Unity.InferenceEngine.TextureConverter.ToTexture(inputTensor, inputTensor.shape[3], inputTensor.shape[2], 1, false);
 
       // crop & scale
       var tempTex1 = RenderTexture.GetTemporary(129, 129, 0, tempTex0.graphicsFormat);
@@ -56,7 +56,7 @@ namespace GetBack.Spinometer.TrackerNeuralNetImpl
       }
 
       //
-      using var croppedResizedInputTensor = TextureConverter.ToTensor(tempTex1);
+      using var croppedResizedInputTensor = Unity.InferenceEngine.TextureConverter.ToTensor(tempTex1);
 
       var material = GameObject.Find("/DebugPlane")?.GetComponent<MeshRenderer>()?.material;
       if (material != null)
@@ -71,24 +71,24 @@ namespace GetBack.Spinometer.TrackerNeuralNetImpl
       //
       var face = new Face();
       {
-        var results_ = _worker.PeekOutput("pos_size") as Tensor<float>;
+        var results_ = _worker.PeekOutput("pos_size") as Unity.InferenceEngine.Tensor<float>;
         var results = results_.DownloadToNativeArray();
         face.center = patchCenter + 0.5f * patchSize * new float2(results[0], results[1]);
         face.size = 0.5f * patchSize * results[2];
       }
       {
-        var results_ = _worker.PeekOutput("pos_size_scales") as Tensor<float>;
+        var results_ = _worker.PeekOutput("pos_size_scales") as Unity.InferenceEngine.Tensor<float>;
         var results = results_.DownloadToNativeArray();
         face.centerStdDev = 0.5f * patchSize * new float2(results[0], results[1]);
         face.sizeStdDev = 0.5f * patchSize * results[2];
       }
       {
-        var results_ = _worker.PeekOutput("quat") as Tensor<float>;
+        var results_ = _worker.PeekOutput("quat") as Unity.InferenceEngine.Tensor<float>;
         var results = results_.DownloadToNativeArray();
         face.rotation = new Quaternion(results[0], results[1], results[2], results[3]);
       }
       {
-        var results_ = _worker.PeekOutput("rotaxis_scales_tril") as Tensor<float>;
+        var results_ = _worker.PeekOutput("rotaxis_scales_tril") as Unity.InferenceEngine.Tensor<float>;
         var results = results_.DownloadToNativeArray();
         face.matrix = Matrix4x4.identity;
         face.matrix.m00 = results[0];
@@ -102,7 +102,7 @@ namespace GetBack.Spinometer.TrackerNeuralNetImpl
         face.matrix.m22 = results[8];
       }
       {
-        var results_ = _worker.PeekOutput("box") as Tensor<float>;
+        var results_ = _worker.PeekOutput("box") as Unity.InferenceEngine.Tensor<float>;
         var results = results_.DownloadToNativeArray();
         face.box = new TrackerNeuralNet.BoundingBox(patchCenter.x + 0.5f * patchSize * results[0],
                                                     patchCenter.y + 0.5f * patchSize * results[1],

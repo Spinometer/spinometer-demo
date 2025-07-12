@@ -1,23 +1,23 @@
 ﻿using System;
-using Unity.Sentis;
+
 using UnityEngine;
 
 namespace GetBack.Spinometer.TrackerNeuralNetImpl
 {
   public class Localizer : IDisposable
   {
-    private Worker _worker;
+    private Unity.InferenceEngine.Worker _worker;
 
-    public Localizer(Model runtimeModel)
+    public Localizer(Unity.InferenceEngine.Model runtimeModel)
     {
-      var backendType = SystemInfo.supportsComputeShaders ? BackendType.GPUCompute : BackendType.GPUPixel;
-      _worker = new Worker(runtimeModel, backendType);
+      var backendType = SystemInfo.supportsComputeShaders ? Unity.InferenceEngine.BackendType.GPUCompute : Unity.InferenceEngine.BackendType.GPUPixel;
+      _worker = new Unity.InferenceEngine.Worker(runtimeModel, backendType);
     }
 
-    public (float, TrackerNeuralNet.BoundingBox) Run(Tensor<float> inputTensor)
+    public (float, TrackerNeuralNet.BoundingBox) Run(Unity.InferenceEngine.Tensor<float> inputTensor)
     {
       _worker.Schedule(inputTensor);
-      var results_ = _worker.PeekOutput() as Tensor<float>;
+      var results_ = _worker.PeekOutput() as Unity.InferenceEngine.Tensor<float>;
       var results = results_.DownloadToNativeArray();
       float localizerProbability = Sigmoid(results[0]);
       var normalizedRoi = new TrackerNeuralNet.BoundingBox(results[1], results[2], results[3], results[4]);

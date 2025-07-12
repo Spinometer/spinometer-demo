@@ -6,7 +6,7 @@ using GetBack.Spinometer.SpinometerCore;
 using GetBack.Spinometer.TrackerNeuralNetImpl;
 using GetBack.Spinometer.UI;
 using Unity.Mathematics;
-using Unity.Sentis;
+using Unity.InferenceEngine;
 using UnityEngine;
 using UnityEngine.UIElements;
 
