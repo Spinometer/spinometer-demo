@@ -60,7 +60,15 @@ namespace GetBack.Spinometer
     private bool SceneLoaded(string sceneName)
     {
       var scene = SceneManager.GetSceneByName(sceneName);
-      return scene != null && scene.isLoaded;
+      return scene.isLoaded;
+    }
+
+    private AsyncOperation CloseScene(string sceneName)
+    {
+      var scene = SceneManager.GetSceneByName(sceneName);
+      if (!scene.isLoaded)
+        return null;
+      return SceneManager.UnloadSceneAsync(scene);
     }
 
     void Update()
@@ -99,7 +107,7 @@ namespace GetBack.Spinometer
     private async void ToggleDebugUI()
     {
       var scene = SceneManager.GetSceneByName(_sceneName_debug);
-      if (scene == null || !scene.isLoaded) {
+      if (!scene.isLoaded) {
         await SceneManager.LoadSceneAsync(_sceneName_debug, LoadSceneMode.Additive);
       } else {
         await SceneManager.UnloadSceneAsync(scene);
@@ -109,7 +117,7 @@ namespace GetBack.Spinometer
     private async void ToggleExtraUI()
     {
       var scene = SceneManager.GetSceneByName(_sceneName_extra);
-      if (scene == null || !scene.isLoaded) {
+      if (!scene.isLoaded) {
         await SceneManager.LoadSceneAsync(_sceneName_extra, LoadSceneMode.Additive);
         GameObject.Find("/SK_Skeleton/FaceProxyOrigin/CameraOrigin/FaceProxy/Cube").SetActive(true);
       } else {
@@ -132,11 +140,7 @@ namespace GetBack.Spinometer
     {
       LoadDisclaimerScene();
 
-      var scene = SceneManager.GetSceneByName(_sceneName_opening);
-      if (scene != null && scene.isLoaded) {
-        Debug.Log("Unload");
-        SceneManager.UnloadSceneAsync(scene);
-      }
+      CloseScene(_sceneName_opening);
 
       _screenTransitionOverlay.StartTransition(durationSeconds: 2f,
                                                transitionStyle: ScreenTransitionOverlay.TransitionStyle.Fade);
@@ -175,11 +179,7 @@ namespace GetBack.Spinometer
 
       LoadSpinometerScene();
 
-      var scene = SceneManager.GetSceneByName(_sceneName_disclaimer);
-      if (scene != null && scene.isLoaded) {
-        Debug.Log("Unload");
-        SceneManager.UnloadSceneAsync(scene);
-      }
+      CloseScene(_sceneName_disclaimer);
 
       if (!InitialSetupAlreadyCompleted) {
         _screenTransitionOverlay.StartTransition(durationSeconds: 2f,
@@ -257,14 +257,6 @@ namespace GetBack.Spinometer
           CloseScene(_sceneName_settings);
         };
         RegisterLocaleChangeButtonEvents(uidoc);
-      }
-    }
-
-    private void CloseScene(string sceneName)
-    {
-      var scene = SceneManager.GetSceneByName(sceneName);
-      if (scene != null && scene.isLoaded) {
-        SceneManager.UnloadSceneAsync(scene);
       }
     }
 
