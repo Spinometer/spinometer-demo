@@ -41,7 +41,7 @@ Note: Setup information is saved in the registry. If you uninstall the program, 
 
 ## Building from Source
 
-This is a [Unity](https://unity.com/) project.  At the time of writing, development is done using Unity Editor version 6000.0.36f1.
+This is a [Unity](https://unity.com/) project.  At the time of writing, development is done using Unity Editor version 6000.2.0f1.
 
 Following third-party assets/files are not included in this repository.  You will need download and place them separately.
 
