@@ -1,12 +1,12 @@
 .unity-label {
     font-size: 10px;
-    // color: rgb(204, 204, 204);
+    /* color: rgb(204, 204, 204); */
     text-shadow: 0 0 4px rgb(0, 0, 0);
 }
 
 .big .unity-label {
     font-size: 24px;
-    // color: rgb(204, 204, 204);
+    /* color: rgb(204, 204, 204); */
     text-shadow: 0 0 8px rgb(0, 0, 0);
 }
 
