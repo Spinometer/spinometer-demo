@@ -143,9 +143,19 @@ namespace GetBack.Spinometer
 
     void OnDestroy()
     {
-      if (_webcamRaw != null) Destroy(_webcamRaw);
-      if (_webcamBufferColor != null) Destroy(_webcamBufferColor);
-      if (_webcamBufferGrayscale != null) Destroy(_webcamBufferGrayscale);
+      if (_webcamRaw != null) {
+        _webcamRaw.Stop();
+        Destroy(_webcamRaw);
+        _webcamRaw = null;
+      }
+      if (_webcamBufferColor != null) {
+        Destroy(_webcamBufferColor);
+        _webcamBufferColor = null;
+      }
+      if (_webcamBufferGrayscale != null) {
+        Destroy(_webcamBufferGrayscale);
+        _webcamBufferGrayscale = null;
+      }
     }
 
     void Update()
