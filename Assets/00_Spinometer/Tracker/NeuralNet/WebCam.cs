@@ -16,7 +16,7 @@ namespace GetBack.Spinometer
       accessRejected,
       accessGranted,
       noDeviceSelected, // access granted but no device selected
-      failedToCreatedWebCamTexture, // access granted but failed to create webcam texture, probably due to bug
+      failedToCreateWebCamTexture, // access granted but failed to create webcam texture, probably due to bug
       running,
       webCamNotResponding,
     }
@@ -54,7 +54,7 @@ namespace GetBack.Spinometer
       { StateEnum.accessRejected, "rejected to access webcam" },
       { StateEnum.accessGranted, "granted to access webcam" },
       { StateEnum.noDeviceSelected, "access granted but no device selected" },
-      { StateEnum.failedToCreatedWebCamTexture, "failed to create webcam texture" },
+      { StateEnum.failedToCreateWebCamTexture, "failed to create webcam texture" },
       { StateEnum.running, "running" },
       { StateEnum.webCamNotResponding, "webcam not responding" },
     };
@@ -132,7 +132,7 @@ namespace GetBack.Spinometer
 
       _webcamRaw = new WebCamTexture(deviceName, 320, 240, 30);
       if (_webcamRaw == null) {
-        State = StateEnum.failedToCreatedWebCamTexture;
+        State = StateEnum.failedToCreateWebCamTexture;
         return;
       }
 
